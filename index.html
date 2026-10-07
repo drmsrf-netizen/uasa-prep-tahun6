@@ -1,0 +1,1910 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="UASA Year 6 revision: Maths and Science notes, practice questions with feedback, and UASA-format mock papers.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>UASA Year 6 Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: exercise-book page — sticky tab bar, graph-paper ground, one working column for notes and questions */
+:root{
+  --paper:#F4F6FB; --card:#FFFFFF; --ink:#18213A; --muted:#566180; --line:#D9E0ED; --grid:#E4E9F3;
+  --pen:#2453B3; --pen-soft:#E4ECFB; --hi:#FFD23F; --hi-soft:#FFF4C9; --on-hi:#18213A;
+  --good:#1D8350; --good-soft:#E1F4E8; --bad:#BF3A30; --bad-soft:#FBE5E2;
+  --sci:#0B7A6A; --sci-soft:#DDF3EE;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Lexend", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#10152A; --card:#18203A; --ink:#E9EDF7; --muted:#9BA6C4; --line:#2B3556; --grid:#182041;
+  --pen:#86A8F2; --pen-soft:#22305133; --hi:#FFD23F; --hi-soft:#3A3417; --on-hi:#18213A;
+  --good:#5CCB8D; --good-soft:#15342A; --bad:#F27C72; --bad-soft:#3E1F1D; --sci:#4FD1BC; --sci-soft:#12332F; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#10152A; --card:#18203A; --ink:#E9EDF7; --muted:#9BA6C4; --line:#2B3556; --grid:#182041;
+  --pen:#86A8F2; --pen-soft:#22305133; --hi:#FFD23F; --hi-soft:#3A3417; --on-hi:#18213A;
+  --good:#5CCB8D; --good-soft:#15342A; --bad:#F27C72; --bad-soft:#3E1F1D; --sci:#4FD1BC; --sci-soft:#12332F; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--pen);outline-offset:2px;border-radius:6px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+body[data-subject="science"]{--pen:var(--sci);--pen-soft:var(--sci-soft)}
+.subj{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.subj button{border:0;background:var(--card);color:var(--ink);padding:5px 14px;font-weight:600;font-size:.9rem}
+.subj button[aria-pressed="true"]{background:var(--pen);color:var(--card)}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:2px solid var(--ink)}
+.bar-in{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:8px;margin-right:auto}
+.brand b{background:var(--hi);color:var(--on-hi);padding:0 6px;border-radius:4px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-weight:500;font-size:.95rem}
+.tab[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.tab:hover:not([aria-current="page"]){color:var(--ink)}
+
+/* home */
+.hero{padding-block:36px 24px;display:grid;gap:14px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800}
+.hero h1 mark{background:linear-gradient(transparent 55%,var(--hi) 55%);color:inherit;padding:0 2px}
+.hero p{margin:0;max-width:60ch;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:6px}
+.stat{display:flex;flex-direction:column}
+.stat .v{font-family:var(--mono);font-size:1.6rem;font-weight:700}
+.stat .k{font-size:.8rem;color:var(--muted)}
+
+.sheet{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:20px}
+.section-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
+.section-h h2{font-size:1.35rem}
+.section-h span{color:var(--muted);font-size:.9rem}
+
+.topics{display:grid;gap:0;padding:4px 20px}
+.trow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line)}
+.trow:last-child{border-bottom:0}
+.tno{font-family:var(--mono);font-weight:700;font-size:1.1rem;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--pen-soft);color:var(--pen)}
+.tname{font-weight:600}
+.meter{height:8px;border-radius:99px;background:var(--grid);margin-top:6px;overflow:hidden;max-width:260px}
+.meter i{display:block;height:100%;background:var(--good);border-radius:99px}
+.tmeta{font-size:.8rem;color:var(--muted);margin-top:2px}
+.tact{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:560px){.trow{grid-template-columns:40px minmax(0,1fr)}.tact{grid-column:2;justify-content:flex-start}}
+
+.btn{border:1.5px solid var(--ink);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:10px;font-weight:500;font-size:.92rem}
+.btn:hover{background:var(--pen-soft)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--pen);border-color:var(--pen)}
+.btn.hi{background:var(--hi);color:var(--on-hi);border-color:var(--on-hi)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+.mockcard{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;margin-top:16px;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--hi)}
+.mockcard h3{font-size:1.25rem}
+.mockcard p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+@media (max-width:560px){.mockcard{grid-template-columns:1fr}}
+
+/* notes */
+.notes-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+.toc{position:sticky;top:80px;display:grid;gap:2px}
+.toc button{text-align:left;border:0;background:none;color:var(--muted);padding:8px 10px;border-radius:8px;font-size:.9rem;display:flex;gap:8px}
+.toc button span{font-family:var(--mono)}
+.toc button[aria-current="true"]{background:var(--card);color:var(--ink);font-weight:600;box-shadow:inset 3px 0 0 var(--pen)}
+.toc-select{display:none;width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+@media (max-width:720px){.notes-layout{grid-template-columns:1fr}.toc{display:none}.toc-select{display:block}}
+.note h2{font-size:1.7rem;margin-bottom:6px}
+.note .lead{color:var(--muted);margin:0 0 18px}
+.note h3{font-size:1.1rem;margin:22px 0 8px}
+.note p,.note li{max-width:65ch}
+.note ul,.note ol{padding-left:1.3em;margin:6px 0}
+.note li{margin:4px 0}
+.note .tbl{overflow-x:auto;margin:10px 0}
+.note table{border-collapse:collapse;font-size:.92rem;min-width:320px}
+.note th,.note td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.note th{background:var(--pen-soft);font-weight:600}
+.box{border-radius:10px;padding:12px 14px;margin:14px 0}
+.box.eg{background:var(--pen-soft);border:1px solid var(--line)}
+.box.warn{background:var(--hi-soft);border:1px dashed var(--muted)}
+.box .lbl{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.note-foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:26px;padding-top:16px;border-top:1px dashed var(--line)}
+
+/* question card */
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:24px 0 10px}
+.qhead .t{font-weight:600}
+.pbar{height:6px;background:var(--grid);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.pbar i{display:block;height:100%;background:var(--pen)}
+.q-text{font-size:1.12rem;font-weight:500;margin:0 0 16px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:12px 14px;border-radius:12px;font-size:1rem}
+.opt .L{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-family:var(--mono);font-weight:700;background:var(--grid)}
+.opt:hover:not(:disabled){border-color:var(--pen)}
+.opt.sel{border-color:var(--pen);background:var(--pen-soft)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.right .L{background:var(--good);color:var(--card)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .L{background:var(--bad);color:var(--card)}
+.opt:disabled{cursor:default}
+.ansrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ansbox{display:flex;align-items:center;border:1.5px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden}
+.ansbox span{padding:0 10px;color:var(--muted);font-family:var(--mono)}
+.ansbox input{border:0;background:transparent;color:var(--ink);font:500 1.1rem var(--mono);padding:10px 12px;width:180px;max-width:50vw}
+.ansbox input:focus{outline:none}
+.ansbox:focus-within{box-shadow:0 0 0 3px var(--pen-soft);border-color:var(--pen)}
+.hint-line{font-size:.85rem;color:var(--muted);margin-top:8px}
+.fb{margin-top:18px;border-radius:12px;padding:16px;border:1.5px solid}
+.fb.ok{background:var(--good-soft);border-color:var(--good)}
+.fb.no{background:var(--bad-soft);border-color:var(--bad)}
+.fb h3{font-size:1.15rem;margin-bottom:4px}
+.fb.ok h3{color:var(--good)} .fb.no h3{color:var(--bad)}
+.fb p{margin:4px 0}
+.fb ol{margin:6px 0 0;padding-left:1.3em}
+.fb .tip{margin-top:10px;font-size:.92rem;background:var(--card);border-radius:8px;padding:8px 10px}
+.qnav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* practice picker */
+.picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:8px}
+.pick{text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:14px;display:grid;gap:4px}
+.pick:hover{border-color:var(--pen)}
+.pick .n{font-family:var(--mono);color:var(--pen);font-weight:700;font-size:.85rem}
+.pick .nm{font-weight:600}
+.pick .s{font-size:.8rem;color:var(--muted)}
+.pick.mixed{border:2px dashed var(--pen)}
+
+/* results */
+.result-top{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.ring{font-family:var(--mono);font-weight:700;font-size:2.2rem;width:110px;height:110px;border-radius:50%;display:grid;place-items:center;border:8px solid var(--hi);background:var(--card)}
+.result-top h2{font-size:1.6rem}
+.result-top p{margin:4px 0 0;color:var(--muted);max-width:50ch}
+.breakdown{display:grid;gap:8px;margin-top:18px}
+.brow{display:grid;grid-template-columns:minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:.92rem}
+.review{display:grid;gap:14px;margin-top:10px}
+.review .sheet{padding:16px}
+.review .q-text{font-size:1rem;margin-bottom:6px}
+
+/* mock */
+.timer{font-family:var(--mono);font-weight:700;font-size:1.15rem;padding:4px 12px;border-radius:8px;background:var(--ink);color:var(--paper)}
+.timer.low{background:var(--bad);color:var(--card)}
+.palette{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.palette button{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-family:var(--mono);font-size:.85rem}
+.palette button.done{background:var(--pen-soft);border-color:var(--pen)}
+.palette button.cur{border-color:var(--ink);border-width:2.5px}
+.confirm{margin-top:14px;padding:12px;border-radius:10px;background:var(--hi-soft);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+/* UASA paper */
+.ua-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.marks{color:var(--muted);font-size:.85rem;font-weight:500}
+.ua-parts{display:grid;gap:16px;margin-top:12px}
+.ua-part{display:grid;gap:6px}
+.ua-pq{margin:0;max-width:65ch}
+.ua-lbl{font-size:.85rem;color:var(--muted);font-weight:600}
+.ua-part .ansbox{width:fit-content;max-width:100%}
+.ua-part .ansbox input{width:220px}
+.ua-fb .fb{margin-top:6px}
+.data-tbl{border-collapse:collapse;font-size:.92rem}
+.data-tbl th,.data-tbl td{border:1px solid var(--line);padding:6px 10px;text-align:center}
+.data-tbl th{background:var(--pen-soft);font-weight:600}
+.data-tbl td:first-child,.data-tbl th:first-child{text-align:left}
+.score-tbl td.full{background:var(--good-soft);color:var(--good);font-weight:700}
+.score-tbl td.part{background:var(--hi-soft)}
+.score-tbl td.zero{background:var(--bad-soft);color:var(--bad)}
+.ropt{position:relative;cursor:pointer}
+.ropt input{position:absolute;opacity:0;pointer-events:none}
+.ropt:has(input:checked){border-color:var(--pen);background:var(--pen-soft)}
+.ropt:has(input:checked) .L{background:var(--pen);color:var(--card)}
+.ropt:focus-within{outline:3px solid var(--pen);outline-offset:2px}
+.ropt:has(input:disabled){cursor:default}
+.mrows{display:grid;gap:8px}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.mrow select{font:inherit;padding:6px 8px;border-radius:8px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);max-width:min(220px,45vw)}
+@media (max-width:520px){.mrow{grid-template-columns:1fr}.mrow select{max-width:100%}}
+.fb.part{background:var(--hi-soft);border-color:var(--muted)}
+.mres{list-style:none;padding:0;margin:6px 0;display:grid;gap:4px}
+.mres li span{font-weight:700;margin-right:4px}
+.mres li.y span{color:var(--good)} .mres li.n span{color:var(--bad)}
+/* figures */
+.fig{margin:16px 0;padding:14px 12px 10px;border:1px dashed var(--line);border-radius:12px;background:var(--paper)}
+.fig svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto;color:var(--ink);font-family:var(--body);font-size:13px;overflow:visible}
+.fig figcaption{font-size:.85rem;color:var(--muted);margin:8px auto 0;text-align:center;max-width:60ch}
+.qcard-fig .fig,.sheet>.fig{max-width:420px}
+.fig .s{fill:none;stroke:currentColor;stroke-width:2}
+.fig .sm{fill:none;stroke:var(--muted);stroke-width:2}
+.fig .sa{fill:none;stroke:var(--pen);stroke-width:3}
+.fig .sb{stroke:var(--bad);stroke-width:3}
+.fig .dash{stroke-dasharray:5 4}
+.fig .gl{stroke:var(--line);stroke-width:1}
+.fig .t{fill:currentColor}
+.fig .tm{fill:var(--muted)}
+.fig .ta{fill:var(--pen);font-weight:600}
+.fig .tc{fill:var(--card);font-weight:600}
+.fig .tk{fill:var(--on-hi)}
+.fig .fa{fill:var(--pen)}
+.fig .fs{fill:var(--pen-soft)}
+.fig .fh{fill:var(--hi)}
+.fig .fhs{fill:var(--hi-soft)}
+.fig .fc{fill:var(--card)}
+.fig .fm{fill:var(--muted)}
+.fig .bold{font-weight:600}
+.chain{display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center;align-items:center}
+.chain .chip{border:1.5px solid var(--ink);background:var(--pen-soft);border-radius:8px;padding:6px 12px;font-weight:600;font-size:.88rem}
+.chain .chip.first{background:var(--hi);color:var(--on-hi)}
+.chain .arr{color:var(--muted);font-weight:700}
+.fig .small-t{font-size:11.5px}
+.fig .tiny-t{font-size:10.5px}
+.fig .big-t{font-size:16px;font-weight:600}
+.fig .halo{paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+@media (prefers-reduced-motion:no-preference){.fb{animation:pop .25s ease-out}@keyframes pop{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="brand"><b>UASA</b> Year 6 Prep</div>
+    <div class="subj" role="group" aria-label="Subject"><button data-subj="maths">Maths</button><button data-subj="science">Science</button></div>
+    <nav class="tabs" aria-label="Sections">
+      <button class="tab" data-view="home">Home</button>
+      <button class="tab" data-view="notes">Notes</button>
+      <button class="tab" data-view="practice">Practice</button>
+      <button class="tab" data-view="mock">Mock Paper</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="app"></main>
+
+<script>
+/* ---------- CONTENT ---------- */
+/* ---------- FIGURES ---------- */
+const AR=id=>`<defs><marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>`;
+const T=(x,y,s,c='t',a='middle')=>`<text x="${x}" y="${y}" text-anchor="${a}" class="${c}">${s}</text>`;
+const fig=(vb,label,body,cap)=>`<figure class="fig"><svg viewBox="${vb}" style="max-width:${Math.round(vb.split(' ')[2]*1.05)}px" role="img" aria-label="${label}">${body}</svg>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
+const GREEN='#3E9B5B';
+
+function trapPot(cx,top,bot,wt,wb){return `<polygon points="${cx-wt/2},${top} ${cx+wt/2},${top} ${cx+wb/2},${bot} ${cx-wb/2},${bot}" class="fs" stroke="currentColor" stroke-width="2"/>`}
+
+function coordFig(mode){
+  const ox=40,oy=290,u=26,X=v=>ox+v*u,Y=v=>oy-v*u;let g='';
+  for(let i=1;i<=10;i++){g+=`<line x1="${X(i)}" y1="${Y(0)}" x2="${X(i)}" y2="${Y(10)}" class="gl"/><line x1="${X(0)}" y1="${Y(i)}" x2="${X(10)}" y2="${Y(i)}" class="gl"/>`}
+  for(let i=0;i<=10;i++){g+=T(X(i),oy+17,i,'tm small-t');if(i)g+=T(ox-8,Y(i)+4,i,'tm small-t','end')}
+  g+=`<line x1="${ox}" y1="${oy}" x2="${X(10)+14}" y2="${oy}" class="s" marker-end="url(#ar-c${mode})"/><line x1="${ox}" y1="${oy}" x2="${ox}" y2="${Y(10)-14}" class="s" marker-end="url(#ar-c${mode})"/>`;
+  g+=T(X(10)+22,oy+4,'x','t','start')+T(ox,Y(10)-20,'y');
+  const P=(x,y,lab,dx=8,dy=-8,a='start')=>`<line x1="${X(x)}" y1="${Y(y)}" x2="${X(x)}" y2="${oy}" class="sa dash" style="stroke-width:1.5"/><line x1="${X(x)}" y1="${Y(y)}" x2="${ox}" y2="${Y(y)}" class="sa dash" style="stroke-width:1.5"/><circle cx="${X(x)}" cy="${Y(y)}" r="5" class="fa"/>`+T(X(x)+dx,Y(y)+dy,lab,'ta halo',a);
+  if(mode==='q'){g+=P(4,3,'P')}
+  else{
+    g+=P(4,3,'P(4, 3)');
+    g+=`<line x1="${X(2)}" y1="${Y(5)}" x2="${X(9)}" y2="${Y(5)}" class="s" style="stroke-width:3"/><circle cx="${X(2)}" cy="${Y(5)}" r="5" fill="currentColor"/><circle cx="${X(9)}" cy="${Y(5)}" r="5" fill="currentColor"/>`;
+    g+=T(X(2),Y(5)-12,'A(2, 5)','t halo')+T(X(9),Y(5)-12,'B(9, 5)','t halo')+T(X(5.5),Y(5)+20,'7 units','t halo bold');
+  }
+  return AR('ar-c'+mode)+g;
+}
+
+function pieFig(){
+  const cx=160,cy=120,r=95,pt=(a,rr)=>[cx+rr*Math.sin(a*Math.PI/180),cy-rr*Math.cos(a*Math.PI/180)];
+  const sec=[['Football',0,90,'fa','tc'],['Badminton',90,210,'fs','t'],['Swimming',210,300,'fh','tk'],['Takraw',300,360,'fc','t']];
+  return sec.map(([n,a0,a1,f,tc])=>{const [x0,y0]=pt(a0,r),[x1,y1]=pt(a1,r),[lx,ly]=pt((a0+a1)/2,r*0.6);
+    return `<path d="M${cx} ${cy} L${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${a1-a0>180?1:0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z" class="${f}" stroke="currentColor" stroke-width="1.5"/>`+T(lx.toFixed(1),(ly-2).toFixed(1),n,tc+' small-t')+T(lx.toFixed(1),(ly+13).toFixed(1),(a1-a0)+'°',tc+' bold')}).join('');
+}
+
+function galaxyFig(){
+  const cx=160,cy=130;let g=`<circle cx="${cx}" cy="${cy}" r="34" class="fh" opacity=".3"/><circle cx="${cx}" cy="${cy}" r="18" class="fh"/>`;
+  const rnd=s=>{const v=Math.sin(s)*43758.5453;return v-Math.floor(v)};
+  for(let k=0;k<2;k++)for(let i=8;i<=120;i++){const t=i/120,a=k*Math.PI+t*2.6*Math.PI,r=14+t*105;
+    for(let j=0;j<3;j++){const jit=2+t*5,x=cx+r*Math.cos(a)+(rnd(i*12.9+k*78.2+j*3.1)-.5)*2*jit,y=cy+(r*Math.sin(a)+(rnd(i*4.1+k*9.7+j*7.3)-.5)*2*jit)*0.82;
+      g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1.8-t*0.7).toFixed(2)}" fill="currentColor" opacity=".7"/>`}}
+  const t=0.8,a=t*2.6*Math.PI,r=14+t*105,sx=cx+r*Math.cos(a),sy=cy+r*Math.sin(a)*0.82;
+  g+=`<circle cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="8" class="sa" style="stroke-width:2.5"/><line x1="${sx.toFixed(1)}" y1="${(sy-10).toFixed(1)}" x2="${sx.toFixed(1)}" y2="${(sy-26).toFixed(1)}" class="sa" style="stroke-width:2"/>`+T(sx.toFixed(1),(sy-32).toFixed(1),'Our Solar System','ta halo')+T(cx,cy+4,'centre','tk small-t bold');
+  return g;
+}
+
+function altitudeFig(){
+  let g='';
+  for(let y=14,row=0;y<=210;y+=14,row++){const s=10+(210-y)*0.22;for(let x=8+(row%2)*s/2;x<352;x+=s)g+=`<circle cx="${x.toFixed(1)}" cy="${y}" r="2" class="fm"/>`}
+  g+=`<polygon points="40,215 180,44 320,215" class="fs" stroke="currentColor" stroke-width="2"/><line x1="0" y1="215" x2="360" y2="215" class="s"/>`;
+  g+=T(180,30,'Mountain top: less air, low pressure','t halo bold')+T(180,234,'Sea level: more air, high pressure','t bold');
+  return g;
+}
+
+function microbesFig(){
+  const L=(x,s)=>T(x,132,s,'t bold');let g='';
+  // bacteria
+  g+=`<rect x="28" y="38" width="36" height="14" rx="7" class="fs" stroke="currentColor" stroke-width="2"/><rect x="56" y="60" width="36" height="14" rx="7" class="fs" stroke="currentColor" stroke-width="2"/><rect x="24" y="74" width="36" height="14" rx="7" class="fs" stroke="currentColor" stroke-width="2"/>`+L(60,'Bacteria');
+  // virus
+  let sp='';for(let i=0;i<10;i++){const a=i*Math.PI/5,x1=170+18*Math.cos(a),y1=62+18*Math.sin(a),x2=170+28*Math.cos(a),y2=62+28*Math.sin(a);sp+=`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="s"/><circle cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="2.5" fill="currentColor"/>`}
+  g+=sp+`<circle cx="170" cy="62" r="18" class="fs" stroke="currentColor" stroke-width="2"/>`+L(170,'Virus');
+  // yeast
+  g+=`<ellipse cx="272" cy="68" rx="20" ry="15" class="fs" stroke="currentColor" stroke-width="2"/><ellipse cx="294" cy="50" rx="10" ry="8" class="fs" stroke="currentColor" stroke-width="2"/><circle cx="270" cy="68" r="4" fill="currentColor"/>`+L(280,'Fungi (yeast)');
+  // amoeba
+  const x=390,y=62;
+  g+=`<path d="M${x-26} ${y+4} C${x-30} ${y-18} ${x-8} ${y-26} ${x+4} ${y-14} C${x+18} ${y-26} ${x+34} ${y-6} ${x+22} ${y+8} C${x+30} ${y+24} ${x+2} ${y+28} ${x-6} ${y+18} C${x-16} ${y+28} ${x-24} ${y+18} ${x-26} ${y+4}Z" class="fs" stroke="currentColor" stroke-width="2"/><circle cx="${x}" cy="${y}" r="6" fill="currentColor"/>`+L(390,'Protozoa');
+  // spirogyra
+  let w='M466 62';for(let i=1;i<=8;i++)w+=` Q${466+i*8-4} ${i%2?50:74} ${466+i*8} 62`;
+  g+=`<rect x="462" y="48" width="76" height="28" rx="8" class="fs" stroke="currentColor" stroke-width="2"/><path d="${w}" fill="none" stroke="${GREEN}" stroke-width="3"/>`+L(500,'Algae');
+  return g;
+}
+
+function potsFig(){
+  let g=trapPot(110,150,195,120,90)+trapPot(330,150,195,120,90);
+  g+=`<line x1="110" y1="150" x2="110" y2="48" stroke="${GREEN}" stroke-width="5"/>`;
+  [[60,-1],[78,1],[96,-1],[114,1]].forEach(([y,s])=>g+=`<ellipse cx="${110+s*16}" cy="${y}" rx="15" ry="6" fill="${GREEN}"/>`);
+  for(let i=0;i<8;i++){const x=280+i*14.3,h=88+((i*7)%5)*2;g+=`<line x1="${x}" y1="150" x2="${x+((i%2)?2:-2)}" y2="${150-h}" stroke="${GREEN}" stroke-width="1.5"/><ellipse cx="${x+((i%2)?6:-6)}" cy="${150-h+8}" rx="5" ry="2" fill="${GREEN}"/>`}
+  g+=T(110,218,'1 seedling: grows strong','t bold')+T(330,218,'8 seedlings: thin and weak','t bold');
+  return g;
+}
+
+function fairTestFig(){
+  let g=T(20,22,'Responding variable: plant height','ta','start');
+  [[110,40,'50 ml'],[260,70,'100 ml'],[410,100,'150 ml']].forEach(([cx,h,l])=>{
+    g+=trapPot(cx,140,185,70,50)+`<line x1="${cx}" y1="140" x2="${cx}" y2="${140-h}" stroke="${GREEN}" stroke-width="3"/><ellipse cx="${cx-10}" cy="${140-h*0.55}" rx="10" ry="4" fill="${GREEN}"/><ellipse cx="${cx+10}" cy="${140-h*0.8}" rx="10" ry="4" fill="${GREEN}"/>`+T(cx,205,l,'t bold')});
+  g+=T(260,230,'Manipulated variable: amount of water given each day','t');
+  return g;
+}
+
+const FIG={
+roundLine:fig('0 0 520 110','Number line from 680 000 to 690 000. 683 549 is before the halfway mark.',
+ `<line x1="40" y1="60" x2="480" y2="60" class="s"/><line x1="40" y1="60" x2="196" y2="60" class="sa" style="stroke-width:5"/>`+
+ [40,260,480].map(x=>`<line x1="${x}" y1="50" x2="${x}" y2="70" class="s"/>`).join('')+
+ T(40,92,'680 000')+T(260,92,'685 000','tm')+T(480,92,'690 000')+T(260,40,'halfway','tm')+
+ `<circle cx="196" cy="60" r="7" class="fa"/>`+T(196,36,'683 549','ta'),
+ '683 549 is before the halfway mark (685 000), so it rounds down to 680 000.'),
+
+fracBar:fig('0 0 500 140','Bar model: four fifths shaded, shared into 2 equal groups gives two fifths.',
+ [0,1,2,3,4].map(i=>`<rect x="${80+i*80}" y="16" width="80" height="40" class="${i<4?'fa':'fc'}" stroke="currentColor" stroke-width="1.5"/>`).join('')+
+ [0,1,2,3,4].map(i=>`<rect x="${80+i*80}" y="88" width="80" height="40" class="${i<2?'fa':'fc'}" stroke="currentColor" stroke-width="1.5"/>`).join('')+
+ T(40,42,'4/5','t bold')+T(40,114,'2/5','t bold')+T(280,77,'÷ 2: share the 4 shaded parts into 2 equal groups','tm'),
+ 'Half of 4 shaded fifths is 2 shaded fifths.'),
+
+timeline:fig('0 0 520 140','Timeline from 2245 to 0130, split at midnight into 1 h 15 min and 1 h 30 min.',
+ `<line x1="40" y1="70" x2="480" y2="70" class="s"/>`+[40,240,480].map(x=>`<line x1="${x}" y1="62" x2="${x}" y2="78" class="s"/>`).join('')+
+ `<path d="M42 54V46H238V54M242 54V46H478V54" class="sa" style="stroke-width:2"/>`+
+ T(140,36,'1 h 15 min','ta')+T(360,36,'1 h 30 min','ta')+
+ T(40,96,'2245','t bold')+T(240,96,'0000','t bold')+T(480,96,'0130','t bold')+T(240,112,'midnight','tm small-t')+T(480,112,'next day','tm small-t')+
+ T(260,134,'Total: 1 h 15 min + 1 h 30 min = 2 h 45 min','t bold'),
+ 'Split the journey at midnight, then add the two parts.'),
+
+measLadder:fig('0 0 530 100','Conversion ladder: km times 1000 to m, times 100 to cm, times 10 to mm, and divide to go back.',
+ AR('ar-m')+[['km',20],['m',160],['cm',300],['mm',440]].map(([l,x])=>`<rect x="${x}" y="30" width="70" height="36" rx="8" class="fs" stroke="currentColor" stroke-width="2"/>`+T(x+35,53,l,'t bold')).join('')+
+ [[92,'× 1 000','÷ 1 000'],[232,'× 100','÷ 100'],[372,'× 10','÷ 10']].map(([x,a,b])=>
+ `<line x1="${x}" y1="40" x2="${x+64}" y2="40" class="sa" style="stroke-width:2" marker-end="url(#ar-m)"/><line x1="${x+64}" y1="56" x2="${x}" y2="56" class="s" marker-end="url(#ar-m)"/>`+T(x+33,26,a,'ta small-t')+T(x+33,82,b,'tm small-t')).join(''),
+ 'Going to a smaller unit: multiply. Going to a bigger unit: divide. For mass and volume, kg → g and l → ml are both × 1 000.'),
+
+triAngles:fig('0 0 300 240','Triangle with angles 65°, 48° and 67°.',
+ `<polygon points="40,210 260,210 115,49" class="fs" stroke="currentColor" stroke-width="2"/>`+T(72,200,'65°','ta')+T(228,200,'48°','ta')+T(115,84,'67°','ta'),
+ 'Angles in a triangle add up to 180°: 65° + 48° + 67° = 180°.'),
+triQ:fig('0 0 300 240','Triangle with angles 65°, 48° and an unknown angle.',
+ `<polygon points="40,210 260,210 115,49" class="fs" stroke="currentColor" stroke-width="2"/>`+T(72,200,'65°','ta')+T(228,200,'48°','ta')+T(115,84,'?','ta'),'Diagram not drawn to scale.'),
+
+circleParts:fig('0 0 360 230','Circle showing the centre, a radius, a diameter and the circumference.',
+ `<circle cx="150" cy="120" r="85" class="s"/><line x1="150" y1="35" x2="150" y2="205" class="sa"/><line x1="150" y1="120" x2="235" y2="120" class="s dash"/><circle cx="150" cy="120" r="4" fill="currentColor"/><line x1="210" y1="60" x2="240" y2="45" class="s" style="stroke-width:1"/>`+
+ T(192,112,'radius')+T(142,96,'diameter','ta','end')+T(142,142,'centre','t','end')+T(244,44,'circumference','t','start'),
+ 'The diameter is twice the radius.'),
+circleQ:fig('0 0 260 220','Circle with a diameter of 14 cm.',
+ `<circle cx="130" cy="110" r="85" class="s"/><line x1="45" y1="110" x2="215" y2="110" class="sa"/><circle cx="130" cy="110" r="4" fill="currentColor"/>`+T(130,100,'14 cm','ta halo')),
+
+cuboid:fig('0 0 340 205','Cuboid 8 cm long, 5 cm wide and 4 cm high.',
+ `<polygon points="40,70 80,30 280,30 240,70" class="fs" stroke="currentColor" stroke-width="2"/><polygon points="240,70 280,30 280,130 240,170" class="fs" stroke="currentColor" stroke-width="2"/><rect x="40" y="70" width="200" height="100" class="fc" stroke="currentColor" stroke-width="2"/>`+
+ T(140,192,'8 cm','ta')+T(32,124,'4 cm','ta','end')+T(268,162,'5 cm','ta','start'),
+ 'Volume = length × width × height'),
+
+composite:fig('0 0 300 240','A 9 cm square with a 3 cm square cut out of one corner.',
+ `<rect x="160" y="20" width="60" height="60" fill="none" class="sm dash"/><polygon points="40,20 160,20 160,80 220,80 220,200 40,200" class="fs" stroke="currentColor" stroke-width="2"/>`+
+ T(130,222,'9 cm','ta')+T(32,115,'9 cm','ta','end')+T(190,14,'3 cm','ta')+T(228,54,'3 cm','ta','start'),
+ 'Dashed part is cut out. Diagram not drawn to scale.'),
+
+triArea:fig('0 0 320 205','Triangle with base 10 cm and height 6 cm.',
+ `<polygon points="40,170 280,170 200,50" class="fs" stroke="currentColor" stroke-width="2"/><line x1="200" y1="50" x2="200" y2="170" class="sa dash" style="stroke-width:2"/><path d="M200 158H212V170" fill="none" class="s" style="stroke-width:1.5"/>`+
+ T(160,192,'base 10 cm','ta')+T(194,124,'height 6 cm','ta halo','end'),
+ 'The height is measured straight up from the base, at a right angle.'),
+
+coordNote:fig('0 0 330 320','Grid showing point P at (4, 3), and points A(2, 5) and B(9, 5) which are 7 units apart.',coordFig('n'),
+ 'P: go 4 across, then 3 up. A and B share y = 5, so the distance is 9 − 2 = 7 units.'),
+coordQ:fig('0 0 330 320','Grid showing point P.',coordFig('q')),
+
+pie:fig('0 0 320 240','Pie chart of 120 pupils: football 90°, badminton 120°, swimming 90°, takraw 60°.',pieFig(),
+ 'Favourite sports of 120 pupils. Football: 90/360 = ¼ of 120 = 30 pupils.'),
+
+// SCIENCE
+fairTest:fig('0 0 520 240','Three pots given 50, 100 and 150 ml of water; the plants grow taller with more water.',fairTestFig(),
+ 'Constant variables: same type of plant, same pot size, same amount of sunlight.'),
+
+nervous:fig('0 0 320 300','Human body showing the brain, spinal cord and nerves.',
+ `<circle cx="150" cy="50" r="32" class="sm"/><rect x="115" y="88" width="70" height="110" rx="18" class="sm"/><line x1="115" y1="100" x2="75" y2="190" class="sm"/><line x1="185" y1="100" x2="225" y2="190" class="sm"/><line x1="130" y1="198" x2="120" y2="285" class="sm"/><line x1="170" y1="198" x2="180" y2="285" class="sm"/>`+
+ `<ellipse cx="150" cy="45" rx="22" ry="16" class="fa"/><line x1="150" y1="62" x2="150" y2="196" class="sa" style="stroke-width:5"/>`+
+ [[150,104,80,184],[150,104,220,184],[150,190,122,280],[150,190,178,280],[150,140,118,150],[150,140,182,150]].map(([a,b,c,d])=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" class="sa" style="stroke-width:1.5"/>`).join('')+
+ `<line x1="172" y1="40" x2="204" y2="32" class="s" style="stroke-width:1"/><line x1="153" y1="120" x2="200" y2="120" class="s" style="stroke-width:1"/><line x1="222" y1="184" x2="236" y2="196" class="s" style="stroke-width:1"/>`+
+ T(208,36,'brain','t bold','start')+T(204,124,'spinal cord','t bold','start')+T(238,206,'nerves','t bold','start'),
+ 'Brain + spinal cord = central nervous system. Nerves carry messages to and from every part of the body.'),
+
+growth:`<figure class="fig"><div class="chain" role="img" aria-label="Sperm and ovum, then zygote, embryo, foetus, baby">${['Sperm + ovum','Zygote','Embryo','Foetus','Baby'].map((l,i)=>`<span class="chip${i?'':' first'}">${l}</span>`).join('<span class="arr" aria-hidden="true">→</span>')}</div><figcaption>Fertilisation forms a zygote, which grows in the uterus for about 9 months.</figcaption></figure>`,
+
+microbes:fig('0 0 560 150','Simple drawings of bacteria, a virus, yeast, an amoeba and spirogyra.',microbesFig(),
+ 'Simplified shapes, magnified many times. Most microorganisms can only be seen with a microscope.'),
+
+pots:fig('0 0 440 230','One seedling in a pot grows strong; eight seedlings in the same size pot grow thin.',potsFig(),
+ 'Same pot size, same water. More plants means stronger competition for sunlight, water and nutrients.'),
+
+foodChain:fig('0 0 460 150','Food chain grass to deer to tiger. If deer become extinct, the tiger has no food.',
+ AR('ar-f')+T(20,16,'Healthy food chain','tm small-t','start')+T(20,90,'If the deer become extinct','tm small-t','start')+
+ [['Grass',20],['Deer',180],['Tiger',340]].map(([l,x])=>`<rect x="${x}" y="24" width="100" height="36" rx="8" class="fs" stroke="currentColor" stroke-width="1.5"/>`+T(x+50,47,l,'t bold')).join('')+
+ [120,280].map(x=>`<line x1="${x+2}" y1="42" x2="${x+58}" y2="42" class="s" marker-end="url(#ar-f)"/>`+T(x+30,35,'eaten by','tm tiny-t')).join('')+
+ `<rect x="20" y="98" width="100" height="36" rx="8" class="fs" stroke="currentColor" stroke-width="1.5"/>`+T(70,121,'Grass grows wild','t tiny-t')+
+ `<rect x="180" y="98" width="100" height="36" rx="8" fill="none" class="sm dash"/><line x1="200" y1="104" x2="260" y2="128" class="sb"/><line x1="260" y1="104" x2="200" y2="128" class="sb"/>`+
+ `<rect x="340" y="98" width="100" height="36" rx="8" class="fs" stroke="currentColor" stroke-width="1.5"/>`+T(390,121,'Tiger: no food','t tiny-t bold'),
+ 'Losing one species affects the others in the food chain.'),
+
+friction:fig('0 0 460 180','Toy car pushed with the same force travels furthest on glass and shortest on carpet.',
+ AR('ar-fr')+[['Glass',20,420,'fc'],['Tiles',75,330,'fs'],['Carpet',130,230,'fhs']].map(([l,y,end,f])=>
+ `<rect x="110" y="${y}" width="330" height="40" rx="6" class="${f}" stroke="currentColor" stroke-width="1"/>`+T(100,y+25,l,'t bold','end')+
+ `<rect x="116" y="${y+10}" width="30" height="14" rx="3" class="fa"/><circle cx="123" cy="${y+28}" r="4" fill="currentColor"/><circle cx="140" cy="${y+28}" r="4" fill="currentColor"/>`+
+ `<line x1="152" y1="${y+20}" x2="${end}" y2="${y+20}" class="sa" style="stroke-width:2.5" marker-end="url(#ar-fr)"/>`).join(''),
+ 'Same push, rougher surface → more friction → shorter distance.'),
+
+altitude:fig('0 0 360 244','Air particles are packed close together at sea level and spread out at the mountain top.',altitudeFig(),
+ 'Each dot stands for air. Higher up there is less air above you, so air pressure is lower.'),
+
+speedTri:fig('0 0 240 200','Speed triangle with Distance on top and Speed times Time at the bottom.',
+ `<polygon points="120,16 222,184 18,184" class="fs" stroke="currentColor" stroke-width="2"/><line x1="62" y1="112" x2="178" y2="112" class="s"/>`+
+ T(120,92,'Distance','ta big-t')+T(80,158,'Speed','t big-t')+T(120,158,'×','t big-t')+T(160,158,'Time','t big-t'),
+ 'Cover the one you want to find. Covering Speed leaves Distance ÷ Time.'),
+
+bins:fig('0 0 420 190','Malaysian recycling bins: blue for paper, orange for plastic and aluminium, brown for glass.',
+ [[80,'#2F6FD6','Blue','Paper'],[210,'#F08A24','Orange','Plastic & aluminium'],[340,'#8A5A3C','Brown','Glass']].map(([x,c,n,i])=>
+ `<path d="M${x-40} 50 H${x+40} L${x+33} 140 H${x-33}Z" fill="${c}" stroke="currentColor" stroke-width="1.5"/><rect x="${x-46}" y="38" width="92" height="12" rx="3" fill="${c}" stroke="currentColor" stroke-width="1.5"/>`+
+ `<line x1="${x-15}" y1="65" x2="${x-12}" y2="125" stroke="#fff" stroke-opacity=".45" stroke-width="3"/><line x1="${x+15}" y1="65" x2="${x+12}" y2="125" stroke="#fff" stroke-opacity=".45" stroke-width="3"/>`+
+ T(x,162,n,'t bold')+T(x,180,i,'tm small-t')).join('')),
+
+eclipse:fig('0 0 520 285','Solar eclipse: Sun, Moon, Earth in a line with the Moon in the middle. Lunar eclipse: Sun, Earth, Moon with the Earth in the middle.',
+ T(20,20,'Solar eclipse: the Moon is in the middle','t bold','start')+
+ `<circle cx="60" cy="80" r="40" class="fh"/><polygon points="270,70 270,90 418,84 418,76" fill="currentColor" opacity=".3"/><circle cx="270" cy="80" r="10" class="fm"/><circle cx="440" cy="80" r="26" class="fa"/>`+
+ T(60,140,'Sun')+T(270,140,'Moon')+T(440,140,'Earth')+T(372,62,'Moon’s shadow','tm tiny-t')+
+ T(20,166,'Lunar eclipse: the Earth is in the middle','t bold','start')+
+ `<circle cx="60" cy="222" r="40" class="fh"/><polygon points="270,196 270,248 460,230 460,214" fill="currentColor" opacity=".3"/><circle cx="270" cy="222" r="26" class="fa"/><circle cx="440" cy="222" r="10" class="fm" opacity=".55"/>`+
+ T(60,280,'Sun')+T(270,280,'Earth')+T(440,280,'Moon')+T(362,198,'Earth’s shadow','tm tiny-t'),
+ 'Whatever is in the middle casts the shadow. Not drawn to scale.'),
+
+galaxy:fig('0 0 320 260','The Milky Way, a spiral galaxy, with our Solar System in one of its arms.',galaxyFig(),
+ 'The Milky Way is a spiral galaxy. Our Solar System is in one arm, far from the centre.'),
+
+stability:fig('0 0 460 200','A short object with a wide base is more stable than a tall object with a narrow base.',
+ `<line x1="20" y1="170" x2="440" y2="170" class="s"/><polygon points="40,170 200,170 170,110 70,110" class="fs" stroke="currentColor" stroke-width="2"/><polygon points="300,170 350,170 345,40 305,40" class="fs" stroke="currentColor" stroke-width="2"/>`+
+ `<circle cx="120" cy="146" r="6" class="fa"/><circle cx="325" cy="108" r="6" class="fa"/>`+
+ T(120,192,'Wide base, low: more stable','t bold')+T(325,192,'Narrow base, tall: less stable','t bold'),
+ 'The coloured dot marks where the weight is centred. The lower it is and the wider the base, the harder it is to topple.'),
+
+truss:fig('0 0 460 130','Bridge frame made of triangles.',
+ `<line x1="20" y1="100" x2="440" y2="100" class="s" style="stroke-width:4"/><line x1="80" y1="40" x2="380" y2="40" class="sa"/><polyline points="30,100 80,40 130,100 180,40 230,100 280,40 330,100 380,40 430,100" class="sa"/>`+
+ `<polygon points="30,100 20,122 40,122" class="fs" stroke="currentColor" stroke-width="1.5"/><polygon points="430,100 420,122 440,122" class="fs" stroke="currentColor" stroke-width="1.5"/>`,
+ 'Triangles keep their shape under a load, so bridges and towers are built from them.')
+};
+const figFor=q=>q.fig&&FIG[q.fig]?FIG[q.fig]:'';
+
+const MATHS_TOPICS = [
+ {id:'whole', name:'Whole Numbers & Operations'},
+ {id:'frac',  name:'Fractions, Decimals & Percentages'},
+ {id:'money', name:'Money'},
+ {id:'time',  name:'Time'},
+ {id:'meas',  name:'Measurement'},
+ {id:'space', name:'Space & Shapes'},
+ {id:'coord', name:'Coordinates, Ratio & Proportion'},
+ {id:'data',  name:'Data Handling'}
+];
+
+const MATHS_NOTES = {
+whole:`<p class="lead">Place value up to millions, rounding, prime numbers and mixed operations.</p>
+<h3>Place value</h3>
+<div class="tbl"><table><tr><th>Millions</th><th>Hundred thousands</th><th>Ten thousands</th><th>Thousands</th><th>Hundreds</th><th>Tens</th><th>Ones</th></tr>
+<tr class="num"><td>4</td><td>5</td><td>7</td><td>2</td><td>3</td><td>1</td><td>8</td></tr></table></div>
+<p>In <span class="num">4 572 318</span>, the digit 7 is in the ten thousands place, so its <b>value</b> is <span class="num">70 000</span>.</p>
+<h3>Numbers in millions</h3>
+<ul><li><span class="num">2.35 million = 2 350 000</span> (multiply 2.35 by 1 000 000)</li>
+<li><span class="num">3¼ million = 3 250 000</span></li>
+<li><span class="num">1 600 000 = 1.6 million</span></li></ul>
+<h3>Rounding</h3>
+<ol><li>Find the digit in the place you are rounding to.</li><li>Look at the digit on its right.</li><li>5 or more: round up. 4 or less: keep it. Change all digits after it to 0.</li></ol>
+<div class="box eg"><span class="lbl">Example</span>Round <span class="num">683 549</span> to the nearest ten thousand. Ten thousands digit is 8, next digit is 3 → keep → <b class="num">680 000</b>.</div>
+${FIG.roundLine}
+<h3>Prime numbers</h3>
+<p>A prime number has exactly two factors: 1 and itself. Primes below 100:</p>
+<p class="num">2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97</p>
+<div class="box warn"><span class="lbl">Watch out</span>1 is <b>not</b> prime. 2 is the only even prime. Numbers like 51 (3 × 17) and 57 (3 × 19) look prime but are not.</div>
+<h3>Mixed operations</h3>
+<ol><li><b>Brackets</b> first.</li><li>Then <b>× and ÷</b>, working left to right.</li><li>Then <b>+ and −</b>, working left to right.</li></ol>
+<div class="box eg"><span class="lbl">Example</span><span class="num">48 + 36 ÷ 4 × 3</span><br>= <span class="num">48 + 9 × 3</span><br>= <span class="num">48 + 27 = 75</span></div>`,
+
+frac:`<p class="lead">Adding, subtracting, multiplying and dividing fractions and decimals, and working with percentages.</p>
+<h3>Adding and subtracting fractions</h3>
+<ol><li>Change mixed numbers to improper fractions.</li><li>Make the denominators the same (use the LCM).</li><li>Add or subtract the numerators. Simplify and change back to a mixed number.</li></ol>
+<div class="box eg"><span class="lbl">Example</span><span class="num">2⅓ + ¾ = 7/3 + 3/4 = 28/12 + 9/12 = 37/12 = 3 1/12</span></div>
+<h3>Dividing a fraction by a whole number</h3>
+<p>Multiply the denominator by the whole number, or divide the numerator if it divides exactly.</p>
+<p class="num">4/5 ÷ 2 = 4/10 = 2/5</p>
+${FIG.fracBar}
+<h3>Decimals</h3>
+<ul><li>× and ÷ by 10, 100, 1000: move the decimal point 1, 2 or 3 places.</li>
+<li>Multiplying: multiply as whole numbers, then count the decimal places. <span class="num">3.06 × 7 = 21.42</span></li>
+<li>Dividing by a whole number: keep the decimal point in line. <span class="num">18.72 ÷ 6 = 3.12</span></li></ul>
+<h3>Percentages</h3>
+<p>Per cent means "out of 100".</p>
+<div class="tbl"><table><tr><th>Fraction</th><th>Decimal</th><th>Percentage</th></tr>
+<tr class="num"><td>1/2</td><td>0.5</td><td>50%</td></tr><tr class="num"><td>1/4</td><td>0.25</td><td>25%</td></tr>
+<tr class="num"><td>3/4</td><td>0.75</td><td>75%</td></tr><tr class="num"><td>1/5</td><td>0.2</td><td>20%</td></tr>
+<tr class="num"><td>7/20</td><td>0.35</td><td>35%</td></tr></table></div>
+<div class="box eg"><span class="lbl">Percentage of a quantity</span>15% of RM 240 = <span class="num">15/100 × 240 = RM 36</span></div>
+<div class="box warn"><span class="lbl">Watch out</span>To change a fraction to a percentage, make the denominator 100 first: <span class="num">7/20 = 35/100 = 35%</span>.</div>`,
+
+money:`<p class="lead">Profit and loss, discounts, savings and interest, and managing money wisely.</p>
+<h3>Buying and selling</h3>
+<ul><li><b>Profit</b> = selling price − cost price (when selling price is higher)</li>
+<li><b>Loss</b> = cost price − selling price (when selling price is lower)</li>
+<li><b>Discount</b>: price reduction. Sale price = original price − discount.</li></ul>
+<div class="box eg"><span class="lbl">Example</span>A shirt costs RM 80 with 25% discount.<br>Discount = <span class="num">25/100 × 80 = RM 20</span>. Sale price = <span class="num">80 − 20 = RM 60</span>.</div>
+<h3>Simple interest</h3>
+<p>Interest is calculated on the original amount only.</p>
+<p class="num">Interest = savings × rate × years</p>
+<div class="box eg"><span class="lbl">Example</span>RM 2 000 at 3% per year for 1 year: <span class="num">2 000 × 3/100 = RM 60</span>.</div>
+<h3>Compound interest</h3>
+<p>Interest is added to the savings each year, and the next year's interest is calculated on the new total.</p>
+<div class="box eg"><span class="lbl">Example</span>RM 1 000 at 5% per year for 2 years.<br>Year 1: <span class="num">1 000 + 50 = RM 1 050</span><br>Year 2: <span class="num">1 050 + 52.50 = RM 1 102.50</span></div>
+<h3>Assets and liabilities</h3>
+<ul><li><b>Assets</b>: things you own that have value (house, car, savings, gold).</li>
+<li><b>Liabilities</b>: money you owe (car loan, housing loan, credit card debt).</li></ul>
+<h3>Payments</h3>
+<ul><li><b>Debit card</b>: money comes straight from your bank account.</li><li><b>Credit card</b>: the bank pays first; you pay the bank back later, with interest if you pay late.</li></ul>
+<div class="box warn"><span class="lbl">Watch out</span>Always write money answers with two decimal places: RM 6.80, not RM 6.8.</div>`,
+
+time:`<p class="lead">The 24-hour system, durations, long periods of time and time zones.</p>
+<h3>Units of time</h3>
+<div class="tbl"><table><tr><th>Unit</th><th>Equals</th></tr>
+<tr><td>1 hour</td><td class="num">60 minutes</td></tr><tr><td>1 day</td><td class="num">24 hours</td></tr>
+<tr><td>1 year</td><td class="num">12 months</td></tr><tr><td>1 decade</td><td class="num">10 years</td></tr>
+<tr><td>1 century</td><td class="num">100 years</td></tr></table></div>
+<ul><li><span class="num">3½ decades = 3.5 × 10 = 35 years</span></li><li><span class="num">7.25 hours = 7.25 × 60 = 435 minutes</span></li></ul>
+<h3>Durations that pass midnight</h3>
+<p>Split the time at 0000 (midnight).</p>
+<div class="box eg"><span class="lbl">Example</span>2245 to 0130 the next day.<br>2245 → 0000 = 1 h 15 min<br>0000 → 0130 = 1 h 30 min<br>Total = <b>2 h 45 min</b></div>
+${FIG.timeline}
+<h3>Adding years and months</h3>
+<p>Add months first. Every 12 months becomes 1 year.</p>
+<p class="num">5 y 8 m + 3 y 7 m = 8 y 15 m = 9 y 3 m</p>
+<h3>Time zones</h3>
+<p>Malaysia uses GMT+8. A place with a smaller GMT number is behind us.</p>
+<div class="box eg"><span class="lbl">Example</span>9:00 a.m. in Malaysia (GMT+8). A city at GMT+0 is 8 hours behind → <b>1:00 a.m.</b></div>
+<div class="box warn"><span class="lbl">Watch out</span>Do not subtract times like ordinary numbers. 0130 − 2245 does not work, because 1 hour is 60 minutes, not 100.</div>`,
+
+meas:`<p class="lead">Length, mass and volume of liquid, converting units and solving problems.</p>
+<h3>Conversion table</h3>
+<div class="tbl"><table><tr><th>Length</th><th>Mass</th><th>Volume</th></tr>
+<tr class="num"><td>1 cm = 10 mm</td><td>1 kg = 1 000 g</td><td>1 l = 1 000 ml</td></tr>
+<tr class="num"><td>1 m = 100 cm</td><td></td><td></td></tr>
+<tr class="num"><td>1 km = 1 000 m</td><td></td><td></td></tr></table></div>
+${FIG.measLadder}
+<ul><li>Big unit → small unit: <b>multiply</b>. <span class="num">3.45 km = 3 450 m</span></li>
+<li>Small unit → big unit: <b>divide</b>. <span class="num">4 750 ml = 4.75 l</span></li>
+<li>Fractions: <span class="num">2¾ kg = 2.75 kg = 2 750 g</span></li></ul>
+<h3>Solving problems</h3>
+<ol><li>Change every quantity to the <b>same unit</b>.</li><li>Then add, subtract, multiply or divide.</li><li>Give the answer in the unit the question asks for.</li></ol>
+<div class="box eg"><span class="lbl">Example</span>A 6 m ribbon is cut into 8 equal pieces. Length of each piece in cm?<br>6 m = 600 cm → <span class="num">600 ÷ 8 = 75 cm</span></div>
+<div class="box warn"><span class="lbl">Watch out</span>Read the unit in the question twice. Many marks are lost by answering in g when the question asks for kg.</div>`,
+
+space:`<p class="lead">Angles, polygons, circles, perimeter, area and volume.</p>
+<h3>Angles</h3>
+<ul><li>Angles in a triangle add up to <b class="num">180°</b>.</li><li>Angles in a quadrilateral add up to <b class="num">360°</b>.</li><li>Angles on a straight line add up to <b class="num">180°</b>.</li></ul>
+${FIG.triAngles}
+<h3>Circles</h3>
+<ul><li><b>Centre</b>: the middle point.</li><li><b>Radius</b>: centre to the edge.</li><li><b>Diameter</b>: edge to edge through the centre. Diameter = 2 × radius.</li><li><b>Circumference</b>: the distance around the circle.</li></ul>
+${FIG.circleParts}
+<h3>Perimeter and area</h3>
+<div class="tbl"><table><tr><th>Shape</th><th>Perimeter</th><th>Area</th></tr>
+<tr><td>Square (side s)</td><td class="num">4 × s</td><td class="num">s × s</td></tr>
+<tr><td>Rectangle</td><td class="num">2 × (l + w)</td><td class="num">l × w</td></tr>
+<tr><td>Triangle</td><td>add all sides</td><td class="num">½ × base × height</td></tr></table></div>
+<h3>Volume</h3>
+<ul><li>Cuboid: <span class="num">length × width × height</span></li><li>Cube: <span class="num">side × side × side</span></li><li>Units: cm³ or m³</li></ul>
+${FIG.cuboid}
+<h3>Composite shapes</h3>
+<p>Break the shape into squares, rectangles and triangles. Add the parts, or subtract the part that is cut out.</p>
+<div class="box eg"><span class="lbl">Example</span>A 9 cm square with a 3 cm square cut out of one corner.<br>Area = <span class="num">81 − 9 = 72 cm²</span></div>
+${FIG.composite}
+<div class="box warn"><span class="lbl">Watch out</span>Perimeter is in cm, area in cm², volume in cm³. Check the units before you write the answer.</div>`,
+
+coord:`<p class="lead">Locating points, finding distances, simplifying ratios and the unitary method.</p>
+<h3>Coordinates</h3>
+<p>Write a point as <b class="num">(x, y)</b>: first go <b>across</b> (horizontal), then go <b>up</b> (vertical). "Along the corridor, then up the stairs."</p>
+<ul><li>4 units right and 3 units up from the origin is <span class="num">(4, 3)</span>.</li>
+<li>Distance between <span class="num">(2, 5)</span> and <span class="num">(9, 5)</span>: same y, so subtract x: <span class="num">9 − 2 = 7 units</span>.</li></ul>
+${FIG.coordNote}
+<h3>Ratio</h3>
+<p>A ratio compares quantities. Simplify by dividing both parts by the HCF.</p>
+<p class="num">18 : 24 → divide by 6 → 3 : 4</p>
+<div class="box eg"><span class="lbl">Finding a part from the total</span>Boys : girls = 2 : 3, total 40 pupils.<br>Total parts = 5. One part = <span class="num">40 ÷ 5 = 8</span>. Girls = <span class="num">3 × 8 = 24</span>.</div>
+<div class="box eg"><span class="lbl">Finding a part from another part</span>Red : blue = 3 : 5, red = 21.<br>One part = <span class="num">21 ÷ 3 = 7</span>. Blue = <span class="num">5 × 7 = 35</span>.</div>
+<h3>Proportion (unitary method)</h3>
+<p>Find the value of <b>one</b> first, then multiply.</p>
+<p class="num">5 pens = RM 7.50 → 1 pen = RM 1.50 → 8 pens = RM 12.00</p>
+<div class="box warn"><span class="lbl">Watch out</span>(4, 3) and (3, 4) are different points. Across first, up second.</div>`,
+
+data:`<p class="lead">Mean, median, mode, range and reading pie charts.</p>
+<h3>Averages and range</h3>
+<div class="tbl"><table><tr><th>Term</th><th>How to find it</th></tr>
+<tr><td><b>Mean</b></td><td>Total of all values ÷ number of values</td></tr>
+<tr><td><b>Median</b></td><td>Arrange in order; the middle value. With two middle values, find their average.</td></tr>
+<tr><td><b>Mode</b></td><td>The value that appears most often</td></tr>
+<tr><td><b>Range</b></td><td>Largest value − smallest value</td></tr></table></div>
+<div class="box eg"><span class="lbl">Example</span>Median of 7, 3, 9, 5, 11, 4<br>In order: 3, 4, <b>5, 7</b>, 9, 11 → <span class="num">(5 + 7) ÷ 2 = 6</span></div>
+<h3>Pie charts</h3>
+<p>A full circle is <b class="num">360°</b> and stands for the whole group (100%).</p>
+<ul><li>Sector of 90° = 90/360 = ¼ of the total.</li><li>25% of the total = ¼ × 360° = 90°.</li></ul>
+<div class="box eg"><span class="lbl">Example</span>120 pupils were surveyed. The football sector is 90°.<br>Football = <span class="num">90/360 × 120 = 30 pupils</span></div>
+${FIG.pie}
+<div class="box warn"><span class="lbl">Watch out</span>Always arrange the numbers in order before finding the median.</div>`
+};
+
+/* type: mcq (a = index) or num (a = number). pre/unit wrap the answer box. */
+const MATHS_Q = [
+// WHOLE
+{id:'w1',t:'whole',type:'mcq',q:'What is the value of the digit 7 in 4 572 318?',opts:['700','7 000','70 000','700 000'],a:2,
+ why:{0:'700 would be the hundreds place. Count the places from the right: ones, tens, hundreds, thousands, ten thousands.',1:'7 000 would be the thousands place. The 7 is one place further left.',3:'700 000 is the hundred thousands place, where the 5 is.'},
+ work:['Place the digits: 4 (millions) 5 (hundred thousands) 7 (ten thousands) 2 (thousands) 3 1 8','The 7 is in the ten thousands place','Value = 7 × 10 000 = 70 000']},
+{id:'w2',t:'whole',type:'num',q:'Write 2.35 million as a number.',a:2350000,
+ work:['1 million = 1 000 000','2.35 × 1 000 000 = 2 350 000'],tip:'Move the decimal point 6 places to the right when multiplying by 1 000 000.'},
+{id:'w3',t:'whole',type:'mcq',q:'Which of these is a prime number?',opts:['51','57','59','63'],a:2,
+ why:{0:'51 = 3 × 17, so it has more than two factors.',1:'57 = 3 × 19, so it is not prime.',3:'63 = 7 × 9, so it is not prime.'},
+ work:['Test each number for factors other than 1 and itself','51 = 3 × 17, 57 = 3 × 19, 63 = 7 × 9','59 has no factors except 1 and 59, so it is prime'],tip:'Quick check: add the digits. If the sum divides by 3, the number divides by 3 (5 + 1 = 6, 5 + 7 = 12).'},
+{id:'w4',t:'whole',type:'num',q:'Calculate: 48 + 36 ÷ 4 × 3',a:75,
+ work:['Do ÷ and × first, left to right: 36 ÷ 4 = 9','9 × 3 = 27','Then add: 48 + 27 = 75'],tip:'If you got 63, you added 48 + 36 first. Division and multiplication come before addition.'},
+{id:'w5',t:'whole',type:'num',q:'Round 683 549 to the nearest ten thousand.',a:680000,
+ work:['The ten thousands digit is 8 (683 549)','The digit to its right is 3, which is less than 5','Keep 8 and change the rest to zeros: 680 000'],tip:'690 000 is a common wrong answer. Only round up when the next digit is 5 or more.'},
+{id:'w6',t:'whole',type:'num',q:'Calculate: (250 − 85) × 6',a:990,
+ work:['Brackets first: 250 − 85 = 165','165 × 6 = 990']},
+{id:'w7',t:'whole',type:'mcq',q:'A factory made 128 450 bottles in March and 96 780 bottles in April. It sold 175 000 bottles. How many bottles were left?',opts:['50 230','53 450','46 550','225 230'],a:0,
+ why:{3:'225 230 is the total made. You still need to subtract the 175 000 bottles sold.'},
+ work:['Total made: 128 450 + 96 780 = 225 230','Left: 225 230 − 175 000 = 50 230']},
+// FRACTIONS
+{id:'f1',t:'frac',type:'mcq',q:'Calculate: 2⅓ + ¾',opts:['3 1/12','2 4/7','3 1/4','2 11/12'],a:0,
+ why:{1:'You added the numerators and denominators. Make the denominators the same before adding.',3:'Check your conversion of 2⅓. It is 7/3, which equals 28/12.'},
+ work:['2⅓ = 7/3','Common denominator 12: 7/3 = 28/12, ¾ = 9/12','28/12 + 9/12 = 37/12 = 3 1/12']},
+{id:'f2',t:'frac',type:'mcq',q:'Calculate: 4/5 ÷ 2',opts:['2/5','8/5','2/10','5/8'],a:0,
+ why:{1:'8/5 is 4/5 × 2. Dividing by 2 makes the fraction smaller.',2:'You divided both the numerator and denominator. Only one part changes.'},
+ work:['Divide the numerator by 2: 4 ÷ 2 = 2','4/5 ÷ 2 = 2/5']},
+{id:'f3',t:'frac',type:'num',q:'Calculate: 3.06 × 7',a:21.42,
+ work:['Multiply as whole numbers: 306 × 7 = 2 142','3.06 has 2 decimal places, so the answer has 2: 21.42'],tip:'If you got 21.042 or 214.2, count the decimal places again.'},
+{id:'f4',t:'frac',type:'num',pre:'RM',q:'Find 15% of RM 240.',a:36,
+ work:['15% = 15/100','15/100 × 240 = 3 600/100 = 36','Answer: RM 36.00']},
+{id:'f5',t:'frac',type:'num',q:'Calculate: 18.72 ÷ 6',a:3.12,
+ work:['18 ÷ 6 = 3, bring down the decimal point','7 ÷ 6 = 1 remainder 1','12 ÷ 6 = 2','Answer: 3.12']},
+{id:'f6',t:'frac',type:'mcq',q:'Express 7/20 as a percentage.',opts:['7%','20%','35%','70%'],a:2,
+ why:{0:'The denominator must be 100 before the numerator equals the percentage.',3:'70 would need 7/10. Multiply both parts by 5, not 10.'},
+ work:['Make the denominator 100: 20 × 5 = 100','7 × 5 = 35, so 7/20 = 35/100','35/100 = 35%']},
+{id:'f7',t:'frac',type:'num',q:'Find 3/8 of 96.',a:36,
+ work:['96 ÷ 8 = 12 (one eighth)','12 × 3 = 36']},
+// MONEY
+{id:'m1',t:'money',type:'num',pre:'RM',q:'Aina saves RM 2 000 in a bank that pays 3% simple interest per year. How much interest does she get after 1 year?',a:60,
+ work:['Interest = 3/100 × 2 000','= 6 000/100 = RM 60.00']},
+{id:'m2',t:'money',type:'num',pre:'RM',q:'A trader buys a lamp for RM 45 and sells it for RM 58. What is his profit?',a:13,
+ work:['Profit = selling price − cost price','58 − 45 = RM 13.00']},
+{id:'m3',t:'money',type:'num',pre:'RM',q:'A shirt costs RM 80. The shop gives a 25% discount. What is the sale price?',a:60,
+ work:['Discount = 25/100 × 80 = RM 20','Sale price = 80 − 20 = RM 60.00'],tip:'RM 20 is the discount, not the sale price. Read what the question asks for.'},
+{id:'m4',t:'money',type:'mcq',q:'Encik Lim saves RM 1 000 at 5% compound interest per year. What is the total amount after 2 years?',opts:['RM 1 100.00','RM 1 102.50','RM 1 050.00','RM 1 105.00'],a:1,
+ why:{0:'RM 1 100 is simple interest. With compound interest, year 2 earns interest on RM 1 050.',2:'RM 1 050 is the total after only 1 year.'},
+ work:['Year 1: 5% of 1 000 = 50 → 1 050','Year 2: 5% of 1 050 = 52.50 → 1 102.50']},
+{id:'m5',t:'money',type:'mcq',q:'Which of these is a liability?',opts:['A house','A car loan','Money in a savings account','Gold jewellery'],a:1,
+ why:{0:'A house you own is an asset.',2:'Savings are an asset because they belong to you.',3:'Gold has value and belongs to you, so it is an asset.'},
+ work:['A liability is money you owe to someone','A car loan must be paid back to the bank, so it is a liability']},
+{id:'m6',t:'money',type:'num',pre:'RM',q:'Hafiz buys 3 books at RM 12.90 each and a pen for RM 4.50. He pays with RM 50. How much change does he get?',a:6.8,
+ work:['Books: 3 × 12.90 = RM 38.70','Total: 38.70 + 4.50 = RM 43.20','Change: 50.00 − 43.20 = RM 6.80']},
+// TIME
+{id:'t1',t:'time',type:'mcq',q:'A bus leaves at 2245 and arrives at 0130 the next day. How long is the journey?',opts:['2 h 45 min','3 h 15 min','2 h 15 min','1 h 45 min'],a:0,
+ why:{1:'Check the part before midnight: 2245 to 0000 is 1 h 15 min.',3:'You may have subtracted 0130 from 2245 like ordinary numbers. Split the time at midnight.'},
+ work:['2245 → 0000 = 1 h 15 min','0000 → 0130 = 1 h 30 min','Total = 2 h 45 min']},
+{id:'t2',t:'time',type:'num',unit:'years',q:'How many years are there in 3½ decades?',a:35,
+ work:['1 decade = 10 years','3.5 × 10 = 35 years']},
+{id:'t3',t:'time',type:'num',unit:'years',q:'Convert 2 centuries 4 decades to years.',a:240,
+ work:['2 centuries = 200 years','4 decades = 40 years','200 + 40 = 240 years']},
+{id:'t4',t:'time',type:'mcq',q:'Calculate: 5 years 8 months + 3 years 7 months',opts:['8 years 15 months','9 years 3 months','9 years 5 months','8 years 3 months'],a:1,
+ why:{0:'15 months is more than a year. Change 12 months into 1 year.',3:'You changed 12 months away but forgot to add the extra year.'},
+ work:['Months: 8 + 7 = 15 months = 1 year 3 months','Years: 5 + 3 + 1 = 9','Answer: 9 years 3 months']},
+{id:'t5',t:'time',type:'num',unit:'min',q:'Convert 7.25 hours to minutes.',a:435,
+ work:['1 hour = 60 minutes','7.25 × 60 = 435 minutes'],tip:'0.25 hour is a quarter of an hour = 15 minutes, not 25 minutes.'},
+{id:'t6',t:'time',type:'mcq',q:'It is 9:00 a.m. in Malaysia (GMT+8). What time is it in a city at GMT+0?',opts:['1:00 a.m.','5:00 p.m.','1:00 p.m.','9:00 p.m.'],a:0,
+ why:{1:'5:00 p.m. is 8 hours ahead. GMT+0 is behind Malaysia, so subtract.'},
+ work:['Difference: 8 − 0 = 8 hours','GMT+0 is behind, so subtract: 9:00 a.m. − 8 h = 1:00 a.m.']},
+// MEASUREMENT
+{id:'e1',t:'meas',type:'num',unit:'m',q:'Convert 3.45 km to metres.',a:3450,
+ work:['1 km = 1 000 m','3.45 × 1 000 = 3 450 m']},
+{id:'e2',t:'meas',type:'num',unit:'g',q:'Convert 2¾ kg to grams.',a:2750,
+ work:['2¾ = 2.75','2.75 × 1 000 = 2 750 g']},
+{id:'e3',t:'meas',type:'num',unit:'l',q:'Calculate 4 750 ml + 2.6 l. Give your answer in litres.',a:7.35,
+ work:['Change to litres: 4 750 ml = 4.75 l','4.75 + 2.6 = 7.35 l']},
+{id:'e4',t:'meas',type:'mcq',q:'A ribbon 6 m long is cut into 8 equal pieces. What is the length of each piece?',opts:['75 cm','7.5 cm','48 cm','80 cm'],a:0,
+ why:{1:'6 m is 600 cm, not 60 cm.',2:'48 comes from 6 × 8. The ribbon is shared, so divide.'},
+ work:['6 m = 600 cm','600 ÷ 8 = 75 cm']},
+{id:'e5',t:'meas',type:'num',unit:'kg',q:'A bag holds 5 kg of rice. Mak uses 1 800 g and then 0.75 kg. How much rice is left, in kg?',a:2.45,
+ work:['1 800 g = 1.8 kg','Used: 1.8 + 0.75 = 2.55 kg','Left: 5 − 2.55 = 2.45 kg']},
+{id:'e6',t:'meas',type:'num',unit:'mm',q:'Convert 12.6 cm to millimetres.',a:126,
+ work:['1 cm = 10 mm','12.6 × 10 = 126 mm']},
+// SPACE
+{id:'s1',t:'space',type:'num',unit:'cm',q:'A rectangle is 12 cm long and 7 cm wide. Find its perimeter.',a:38,
+ work:['Perimeter = 2 × (12 + 7)','= 2 × 19 = 38 cm'],tip:'84 is the area (12 × 7), not the perimeter.'},
+{id:'s2',t:'space',type:'num',unit:'cm²',q:'A triangle has a base of 10 cm and a height of 6 cm. Find its area.',a:30,
+ work:['Area = ½ × base × height','= ½ × 10 × 6 = 30 cm²'],tip:'Remember the ½. Without it you get 60.'},
+{id:'s3',t:'space',type:'num',unit:'cm³',q:'A cuboid measures 8 cm × 5 cm × 4 cm. Find its volume.',a:160,
+ work:['Volume = length × width × height','8 × 5 × 4 = 160 cm³']},
+{id:'s4',t:'space',type:'mcq',q:'A circle has a diameter of 14 cm. What is its radius?',opts:['28 cm','14 cm','7 cm','3.5 cm'],a:2,
+ why:{0:'28 cm is double the diameter. The radius is half the diameter.'},
+ work:['Radius = diameter ÷ 2','14 ÷ 2 = 7 cm']},
+{id:'s5',t:'space',type:'num',unit:'°',q:'Two angles of a triangle are 65° and 48°. Find the third angle.',a:67,
+ work:['Angles in a triangle add up to 180°','65 + 48 = 113','180 − 113 = 67°']},
+{id:'s6',t:'space',type:'mcq',q:'What is the sum of the interior angles of a quadrilateral?',opts:['180°','270°','360°','540°'],a:2,
+ why:{0:'180° is the sum for a triangle.',3:'540° is the sum for a pentagon.'},
+ work:['A quadrilateral can be split into 2 triangles','2 × 180° = 360°']},
+{id:'s7',t:'space',type:'num',unit:'cm²',q:'A square of side 9 cm has a small square of side 3 cm cut out of one corner. Find the area of the remaining shape.',a:72,
+ work:['Big square: 9 × 9 = 81 cm²','Small square: 3 × 3 = 9 cm²','Remaining: 81 − 9 = 72 cm²']},
+// COORD
+{id:'c1',t:'coord',type:'mcq',q:'From the origin, point P is 4 units to the right and 3 units up. What are the coordinates of P?',opts:['(3, 4)','(4, 3)','(4, 0)','(0, 3)'],a:1,
+ why:{0:'(3, 4) means 3 across and 4 up. Write the horizontal distance first.'},
+ work:['The x-coordinate (across) comes first: 4','The y-coordinate (up) comes second: 3','P = (4, 3)']},
+{id:'c2',t:'coord',type:'num',unit:'units',q:'Find the distance between the points (2, 5) and (9, 5).',a:7,
+ work:['Both points have y = 5, so they are on the same horizontal line','Distance = 9 − 2 = 7 units']},
+{id:'c3',t:'coord',type:'mcq',q:'Write 18 : 24 in its simplest form.',opts:['9 : 12','6 : 8','3 : 4','4 : 3'],a:2,
+ why:{0:'9 : 12 can still be divided by 3.',1:'6 : 8 can still be divided by 2.',3:'The order matters. 18 comes first, so its part comes first.'},
+ work:['HCF of 18 and 24 is 6','18 ÷ 6 = 3, 24 ÷ 6 = 4','18 : 24 = 3 : 4']},
+{id:'c4',t:'coord',type:'num',unit:'girls',q:'The ratio of boys to girls in a class is 2 : 3. There are 40 pupils. How many girls are there?',a:24,
+ work:['Total parts = 2 + 3 = 5','One part = 40 ÷ 5 = 8','Girls = 3 × 8 = 24']},
+{id:'c5',t:'coord',type:'num',pre:'RM',q:'5 pens cost RM 7.50. How much do 8 pens cost?',a:12,
+ work:['1 pen = 7.50 ÷ 5 = RM 1.50','8 pens = 8 × 1.50 = RM 12.00']},
+{id:'c6',t:'coord',type:'num',unit:'marbles',q:'The ratio of red to blue marbles is 3 : 5. There are 21 red marbles. How many blue marbles are there?',a:35,
+ work:['3 parts = 21, so 1 part = 21 ÷ 3 = 7','Blue = 5 × 7 = 35'],tip:'Here you know one part of the ratio, not the total, so do not divide by 8.'},
+// DATA
+{id:'d1',t:'data',type:'num',q:'Find the mean of 12, 15, 9, 20 and 14.',a:14,
+ work:['Total: 12 + 15 + 9 + 20 + 14 = 70','Number of values: 5','Mean = 70 ÷ 5 = 14']},
+{id:'d2',t:'data',type:'num',q:'Find the median of 7, 3, 9, 5, 11, 4.',a:6,
+ work:['Arrange in order: 3, 4, 5, 7, 9, 11','The two middle values are 5 and 7','Median = (5 + 7) ÷ 2 = 6'],tip:'If you got 7 or 9, you forgot to arrange the numbers in order first.'},
+{id:'d3',t:'data',type:'num',q:'Find the mode of 4, 6, 6, 8, 6, 9, 4.',a:6,
+ work:['Count each value: 4 appears 2 times, 6 appears 3 times','6 appears most often, so the mode is 6']},
+{id:'d4',t:'data',type:'num',q:'Find the range of 23, 41, 17, 35.',a:24,
+ work:['Largest = 41, smallest = 17','Range = 41 − 17 = 24']},
+{id:'d5',t:'data',type:'mcq',q:'In a pie chart showing the favourite sports of 120 pupils, the sector for football is 90°. How many pupils chose football?',opts:['90','30','40','45'],a:1,
+ why:{0:'90 is the angle, not the number of pupils.',2:'40 would be a 120° sector.'},
+ work:['90° out of 360° = 90/360 = ¼','¼ × 120 = 30 pupils']},
+{id:'d6',t:'data',type:'mcq',q:'A sector of a pie chart represents 25% of the data. What is the angle of the sector?',opts:['25°','45°','90°','100°'],a:2,
+ why:{0:'25% is not 25°. A whole circle is 360°, not 100°.'},
+ work:['25% = ¼','¼ × 360° = 90°']}
+];
+
+/* ---------- SCIENCE ---------- */
+const SCI_TOPICS = [
+ {id:'sk', name:'Scientific Skills'},
+ {id:'hu', name:'Humans'},
+ {id:'mi', name:'Microorganisms'},
+ {id:'in', name:'Interactions Among Living Things'},
+ {id:'pp', name:'Preservation & Conservation'},
+ {id:'da', name:'Force'},
+ {id:'ke', name:'Speed'},
+ {id:'pm', name:'Food Preservation Technology'},
+ {id:'bb', name:'Waste Materials'},
+ {id:'ge', name:'Eclipses'},
+ {id:'ga', name:'The Galaxy'},
+ {id:'ks', name:'Stability & Strength'},
+ {id:'te', name:'Technology'}
+];
+
+const SCI_NOTES = {
+sk:`<p class="lead">The process skills scientists use, and how to plan a fair experiment.</p>
+<h3>Science process skills</h3>
+<div class="tbl"><table><tr><th>Skill</th><th>What it means</th></tr>
+<tr><td><b>Observing</b></td><td>Using the senses (sight, hearing, touch, taste, smell) to collect information.</td></tr>
+<tr><td><b>Classifying</b></td><td>Sorting things into groups by common features.</td></tr>
+<tr><td><b>Measuring and using numbers</b></td><td>Using instruments such as a ruler, stopwatch or thermometer, with correct units.</td></tr>
+<tr><td><b>Inferring</b></td><td>Giving an early explanation for an observation.</td></tr>
+<tr><td><b>Predicting</b></td><td>Saying what will happen next, based on a pattern or experience.</td></tr>
+<tr><td><b>Communicating</b></td><td>Sharing information as tables, graphs, charts or writing.</td></tr>
+<tr><td><b>Interpreting data</b></td><td>Explaining what the results in a table or graph mean.</td></tr>
+<tr><td><b>Defining operationally</b></td><td>Explaining a term by what you did and observed in the activity.</td></tr>
+<tr><td><b>Controlling variables</b></td><td>Deciding what to change, what to measure and what to keep the same.</td></tr>
+<tr><td><b>Making a hypothesis</b></td><td>A general statement linking the manipulated and responding variables, which can be tested.</td></tr>
+<tr><td><b>Experimenting</b></td><td>Planning and carrying out an investigation to test a hypothesis.</td></tr></table></div>
+<h3>Variables</h3>
+<ul><li><b>Manipulated variable</b>: what you change on purpose.</li><li><b>Responding variable</b>: what you measure or observe.</li><li><b>Constant variable</b>: what you keep the same so the test is fair.</li></ul>
+<div class="box eg"><span class="lbl">Example</span>Does the amount of water affect plant height?<br>Manipulated: amount of water · Responding: plant height · Constant: type of plant, pot size, sunlight</div>
+${FIG.fairTest}
+<div class="box warn"><span class="lbl">Watch out</span>A hypothesis links two variables: "<b>The more</b> water given, <b>the taller</b> the plant grows." An observation only says what you saw.</div>`,
+
+hu:`<p class="lead">Human reproduction and the nervous system.</p>
+<h3>Reproductive organs</h3>
+<div class="tbl"><table><tr><th>Male</th><th>Female</th></tr>
+<tr><td><b>Testis</b> produces sperm.</td><td><b>Ovary</b> produces ova (egg cells).</td></tr>
+<tr><td><b>Penis</b> carries sperm out of the body.</td><td><b>Uterus</b> (womb) is where the baby develops.</td></tr></table></div>
+<h3>From fertilisation to birth</h3>
+<p>The ovum travels from the ovary along the <b>Fallopian tube</b> towards the uterus.</p>
+<ol><li><b>Fertilisation</b>: a sperm joins with an ovum in the <b>Fallopian tube</b> to form a zygote.</li><li>The zygote attaches to the wall of the uterus and grows into an embryo, then a foetus.</li><li>The foetus gets food and oxygen from the mother through the placenta and umbilical cord.</li><li>A baby is usually born after about 9 months (about 40 weeks).</li></ol>
+${FIG.growth}
+<h3>The nervous system</h3>
+<ul><li>Made up of the <b>brain</b>, the <b>spinal cord</b> and <b>nerves</b>.</li><li>The brain and spinal cord form the <b>central nervous system</b>.</li><li>Nerves carry messages from the sense organs to the brain, and instructions from the brain to the body.</li><li>It controls movement, thinking, memory and body functions.</li></ul>
+${FIG.nervous}
+<h3>If it is damaged</h3>
+<p>Injury to the brain or spinal cord can cause paralysis, loss of feeling, or problems with memory and speech.</p>
+<div class="box eg"><span class="lbl">Keeping it healthy</span>Wear a helmet when cycling, use a seat belt, get enough sleep, eat a balanced diet and avoid drugs, alcohol and smoking.</div>`,
+
+mi:`<p class="lead">Tiny living things, how they live, and how they help or harm us.</p>
+<h3>Types of microorganisms</h3>
+<ul><li><b>Bacteria</b></li><li><b>Fungi</b>: yeast, mould, and mushrooms</li><li><b>Protozoa</b>, such as amoeba</li><li><b>Algae</b>, such as spirogyra</li><li><b>Viruses</b></li></ul>
+<p>Most can only be seen with a microscope. Mushrooms and some moulds can be seen with the eye.</p>
+${FIG.microbes}
+<h3>Life processes</h3>
+<p>Microorganisms <b>respire</b>, <b>grow</b> and <b>move</b>. Yeast in sugar solution gives off gas bubbles because it respires.</p>
+<h3>Factors for growth</h3>
+<p>Microorganisms grow best with <b>water</b> (damp places), <b>nutrients</b> (food), <b>a suitable temperature</b> (warm), and <b>air</b> for most types. Bread mould grows fastest in warm, damp places.</p>
+<h3>Useful and harmful</h3>
+<div class="tbl"><table><tr><th>Useful</th><th>Harmful</th></tr>
+<tr><td>Yeast makes bread dough rise and is used to make tapai</td><td>Cause diseases: influenza (virus), cholera (bacteria)</td></tr>
+<tr><td>Bacteria make yoghurt and cheese</td><td>Spoil food</td></tr>
+<tr><td>Penicillin (an antibiotic) comes from a fungus</td><td>Cause tooth decay</td></tr>
+<tr><td>Decompose dead plants and animals</td><td>Spread through air, water, food, touch and animals such as flies</td></tr></table></div>
+<div class="box warn"><span class="lbl">Prevent the spread</span>Wash your hands with soap, cover your mouth when coughing, cover food, and get vaccinated.</div>`,
+
+in:`<p class="lead">How animals and plants work together and compete with each other.</p>
+<h3>Interactions among animals</h3>
+<ul><li><b>Cooperation</b>: animals live and work in groups to protect themselves, hunt or find food. Examples: ants carrying food together, bees in a hive, zebras in a herd.</li>
+<li><b>Competition</b>: animals compete for <b>food, water, mates, shelter and territory</b>. Example: two lions fighting over prey.</li></ul>
+<div class="box eg"><span class="lbl">Same species or different species?</span>Animals of the <b>same</b> species compete for food, water, territory <b>and mates</b>. Animals of <b>different</b> species compete for food, water and territory, but <b>not</b> for mates.</div>
+<h3>Interactions among plants</h3>
+<p>Plants compete for <b>sunlight, water, nutrients and space</b>.</p>
+<div class="box eg"><span class="lbl">Example</span>Seedlings planted close together grow thin, tall and weak because they compete for sunlight, water and nutrients.</div>
+${FIG.pots}
+<h3>Symbiosis</h3>
+<p>Symbiosis is a close relationship between two different living things.</p>
+<div class="tbl"><table><tr><th>Type</th><th>What happens</th><th>Examples</th></tr>
+<tr><td><b>Mutualism</b></td><td>Both benefit</td><td>Clownfish and sea anemone; bees and flowers</td></tr>
+<tr><td><b>Commensalism</b></td><td>One benefits, the other is not affected</td><td>Staghorn fern on a tree; remora fish and shark</td></tr>
+<tr><td><b>Parasitism</b></td><td>One benefits, the other is harmed</td><td>Mistletoe (dedalu) on a mango tree; tick on a dog</td></tr></table></div>
+<h3>Factors that affect competition</h3>
+<ul><li>The more living things there are, the stronger the competition.</li><li>The less food, water or space there is, the stronger the competition.</li></ul>
+<div class="box warn"><span class="lbl">Watch out</span>Ants carrying food together is <b>cooperation</b>, not competition. Look for whether they help each other or fight for the same thing.</div>`,
+
+pp:`<p class="lead">Why living things are under threat, and how we protect them.</p>
+<h3>Extinct and endangered</h3>
+<ul><li><b>Extinct</b>: no more of that species is alive anywhere. Examples: dinosaurs, the dodo.</li><li><b>Endangered</b>: so few are left that they may become extinct. Examples in Malaysia: Malayan tiger, orangutan, Malayan tapir, leatherback turtle.</li></ul>
+<h3>Threats from humans</h3>
+<ul><li>Illegal logging and clearing forests destroy habitats.</li><li>Illegal hunting and poaching.</li><li>Pollution of rivers, seas and air.</li></ul>
+<h3>Why it matters</h3>
+<p>When a species disappears, food chains are broken and the ecosystem becomes unbalanced. We also lose sources of food and medicine.</p>
+${FIG.foodChain}
+<h3>Protecting living things</h3>
+<ul><li>Gazette forest reserves and national parks such as Taman Negara.</li><li>Enforce laws against illegal hunting and logging.</li><li>Breed endangered animals in captivity and release them.</li><li>Replant trees and reduce pollution.</li><li>Teach people why wildlife matters.</li></ul>
+<div class="box eg"><span class="lbl">Key words</span><b>Preservation</b>: protecting living things and their habitats from harm. <b>Conservation</b>: managing and using natural resources wisely so they last for the future.</div>`,
+
+da:`<p class="lead">Pushes and pulls, friction, and air pressure.</p>
+<h3>What a force does</h3>
+<p>A force is a <b>push or a pull</b>. It can:</p>
+<ul><li>move a still object</li><li>stop a moving object</li><li>change the speed of an object</li><li>change the direction of an object</li><li>change the shape of an object</li></ul>
+<h3>Friction</h3>
+<p>Friction is a force that <b>opposes motion</b> when two surfaces rub. It is greater on <b>rough</b> surfaces and when an object is <b>heavier</b>.</p>
+<div class="tbl"><table><tr><th>Friction helps</th><th>Friction causes problems</th></tr>
+<tr><td>We can walk without slipping</td><td>Tyres and shoe soles wear out</td></tr>
+<tr><td>Brakes can stop a bicycle</td><td>Produces heat in machines</td></tr></table></div>
+${FIG.friction}
+<p><b>Reduce friction</b>: oil or grease, ball bearings, wheels and rollers, smooth surfaces. <b>Increase friction</b>: treads on tyres and shoes, rough surfaces.</p>
+<h3>Air pressure</h3>
+<ul><li>Air has weight and pushes on everything around it.</li><li>The <b>higher</b> the place, the <b>lower</b> the air pressure. That is why your ears "pop" in an aeroplane or on a mountain.</li><li>Uses: drinking straws, rubber suction hooks, syringes.</li><li>A tin of condensed milk needs <b>two holes</b>: one for the milk to flow out and one to let air in, so air pressure can push the milk out.</li></ul>
+${FIG.altitude}
+<div class="box eg"><span class="lbl">Drinking straw</span>When you suck, the air pressure inside the straw becomes lower. The higher air pressure outside pushes the drink up the straw.</div>`,
+
+ke:`<p class="lead">How fast things move, and the speed formula.</p>
+<h3>The formula</h3>
+<div class="box eg"><span class="lbl">Speed triangle</span><b>Speed = distance ÷ time</b><br>Distance = speed × time<br>Time = distance ÷ speed</div>
+${FIG.speedTri}
+<h3>Units</h3>
+<ul><li><b>km/h</b>: kilometres per hour (cars, buses)</li><li><b>m/s</b>: metres per second (runners)</li><li><b>cm/s</b>: centimetres per second (snails, toy cars)</li></ul>
+<h3>Comparing speed</h3>
+<ul><li>Same distance: the one that takes <b>less time</b> is faster.</li><li>Same time: the one that travels <b>further</b> is faster.</li></ul>
+<div class="box eg"><span class="lbl">Example</span>A car travels 180 km in 2 hours.<br>Speed = 180 ÷ 2 = <b>90 km/h</b></div>
+<div class="box warn"><span class="lbl">Watch out</span>Check that units match. If distance is in m and time in s, the speed is in m/s.</div>`,
+
+pm:`<p class="lead">Why food goes bad, and the methods that keep it safe for longer.</p>
+<h3>Food spoilage</h3>
+<p>Food spoils when <b>microorganisms</b> grow on it. Signs: bad smell, sour taste, mould, slimy texture, change in colour.</p>
+<h3>How preservation works</h3>
+<p>Each method stops or slows microorganisms by removing water, air or warmth, or by killing them.</p>
+<div class="tbl"><table><tr><th>Method</th><th>How it works</th><th>Example</th></tr>
+<tr><td>Drying</td><td>Removes water</td><td>Dried anchovies, dried shrimp</td></tr>
+<tr><td>Salting</td><td>Salt draws water out</td><td>Salted fish, salted eggs</td></tr>
+<tr><td>Pickling</td><td>Vinegar is too acidic for microorganisms</td><td>Jeruk mangga, pickled onions</td></tr>
+<tr><td>Sugaring</td><td>High sugar draws water out</td><td>Jam, kurma (dates)</td></tr>
+<tr><td>Smoking</td><td>Heat and smoke dry the food</td><td>Smoked fish</td></tr>
+<tr><td>Cooling and freezing</td><td>Low temperature slows growth</td><td>Frozen chicken, vegetables</td></tr>
+<tr><td>Canning</td><td>Heat kills; airtight seal keeps them out</td><td>Sardines in cans</td></tr>
+<tr><td>Pasteurisation</td><td>Heated to a set temperature, then cooled quickly</td><td>Fresh milk</td></tr>
+<tr><td>Vacuum packing</td><td>Removes air</td><td>Packed sausages, nuts</td></tr></table></div>
+<div class="box warn"><span class="lbl">Why preserve food?</span>Food lasts longer, is safe to eat, can be stored and sent far away, and less food is wasted.</div>`,
+
+bb:`<p class="lead">Types of waste, problems they cause, and how to manage them.</p>
+<h3>Types of waste</h3>
+<ul><li><b>Biodegradable</b>: broken down by microorganisms. Food scraps, fruit peels, leaves, paper.</li><li><b>Non-biodegradable</b>: not broken down, or very slowly. Plastic, glass, rubber, metal cans.</li></ul>
+<h3>Effects of improper disposal</h3>
+<ul><li>Blocked drains cause <b>flash floods</b>.</li><li>Rats, flies and mosquitoes breed and spread disease.</li><li>Pollution of land, rivers and air; bad smell.</li><li>Open burning releases harmful smoke.</li></ul>
+<h3>The 3Rs</h3>
+<ul><li><b>Reduce</b>: use less. Choose items with less packaging.</li><li><b>Reuse</b>: use again. Keep pencils in an old jam jar.</li><li><b>Recycle</b>: turn waste into new products.</li></ul>
+<div class="box eg"><span class="lbl">Recycling bins in Malaysia</span><b>Blue</b>: paper · <b>Orange</b>: plastic and aluminium · <b>Brown</b>: glass</div>
+${FIG.bins}
+<p>Food scraps and leaves can be turned into <b>compost</b> to fertilise plants.</p>`,
+
+ge:`<p class="lead">How the Sun, Earth and Moon line up to make eclipses.</p>
+${FIG.eclipse}
+<h3>Lunar eclipse</h3>
+<ul><li>The <b>Earth</b> is between the Sun and the Moon.</li><li>Earth's shadow falls on the Moon.</li><li>Happens only at <b>full moon</b>, at night.</li><li>It is safe to watch with the naked eye.</li></ul>
+<h3>Solar eclipse</h3>
+<ul><li>The <b>Moon</b> is between the Sun and the Earth.</li><li>The Moon's shadow falls on the Earth and blocks the Sun.</li><li>Happens only at <b>new moon</b>, during the day.</li><li>A total solar eclipse makes the sky dark for a few minutes.</li></ul>
+<div class="box warn"><span class="lbl">Safety</span>Never look at the Sun directly, even during an eclipse. Use solar eclipse glasses or a pinhole projector.</div>
+<h3>Total and partial</h3>
+<p>In the darkest part of the shadow (umbra) the eclipse is <b>total</b>. In the lighter outer shadow (penumbra) it is <b>partial</b>.</p>
+<div class="box eg"><span class="lbl">Memory aid</span>Whatever is in the <b>middle</b> casts the shadow. Moon in the middle → solar eclipse. Earth in the middle → lunar eclipse.</div>`,
+
+ga:`<p class="lead">Our home galaxy, the Milky Way, and other galaxies.</p>
+<h3>What is a galaxy?</h3>
+<p>A galaxy is a huge group of <b>stars, gas and dust</b> held together by gravity. There are billions of galaxies in the universe.</p>
+<h3>The Milky Way (Bima Sakti)</h3>
+<ul><li>Our Solar System is inside the Milky Way.</li><li>It is a <b>spiral</b> galaxy with curved arms.</li><li>It has hundreds of billions of stars. The Sun is just one of them.</li><li>The Solar System sits in one of the arms, far from the centre.</li><li>On a dark night, we see part of it as a faint band of light across the sky.</li><li>Seen from the <b>side</b>, it looks like a thin disc that <b>bulges</b> at the centre.</li></ul>
+<div class="box eg"><span class="lbl">From small to big</span>Earth → <b>Solar System</b> (the Sun and its planets) → <b>Milky Way galaxy</b> → <b>Universe</b> (all the galaxies)</div>
+${FIG.galaxy}
+<h3>Types of galaxies</h3>
+<ul><li><b>Spiral</b>: flat disc with curved arms (Milky Way, Andromeda)</li><li><b>Elliptical</b>: oval or round shape</li><li><b>Irregular</b>: no clear shape</li></ul>
+<div class="box warn"><span class="lbl">Watch out</span>The Sun is a <b>star</b>, not a planet. The Solar System is a tiny part of the galaxy, not the other way round.</div>`,
+
+ks:`<p class="lead">What makes objects and structures stable and strong.</p>
+<h3>Stability</h3>
+<p>Stability is the ability of an object to stay upright without toppling over.</p>
+<ul><li><b>Wider base</b> → more stable.</li><li><b>Lower</b> (heavy part at the bottom) → more stable.</li></ul>
+<div class="box eg"><span class="lbl">Examples</span>Racing cars are low and wide. Put heavy items on the bottom shelf. A table lamp has a heavy, wide base.</div>
+${FIG.stability}
+<h3>Strength</h3>
+<p>Strength is the ability of a structure to support a load without breaking.</p>
+<ul><li><b>Type of material</b>: steel and concrete are stronger than wood or plastic.</li><li><b>Shape of structure</b>: triangles and cylinders are strong shapes.</li></ul>
+<div class="box eg"><span class="lbl">Examples</span>Electricity transmission towers and bridges use triangles. Columns of buildings are often cylinders.</div>
+${FIG.truss}
+<div class="box warn"><span class="lbl">Watch out</span>Stability is about not toppling; strength is about not breaking. Read which one the question asks about.</div>`,
+
+te:`<p class="lead">How technology develops, and its benefits and drawbacks.</p>
+<h3>What is technology?</h3>
+<p>Technology is using science knowledge to make tools, machines and methods that solve problems and make life easier.</p>
+<h3>How technology has developed</h3>
+<div class="tbl"><table><tr><th>Field</th><th>Then</th><th>Now</th></tr>
+<tr><td>Agriculture</td><td>Hoe, buffalo</td><td>Tractors, drones, fertigation</td></tr>
+<tr><td>Medicine</td><td>Herbs</td><td>X-ray, vaccines, robotic surgery</td></tr>
+<tr><td>Transport</td><td>Bullock cart</td><td>Cars, MRT, aeroplanes</td></tr>
+<tr><td>Communication</td><td>Drums, letters</td><td>Smartphones, video calls</td></tr>
+<tr><td>Construction</td><td>Wood and attap</td><td>Cranes, steel, concrete</td></tr></table></div>
+<h3>Benefits and drawbacks</h3>
+<div class="tbl"><table><tr><th>Benefits</th><th>Drawbacks</th></tr>
+<tr><td>Saves time and energy</td><td>Air and water pollution</td></tr>
+<tr><td>Better health care, longer lives</td><td>Health problems from too much screen time</td></tr>
+<tr><td>Easier communication and travel</td><td>Electronic waste, misuse such as scams</td></tr></table></div>
+<div class="box eg"><span class="lbl">Sustainable living</span>Use technology wisely: switch off appliances, choose energy-saving products, repair before replacing, and recycle old devices.</div>`
+};
+
+const SCI_Q = [
+// SKILLS
+{id:'sk1',t:'sk',type:'mcq',q:'Ali sees a wilted plant and says, "The plant wilted because it was not watered." Which science process skill is this?',opts:['Observing','Inferring','Predicting','Classifying'],a:1,
+ why:{0:'Observing is only describing what you see ("the plant has wilted"). Ali is giving a reason.',2:'Predicting is about what will happen in the future.'},
+ work:['Ali gives an early explanation for what he saw','Giving an explanation for an observation is inferring']},
+{id:'sk2',t:'sk',type:'mcq',q:'Aina studies how the amount of water given affects the height of a plant. What is the manipulated variable?',opts:['Amount of water','Height of the plant','Type of plant','Size of the pot'],a:0,
+ why:{1:'Plant height is what she measures, so it is the responding variable.',2:'Type of plant is kept the same, so it is a constant variable.',3:'Pot size is kept the same, so it is a constant variable.'},
+ work:['The manipulated variable is the one you change on purpose','Aina changes the amount of water']},
+{id:'sk3',t:'sk',type:'mcq',q:'In the same experiment, what is the responding variable?',opts:['Amount of water','Height of the plant','Amount of sunlight','Type of soil'],a:1,
+ why:{0:'Amount of water is what she changes: the manipulated variable.'},
+ work:['The responding variable is what you measure or observe','Aina measures the height of the plant']},
+{id:'sk4',t:'sk',type:'mcq',q:'Which statement is a hypothesis?',opts:['The plant is 12 cm tall.','The more water given, the taller the plant grows.','Plants need water.','The plant has green leaves.'],a:1,
+ why:{0:'This is a measurement, not a hypothesis.',2:'This is a general fact. A hypothesis links a manipulated and a responding variable.',3:'This is an observation.'},
+ work:['A hypothesis links the manipulated variable and the responding variable','"The more water (manipulated), the taller the plant (responding)" can be tested']},
+{id:'sk5',t:'sk',type:'mcq',q:'Mei Ling uses a stopwatch to record how long ice takes to melt. Which skill is she using?',opts:['Communicating','Classifying','Measuring and using numbers','Making a hypothesis'],a:2,
+ work:['Using an instrument (stopwatch) with a unit (seconds) is measuring and using numbers']},
+// HUMANS
+{id:'hu1',t:'hu',type:'mcq',q:'Which organ produces sperm?',opts:['Ovary','Uterus','Testis','Kidney'],a:2,
+ why:{0:'The ovary is a female organ that produces ova (egg cells).'},
+ work:['Sperm are made in the testis, a male reproductive organ']},
+{id:'hu2',t:'hu',type:'mcq',q:'Where does a baby develop before it is born?',opts:['Ovary','Uterus','Stomach','Lungs'],a:1,
+ why:{0:'The ovary produces egg cells. The baby develops in the uterus.'},
+ work:['The fertilised egg attaches to the wall of the uterus','It grows into an embryo and then a foetus inside the uterus']},
+{id:'hu3',t:'hu',type:'mcq',q:'What is fertilisation?',opts:['When a baby is born','When a sperm joins with an ovum','When the ovary releases an ovum','When the foetus grows'],a:1,
+ work:['Fertilisation happens when a sperm cell joins with an ovum (egg cell)','This forms a zygote']},
+{id:'hu4',t:'hu',type:'mcq',q:'The central nervous system is made up of the',opts:['brain and spinal cord','heart and blood vessels','brain and eyes','nerves and muscles'],a:0,
+ why:{1:'The heart and blood vessels are part of the blood circulatory system.'},
+ work:['The central nervous system = brain + spinal cord','Nerves connect it to the rest of the body']},
+{id:'hu5',t:'hu',type:'mcq',q:'Which habit helps protect the nervous system?',opts:['Sleeping late every night','Wearing a helmet when cycling','Skipping breakfast','Riding a motorcycle without a helmet'],a:1,
+ work:['A helmet protects the brain from injury in a fall or accident','Damage to the brain or spinal cord can cause paralysis']},
+// MICROORGANISMS
+{id:'mi1',t:'mi',type:'mcq',q:'Which microorganism makes bread dough rise?',opts:['Virus','Yeast','Protozoa','Algae'],a:1,
+ work:['Yeast is a fungus','It respires and gives off carbon dioxide gas, which makes the dough rise']},
+{id:'mi2',t:'mi',type:'mcq',q:'Yeast is put into a sugar solution. After a while, gas bubbles appear. This shows that microorganisms',opts:['respire','need sunlight','grow from seeds','excrete urine'],a:0,
+ work:['The gas bubbles are carbon dioxide','Carbon dioxide is given off when yeast respires']},
+{id:'mi3',t:'mi',type:'mcq',q:'The antibiotic penicillin is made from',opts:['bacteria','a virus','a fungus','protozoa'],a:2,
+ why:{0:'Many antibiotics kill bacteria, but penicillin itself comes from a fungus (mould).'},
+ work:['Penicillin comes from Penicillium, a type of mould (fungus)']},
+{id:'mi4',t:'mi',type:'mcq',q:'In which condition will mould grow fastest on a slice of bread?',opts:['Warm and damp','Cold and dry','Hot and dry','In a freezer'],a:0,
+ work:['Microorganisms need water and a suitable (warm) temperature to grow','Warm and damp gives both']},
+{id:'mi5',t:'mi',type:'mcq',q:'Influenza (flu) is caused by',opts:['bacteria','a virus','a fungus','algae'],a:1,
+ work:['Influenza is caused by a virus','It spreads through the air when an infected person coughs or sneezes']},
+// INTERACTIONS
+{id:'in1',t:'in',type:'mcq',q:'Why do zebras live in herds?',opts:['To compete for water','To protect themselves from predators','To find a territory alone','To avoid eating grass'],a:1,
+ work:['Living in a group is a form of cooperation','More eyes can spot predators, and the herd protects the young']},
+{id:'in2',t:'in',type:'mcq',q:'Seedlings planted very close together grow thin and weak. Why?',opts:['They get too much sunlight','They compete for sunlight, water and nutrients','They cooperate with each other','They have no roots'],a:1,
+ work:['Plants compete for sunlight, water, nutrients and space','Too many plants in a small space means each gets less']},
+{id:'in3',t:'in',type:'mcq',q:'Two lions fight over a deer they caught. What are they competing for?',opts:['Water','Shelter','Food','Sunlight'],a:2,
+ work:['The deer is prey, which is food for the lions']},
+{id:'in4',t:'in',type:'mcq',q:'A group of ants carries a large piece of food back to the nest together. This is an example of',opts:['competition','cooperation','extinction','pollution'],a:1,
+ why:{0:'Competition is when living things fight for the same resource. The ants are helping each other.'},
+ work:['The ants work together to do something one ant cannot do alone','Working together is cooperation']},
+{id:'in5',t:'in',type:'mcq',q:'Four pots of the same size have different numbers of seedlings. In which pot will the seedlings grow best?',opts:['1 seedling','3 seedlings','5 seedlings','8 seedlings'],a:0,
+ work:['Fewer plants means less competition','The single seedling gets all the water, nutrients and space']},
+// PRESERVATION
+{id:'pp1',t:'pp',type:'mcq',q:'Which animal is endangered in Malaysia?',opts:['Domestic cat','Malayan tiger','Chicken','Goat'],a:1,
+ work:['There are very few Malayan tigers left in the wild','Habitat loss and poaching are the main threats']},
+{id:'pp2',t:'pp',type:'mcq',q:'Which human activity threatens wildlife the most by destroying their homes?',opts:['Planting trees','Illegal logging','Building recycling centres','Setting up national parks'],a:1,
+ work:['Cutting down forests destroys the habitats of animals and plants','Without a habitat, they lose food and shelter']},
+{id:'pp3',t:'pp',type:'mcq',q:'Which is a way to conserve wildlife?',opts:['Hunting endangered animals for meat','Gazetting forests as national parks','Clearing forests for farms','Throwing rubbish into rivers'],a:1,
+ work:['National parks such as Taman Negara protect animals and their habitats by law']},
+{id:'pp4',t:'pp',type:'mcq',q:'What can happen if a species becomes extinct?',opts:['Food chains are disrupted','More food for every animal','The ecosystem becomes more balanced','Nothing changes'],a:0,
+ work:['Every species is part of a food chain','If one disappears, the animals that eat it, and those it eats, are affected']},
+{id:'pp5',t:'pp',type:'mcq',q:'Which animal is already extinct?',opts:['Orangutan','Dodo','Malayan tapir','Sun bear'],a:1,
+ why:{0:'Orangutans are endangered, but still alive.',2:'The Malayan tapir is endangered, not extinct.'},
+ work:['The dodo was a bird from Mauritius','No dodo has been alive for more than 300 years']},
+// FORCE
+{id:'da1',t:'da',type:'mcq',q:'A goalkeeper catches a moving ball. Which effect of force is shown?',opts:['Changes the shape of an object','Stops a moving object','Moves a still object','Makes the object faster'],a:1,
+ work:['The ball was moving and the goalkeeper’s force brings it to a stop']},
+{id:'da2',t:'da',type:'mcq',q:'A toy car is pushed across four surfaces with the same force. On which surface will it travel the shortest distance?',opts:['Glass','Floor tiles','Carpet','Smooth plastic'],a:2,
+ work:['A rough surface such as carpet has the most friction','More friction slows the car down faster']},
+{id:'da3',t:'da',type:'mcq',q:'Which is a way to reduce friction?',opts:['Adding treads to tyres','Putting oil on a bicycle chain','Using sandpaper','Wearing rubber-soled shoes'],a:1,
+ why:{0:'Treads increase friction so tyres grip the road.'},
+ work:['Oil makes surfaces slippery, so they rub less against each other']},
+{id:'da4',t:'da',type:'mcq',q:'Compared with sea level, the air pressure at the top of a mountain is',opts:['higher','lower','the same','zero'],a:1,
+ work:['The higher the place, the less air there is above it','So air pressure is lower at the top of a mountain']},
+{id:'da5',t:'da',type:'mcq',q:'Why can we drink using a straw?',opts:['The straw pulls the drink up','Air pressure outside pushes the drink up the straw','The drink is lighter than air','Friction moves the drink'],a:1,
+ work:['Sucking lowers the air pressure inside the straw','The higher air pressure on the drink’s surface pushes it up']},
+// SPEED
+{id:'ke1',t:'ke',type:'num',unit:'km/h',q:'A car travels 180 km in 2 hours. What is its speed?',a:90,
+ work:['Speed = distance ÷ time','180 ÷ 2 = 90 km/h']},
+{id:'ke2',t:'ke',type:'num',unit:'m/s',q:'A boy runs 100 m in 20 seconds. What is his speed?',a:5,
+ work:['Speed = distance ÷ time','100 ÷ 20 = 5 m/s']},
+{id:'ke3',t:'ke',type:'num',unit:'km',q:'A bus moves at 60 km/h for 3 hours. How far does it travel?',a:180,
+ work:['Distance = speed × time','60 × 3 = 180 km'],tip:'If you got 20, you divided. To find distance, multiply speed by time.'},
+{id:'ke4',t:'ke',type:'num',unit:'hours',q:'How long does it take to travel 240 km at 80 km/h?',a:3,
+ work:['Time = distance ÷ speed','240 ÷ 80 = 3 hours']},
+{id:'ke5',t:'ke',type:'mcq',q:'Runner A finishes 100 m in 12 s. Runner B finishes 100 m in 15 s. Which statement is correct?',opts:['A is faster because A took less time','B is faster because B took more time','Both have the same speed','We cannot compare them'],a:0,
+ work:['Both ran the same distance','The one who takes less time is faster: A']},
+{id:'ke6',t:'ke',type:'mcq',q:'Which is NOT a unit of speed?',opts:['km/h','m/s','cm/s','kg/m'],a:3,
+ work:['Speed is distance per time','kg is a unit of mass, so kg/m is not a unit of speed']},
+// FOOD PRESERVATION
+{id:'pm1',t:'pm',type:'mcq',q:'Food goes bad mainly because',opts:['it is kept in the fridge','microorganisms grow on it','it is too dry','it is packed in cans'],a:1,
+ work:['Microorganisms grow on food and break it down','This causes bad smells, mould and sour taste']},
+{id:'pm2',t:'pm',type:'mcq',q:'Ikan masin (salted fish) is preserved by',opts:['pickling','salting','canning','pasteurisation'],a:1,
+ work:['Salt draws water out of the fish','Without water, microorganisms cannot grow']},
+{id:'pm3',t:'pm',type:'mcq',q:'Which food is preserved by pickling?',opts:['Jeruk mangga','Sardines in a can','Fresh milk','Frozen chicken'],a:0,
+ why:{1:'Sardines in a can are preserved by canning.',2:'Fresh milk is usually pasteurised.',3:'Frozen chicken is preserved by freezing.'},
+ work:['Jeruk is soaked in vinegar','Vinegar is acidic, so microorganisms cannot grow']},
+{id:'pm4',t:'pm',type:'mcq',q:'Pasteurisation is commonly used to preserve',opts:['salted eggs','milk','dried anchovies','jam'],a:1,
+ work:['Milk is heated to a set temperature, then cooled quickly','This kills most microorganisms without boiling the milk']},
+{id:'pm5',t:'pm',type:'mcq',q:'How does keeping food in a refrigerator slow down spoilage?',opts:['It removes all the air','The low temperature slows down the growth of microorganisms','It adds salt to the food','It kills all microorganisms'],a:1,
+ why:{3:'Cold slows microorganisms down but does not kill all of them. That is why food in the fridge still spoils after some days.'},
+ work:['Microorganisms grow best in warm conditions','Low temperature slows their growth']},
+// WASTE
+{id:'bb1',t:'bb',type:'mcq',q:'Which waste is biodegradable?',opts:['Plastic bottle','Glass jar','Banana peel','Aluminium can'],a:2,
+ work:['Biodegradable waste is broken down by microorganisms','A banana peel rots away; plastic, glass and cans do not']},
+{id:'bb2',t:'bb',type:'mcq',q:'In Malaysia, which recycling bin is used for plastic bottles?',opts:['Blue','Orange','Brown','Green'],a:1,
+ work:['Blue = paper, orange = plastic and aluminium, brown = glass']},
+{id:'bb3',t:'bb',type:'mcq',q:'Rubbish thrown into drains can cause',opts:['flash floods','cleaner rivers','more rain','eclipses'],a:0,
+ work:['Rubbish blocks the drains','Rain water cannot flow away and overflows onto roads']},
+{id:'bb4',t:'bb',type:'mcq',q:'Using an old jam jar to keep pencils is an example of',opts:['reduce','reuse','recycle','refuse'],a:1,
+ why:{2:'Recycling turns waste into a new product in a factory. Here the jar is used again as it is.'},
+ work:['The jar is used again for another purpose without changing it','That is reusing']},
+{id:'bb5',t:'bb',type:'mcq',q:'Which waste is best for making compost?',opts:['Food scraps and dry leaves','Plastic bags','Old batteries','Broken glass'],a:0,
+ work:['Compost is made when microorganisms break down biodegradable waste','Food scraps and leaves are biodegradable']},
+// ECLIPSE
+{id:'ge1',t:'ge',type:'mcq',q:'What is the position of the Sun, Moon and Earth during a solar eclipse?',opts:['Earth is between the Sun and the Moon','The Moon is between the Sun and the Earth','The Sun is between the Earth and the Moon','They are not in a line'],a:1,
+ why:{0:'With Earth in the middle, you get a lunar eclipse.'},
+ work:['The Moon moves between the Sun and the Earth','The Moon’s shadow falls on the Earth and blocks the Sun']},
+{id:'ge2',t:'ge',type:'mcq',q:'A lunar eclipse happens when',opts:['the Moon is between the Sun and the Earth','the Earth is between the Sun and the Moon','the Sun is behind a cloud','the Moon is at its new moon phase'],a:1,
+ work:['The Earth blocks sunlight from reaching the Moon','Earth’s shadow falls on the Moon']},
+{id:'ge3',t:'ge',type:'mcq',q:'During which phase of the Moon can a lunar eclipse happen?',opts:['New moon','Full moon','First quarter','Crescent'],a:1,
+ work:['The Moon must be on the opposite side of the Earth from the Sun','That is the full moon position']},
+{id:'ge4',t:'ge',type:'mcq',q:'What is a safe way to watch a solar eclipse?',opts:['Look straight at the Sun','Use sunglasses','Use solar eclipse glasses or a pinhole projector','Look through binoculars'],a:2,
+ why:{1:'Ordinary sunglasses do not block enough light and can still damage your eyes.',3:'Binoculars focus sunlight and can blind you instantly.'},
+ work:['Looking at the Sun can permanently damage your eyes','Special solar filters or a pinhole projector are safe']},
+{id:'ge5',t:'ge',type:'mcq',q:'What happens to the sky during a total solar eclipse?',opts:['It becomes dark during the day','It turns red at night','It becomes brighter','Nothing changes'],a:0,
+ work:['The Moon fully blocks the Sun','For a few minutes, the sky becomes dark like evening']},
+// GALAXY
+{id:'ga1',t:'ga',type:'mcq',q:'What is a galaxy?',opts:['A single star','A huge group of stars, gas and dust held together by gravity','A planet with many moons','A group of clouds'],a:1,
+ work:['A galaxy contains billions of stars, plus gas and dust','Gravity holds them together']},
+{id:'ga2',t:'ga',type:'mcq',q:'Our Solar System is located in the',opts:['Andromeda galaxy','Milky Way galaxy','centre of the universe','Moon’s orbit'],a:1,
+ work:['The Solar System is inside the Milky Way (Bima Sakti)','It is in one of the spiral arms, far from the centre']},
+{id:'ga3',t:'ga',type:'mcq',q:'What is the shape of the Milky Way?',opts:['Spiral','Elliptical','Irregular','Square'],a:0,
+ work:['The Milky Way is a flat disc with curved arms','That is a spiral galaxy']},
+{id:'ga4',t:'ga',type:'mcq',q:'The Sun is a',opts:['planet','star','galaxy','moon'],a:1,
+ work:['The Sun makes its own light and heat','It is one of the hundreds of billions of stars in the Milky Way']},
+{id:'ga5',t:'ga',type:'mcq',q:'Which of these is NOT a type of galaxy?',opts:['Spiral','Elliptical','Irregular','Triangular'],a:3,
+ work:['The three main types are spiral, elliptical and irregular']},
+// STABILITY
+{id:'ks1',t:'ks',type:'mcq',q:'Which vase is the most stable?',opts:['Tall with a narrow base','Short with a wide base','Tall with a wide top','Short with a narrow base'],a:1,
+ work:['A wider base makes an object more stable','Being short (low) also makes it more stable']},
+{id:'ks2',t:'ks',type:'mcq',q:'Racing cars are built low and wide so that they',opts:['are more stable at high speed','look bigger','carry more passengers','use more fuel'],a:0,
+ work:['Low height and a wide base increase stability','This stops the car from toppling on sharp bends']},
+{id:'ks3',t:'ks',type:'mcq',q:'Which shape is often used in bridges and electricity towers to make them strong?',opts:['Circle','Triangle','Square','Oval'],a:1,
+ why:{2:'Squares can be pushed out of shape easily. Triangles keep their shape under a load.'},
+ work:['Triangles do not change shape easily when pushed','This makes the structure strong']},
+{id:'ks4',t:'ks',type:'mcq',q:'Putting heavy books on the bottom shelf of a bookcase makes it',opts:['less stable','more stable','weaker','lighter'],a:1,
+ work:['Heavy items at the bottom make the bookcase lower-heavy','This makes it harder to topple, so it is more stable']},
+{id:'ks5',t:'ks',type:'mcq',q:'Which material would make the strongest model bridge?',opts:['Paper','Steel','Plasticine','Drinking straws'],a:1,
+ work:['The type of material affects strength','Steel can support the heaviest load without breaking']},
+// TECHNOLOGY
+{id:'te1',t:'te',type:'mcq',q:'Which is the most recent communication technology?',opts:['Beating drums','Writing letters','Video calls','Telegram (Morse code)'],a:2,
+ work:['Communication developed from drums and letters, to telegraph and telephone, to the internet','Video calls use the internet and are the newest']},
+{id:'te2',t:'te',type:'mcq',q:'Which is a drawback of technology?',opts:['Faster travel','Air pollution from factories and vehicles','Better medical treatment','Easier communication'],a:1,
+ work:['Factories and vehicles release harmful gases','The other options are benefits']},
+{id:'te3',t:'te',type:'mcq',q:'How does a tractor help farmers?',opts:['It ploughs land faster with less human energy','It makes crops grow without water','It replaces sunlight','It stops all pests'],a:0,
+ work:['Technology saves time and energy','A tractor does in hours what took days by hand']},
+{id:'te4',t:'te',type:'mcq',q:'Which action supports sustainable living?',opts:['Leaving lights on all day','Using energy-saving appliances','Throwing old phones in the bin','Buying a new device every month'],a:1,
+ work:['Sustainable living means using resources wisely so they last','Energy-saving appliances use less electricity']},
+{id:'te5',t:'te',type:'mcq',q:'What is technology?',opts:['Only computers and phones','Using science knowledge to make tools that solve problems','Anything found in nature','A type of energy'],a:1,
+ why:{0:'Computers are one kind of technology, but so are hoes, bridges and vaccines.'},
+ work:['Technology applies science to create tools, machines and methods','Its aim is to solve problems and make life easier']}
+];
+
+/* ---------- QUESTION FIGURES ---------- */
+[['c1','coordQ'],['s2','triArea'],['s3','cuboid'],['s4','circleQ'],['s5','triQ'],['s7','composite'],['d5','pie']].forEach(([id,f])=>{const q=MATHS_Q.find(x=>x.id===id);if(q)q.fig=f});
+
+/* ---------- SUBJECTS ---------- */
+const SUBJECTS={
+  maths:{name:'Mathematics',short:'Maths',topics:MATHS_TOPICS,notes:MATHS_NOTES,q:MATHS_Q,workLabel:'How to solve it'},
+  science:{name:'Science',short:'Science',topics:SCI_TOPICS,notes:SCI_NOTES,q:SCI_Q,workLabel:'Why'}
+};
+MATHS_Q.forEach(q=>q.s='maths'); SCI_Q.forEach(q=>q.s='science');
+const ALL_TOPICS=[...MATHS_TOPICS,...SCI_TOPICS];
+let SUBJ='maths',TOPICS=MATHS_TOPICS,NOTES=MATHS_NOTES,Q=MATHS_Q;
+function setSubject(sj){
+  SUBJ=sj;TOPICS=SUBJECTS[sj].topics;NOTES=SUBJECTS[sj].notes;Q=SUBJECTS[sj].q;
+  currentNote=TOPICS[0].id;document.body.dataset.subject=sj;
+  document.querySelectorAll('[data-subj]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.subj===sj));
+  store.subj=sj;save();
+}
+
+/* ---------- STORAGE ---------- */
+const KEY='uasa6-maths-v1';
+let store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){store={}}
+store.q=store.q||{}; store.mocks=store.mocks||[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+
+/* ---------- HELPERS ---------- */
+const app=document.getElementById('app');
+const topic=id=>ALL_TOPICS.find(t=>t.id===id);
+const tIndex=id=>{const l=MATHS_TOPICS.some(t=>t.id===id)?MATHS_TOPICS:SCI_TOPICS;return l.findIndex(t=>t.id===id)+1};
+const qsFor=id=>Q.filter(q=>q.t===id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function group(n){const neg=n<0;let [i,d]=String(Math.abs(n)).split('.');i=i.replace(/\B(?=(\d{3})+(?!\d))/g,' ');return (neg?'-':'')+i+(d?'.'+d:'')}
+function fmtNum(q,n){
+  if(q.pre==='RM') return 'RM '+group(Number(n).toFixed(2));
+  const s=group(Math.round(n*1e6)/1e6);
+  return q.unit?(q.unit==='°'?s+'°':s+' '+q.unit):s;
+}
+const answerText=q=>q.type==='mcq'?q.opts[q.a]:fmtNum(q,q.a);
+function parseNum(s){const c=String(s).replace(/[^0-9.\-]/g,'');if(!c||c==='.'||c==='-')return null;const n=Number(c);return isNaN(n)?null:n}
+function isRight(q,given){
+  if(given===null||given===undefined||given==='') return false;
+  if(q.type==='mcq') return given===q.a;
+  const n=parseNum(given); return n!==null&&Math.abs(n-q.a)<1e-6;
+}
+function mastery(id){const qs=qsFor(id);const ok=qs.filter(q=>store.q[q.id]===1).length;const tried=qs.filter(q=>q.id in store.q).length;return {ok,tried,total:qs.length,pct:Math.round(ok/qs.length*100)}}
+const praise=['Correct! Well done.','Spot on!','Excellent work!','That’s right!','Great thinking!'];
+const encourage=['Not quite. Let’s see how.','Almost. Check the steps below.','Good try. Here’s the method.'];
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+
+function feedbackHTML(q,given,ok){
+  let yours='';
+  if(!ok){
+    const g=q.type==='mcq'?(given===null||given===undefined?'No answer':q.opts[given]):(given===''||given==null?'No answer':given);
+    yours=`<p>Your answer: <b class="num">${g}</b></p>`;
+  }
+  const why=(!ok&&q.type==='mcq'&&q.why&&q.why[given])?`<p>${q.why[given]}</p>`:'';
+  const tip=(!ok&&q.tip)?`<div class="tip"><b>Common mistake:</b> ${q.tip}</div>`:'';
+  return `<div class="fb ${ok?'ok':'no'}" role="status">
+    <h3>${ok?pick(praise):pick(encourage)}</h3>
+    ${yours}<p>Correct answer: <b class="num">${answerText(q)}</b></p>${why}
+    <p style="margin-top:10px"><b>${SUBJECTS[q.s].workLabel}</b></p>
+    <ol>${q.work.map(s=>`<li>${s}</li>`).join('')}</ol>${tip}</div>`;
+}
+
+/* ---------- ROUTER ---------- */
+let timerId=null;
+function go(view,arg){
+  if(timerId&&view!=='mockrun'&&view!=='uasarun'){clearInterval(timerId);timerId=null}
+  const tabView=['practicerun','uasaprac'].includes(view)?'practice':['mockrun','mockres','uasa','uasarun','uasares'].includes(view)?'mock':view;
+  document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-current',b.dataset.view===tabView?'page':'false'));
+  ({home:viewHome,notes:viewNotes,practice:viewPractice,practicerun:runPractice,mock:viewMock,mockrun:runMock,mockres:mockResults,uasa:viewUasa,uasarun:runUasa,uasares:uasaResults,uasaprac:runUasaPractice})[view](arg);
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+  if(b.dataset.view!=='mock'&&mock&&!mock.done&&timerId){ if(!confirmLeave(b.dataset.view)) return }
+  go(b.dataset.view)
+});
+function confirmLeave(){return true}
+
+/* ---------- HOME ---------- */
+function viewHome(){
+  const all=TOPICS.map(t=>mastery(t.id));
+  const ok=all.reduce((s,m)=>s+m.ok,0), tried=Q.filter(q=>q.id in store.q).length;
+  const mine=store.mocks.filter(m=>m.subj===PAPERS[SUBJ].key);const last=mine[mine.length-1];
+  app.innerHTML=`
+  <section class="hero">
+    <span class="eyebrow">Standard 6 · UASA ${SUBJECTS[SUBJ].name}</span>
+    <h1>Read the notes. <mark>Try the questions.</mark> Learn from every answer.</h1>
+    <p>All ${TOPICS.length} Year 6 ${SUBJECTS[SUBJ].name} topics, with ${Q.length} practice questions. Every answer gets instant feedback and ${SUBJ==='maths'?'a step-by-step solution':'an explanation'}. Your progress is saved on this device.</p>
+    <div class="stats">
+      <div class="stat"><span class="v">${ok}/${Q.length}</span><span class="k">questions mastered</span></div>
+      <div class="stat"><span class="v">${tried}</span><span class="k">questions tried</span></div>
+      <div class="stat"><span class="v">${last?last.score+'/'+last.total:'–'}</span><span class="k">last mock paper</span></div>
+    </div>
+  </section>
+  <div class="sheet mockcard">
+    <div><h3>${PAPERS[SUBJ].title}</h3><p>${SUBJ==='maths'?'Section A (13 questions) and Section B (2 structured questions). 50 marks in 1 hour 15 minutes, written answers only.':'Section A (10 multiple choice), Section B (2 questions) and Section C (4 investigation questions). 50 marks in 1 hour 15 minutes.'}</p></div>
+    <button class="btn hi" id="goMock">Start mock paper</button>
+  </div>
+  <div class="section-h"><h2>Topics</h2><span>Green bar = questions answered correctly</span></div>
+  <div class="sheet topics">
+    ${TOPICS.map((t,i)=>{const m=all[i];return `
+    <div class="trow">
+      <div class="tno">${i+1}</div>
+      <div style="min-width:0"><div class="tname">${t.name}</div>
+        <div class="meter" aria-hidden="true"><i style="width:${m.pct}%"></i></div>
+        <div class="tmeta num">${m.ok} of ${m.total} correct</div></div>
+      <div class="tact"><button class="btn" data-n="${t.id}">Notes</button><button class="btn primary" data-p="${t.id}">Practise</button></div>
+    </div>`}).join('')}
+  </div>
+  ${tried?`<p class="small muted" style="margin-top:16px"><button class="btn" id="reset">Reset my progress</button></p><div id="resetBox"></div>`:''}`;
+  app.querySelector('#goMock').onclick=()=>go('mock');
+  app.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>go('notes',b.dataset.n));
+  app.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>go('practicerun',b.dataset.p));
+  const r=app.querySelector('#reset');
+  if(r) r.onclick=()=>{app.querySelector('#resetBox').innerHTML=`<div class="confirm"><span>Clear all scores and mock results on this device?</span><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Cancel</button></div>`;
+    app.querySelector('#yes').onclick=()=>{store={q:{},mocks:[]};save();go('home')};
+    app.querySelector('#no').onclick=()=>app.querySelector('#resetBox').innerHTML='';};
+}
+
+/* ---------- NOTES ---------- */
+let currentNote='whole';
+function viewNotes(id){
+  if(id) currentNote=id;
+  const t=topic(currentNote), i=tIndex(currentNote);
+  const prev=TOPICS[i-2], next=TOPICS[i];
+  app.innerHTML=`
+  <div class="notes-layout">
+    <nav class="toc" aria-label="Topics">${TOPICS.map((x,k)=>`<button data-id="${x.id}" aria-current="${x.id===currentNote}"><span>${k+1}</span>${x.name}</button>`).join('')}</nav>
+    <div style="min-width:0">
+      <label class="sr" for="tocSel" hidden>Topic</label>
+      <select class="toc-select" id="tocSel">${TOPICS.map((x,k)=>`<option value="${x.id}" ${x.id===currentNote?'selected':''}>${k+1}. ${x.name}</option>`).join('')}</select>
+      <article class="sheet note" style="margin-top:12px">
+        <span class="eyebrow">Topic ${i}</span>
+        <h2>${t.name}</h2>
+        ${NOTES[currentNote]}
+        <div class="note-foot">
+          <button class="btn primary" id="prac">Practise ${t.name}</button>
+          <span style="display:flex;gap:8px;flex-wrap:wrap">
+          ${prev?`<button class="btn" data-id="${prev.id}">← ${prev.name}</button>`:''}
+          ${next?`<button class="btn" data-id="${next.id}">${next.name} →</button>`:''}</span>
+        </div>
+      </article>
+    </div>
+  </div>`;
+  app.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>go('notes',b.dataset.id));
+  app.querySelector('#tocSel').onchange=e=>go('notes',e.target.value);
+  app.querySelector('#prac').onclick=()=>go('practicerun',currentNote);
+}
+
+/* ---------- PRACTICE ---------- */
+function viewPractice(){
+  app.innerHTML=`
+  <div class="section-h" style="margin-top:32px"><h2>Choose a topic to practise</h2><span>Instant feedback after each question</span></div>
+  <div class="picker">
+    ${TOPICS.map((t,i)=>{const m=mastery(t.id);return `<button class="pick" data-p="${t.id}"><span class="n">TOPIC ${i+1}</span><span class="nm">${t.name}</span><span class="s num">${m.total} questions · ${m.ok} correct</span></button>`}).join('')}
+    ${SUBJ==='maths'?`<button class="pick mixed" data-ua="A"><span class="n">UASA FORMAT</span><span class="nm">Section A practice</span><span class="s">13 written-answer questions · 26 marks</span></button><button class="pick mixed" data-ua="B"><span class="n">UASA FORMAT</span><span class="nm">Section B practice</span><span class="s">1 structured question · 12 marks</span></button>`:`<button class="pick mixed" data-ua="A"><span class="n">UASA FORMAT</span><span class="nm">Section A practice</span><span class="s">10 multiple-choice questions · 10 marks</span></button><button class="pick mixed" data-ua="B"><span class="n">UASA FORMAT</span><span class="nm">Section B practice</span><span class="s">True/False, matching, labelling · 8 marks</span></button><button class="pick mixed" data-ua="C"><span class="n">UASA FORMAT</span><span class="nm">Section C practice</span><span class="s">1 investigation question · 6 or 10 marks</span></button>`}
+    <button class="pick mixed" data-p="mixed"><span class="n">ALL TOPICS</span><span class="nm">Mixed practice</span><span class="s">10 random questions</span></button>
+    <button class="pick mixed" data-p="redo"><span class="n">REVISE</span><span class="nm">My wrong answers</span><span class="s num">${Q.filter(q=>store.q[q.id]===0).length} to retry</span></button>
+  </div>`;
+  app.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>go('practicerun',b.dataset.p));
+  app.querySelectorAll('[data-ua]').forEach(b=>b.onclick=()=>go('uasaprac',b.dataset.ua));
+}
+
+let prac=null;
+function runPractice(id){
+  let list,label;
+  if(id==='mixed'){list=shuffle(Q).slice(0,10);label='Mixed practice'}
+  else if(id==='redo'){list=shuffle(Q.filter(q=>store.q[q.id]===0));label='My wrong answers';
+    if(!list.length){app.innerHTML=`<div class="sheet" style="margin-top:32px"><h2>No wrong answers to retry</h2><p class="muted">Either you have not tried any questions yet, or you have fixed them all. Pick a topic to keep going.</p><button class="btn primary" id="b">Back to topics</button></div>`;app.querySelector('#b').onclick=()=>go('practice');return}}
+  else{list=qsFor(id);label=topic(id).name}
+  prac={id,list,label,i:0,score:0,results:[]};
+  showPracticeQ();
+}
+function showPracticeQ(){
+  const p=prac,q=p.list[p.i],ord=q.type==='mcq'&&!q.fixed?shuffle(q.opts.map((_,k)=>k)):null;
+  app.innerHTML=`
+  <div class="qhead"><span class="t">${p.label}</span><span class="muted num small">Question ${p.i+1} of ${p.list.length} · Score ${p.score}</span></div>
+  <div class="pbar"><i style="width:${p.i/p.list.length*100}%"></i></div>
+  <div class="sheet">
+    <span class="eyebrow">Topic ${tIndex(q.t)} · ${topic(q.t).name}</span>
+    <p class="q-text" style="margin-top:6px">${q.q}</p>${figFor(q)}
+    ${questionInput(q,ord)}
+    <div id="fb"></div>
+    <div class="qnav"><button class="btn" id="quit">Stop and see score</button><button class="btn primary" id="next" hidden>${p.i===p.list.length-1?'See my score':'Next question →'}</button></div>
+  </div>`;
+  wireQuestion(q,(given)=>{
+    const ok=isRight(q,given);
+    store.q[q.id]=ok?1:0;save();
+    if(ok)p.score++;
+    p.results.push({q,given,ok});
+    lockQuestion(q,given);
+    app.querySelector('#fb').innerHTML=feedbackHTML(q,given,ok);
+    const n=app.querySelector('#next');n.hidden=false;n.focus();
+  });
+  app.querySelector('#next').onclick=()=>{p.i++;p.i<p.list.length?showPracticeQ():practiceDone()};
+  app.querySelector('#quit').onclick=practiceDone;
+}
+function questionInput(q,ord){
+  if(q.type==='mcq'){ord=ord||q.opts.map((_,k)=>k);return `<div class="opts">${ord.map((k,pos)=>`<button class="opt" data-k="${k}"><span class="L">${'ABCD'[pos]}</span><span>${q.opts[k]}</span></button>`).join('')}</div>`}
+  return `<form class="ansrow" id="af"><label class="ansbox">${q.pre?`<span>${q.pre}</span>`:''}<input id="ans-${q.id}" inputmode="decimal" autocomplete="off" aria-label="Your answer">${q.unit?`<span>${q.unit}</span>`:''}</label><button class="btn primary" type="submit">Check answer</button></form>
+  <div class="hint-line">Type numbers only. Spaces in big numbers are fine.</div>`;
+}
+function wireQuestion(q,onAnswer,{instant=true,onPick}={}){
+  if(q.type==='mcq'){
+    app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      const k=+b.dataset.k;
+      if(instant) onAnswer(k); else {app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));onPick&&onPick(k)}
+    });
+  }else{
+    const f=app.querySelector('#af'),inp=f.querySelector('input');
+    if(instant){setTimeout(()=>inp.focus(),0);
+      f.onsubmit=e=>{e.preventDefault();if(parseNum(inp.value)===null){inp.focus();app.querySelector('.hint-line').textContent='Type a number first, then press Check answer.';return}onAnswer(inp.value.trim())};}
+    else{f.querySelector('button').hidden=true;f.onsubmit=e=>e.preventDefault();inp.oninput=()=>onPick&&onPick(inp.value.trim())}
+  }
+}
+function lockQuestion(q,given){
+  if(q.type==='mcq'){app.querySelectorAll('.opt').forEach(b=>{const k=+b.dataset.k;b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===given)b.classList.add('wrong')})}
+  else{const f=app.querySelector('#af');f.querySelectorAll('input,button').forEach(x=>x.disabled=true)}
+}
+function practiceDone(){
+  const p=prac,n=p.results.length,pct=n?Math.round(p.score/n*100):0;
+  const msg=!n?'You stopped before answering. Try again when you are ready.':pct>=80?'Excellent! You know this topic well.':pct>=50?'Good effort. Read the notes again for the questions you missed.':'Keep going. Read the notes, then try again. Every attempt helps.';
+  app.innerHTML=`<div class="sheet" style="margin-top:32px">
+    <div class="result-top"><div class="ring">${p.score}/${n}</div><div><h2>${p.label}</h2><p>${msg}</p></div></div>
+    <div class="qnav"><span style="display:flex;gap:8px;flex-wrap:wrap">
+      ${['mixed','redo'].includes(p.id)?'':`<button class="btn" id="nt">Read the notes</button>`}
+      <button class="btn" id="back">Choose another topic</button></span>
+      <button class="btn primary" id="again">Try again</button></div></div>`;
+  const nt=app.querySelector('#nt');if(nt)nt.onclick=()=>go('notes',p.id);
+  app.querySelector('#back').onclick=()=>go('practice');
+  app.querySelector('#again').onclick=()=>go('practicerun',p.id);
+}
+
+/* ---------- MOCK PAPER ---------- */
+const MOCK_N=20, MOCK_SEC=30*60;
+let mock=null;
+function viewMock(){
+  viewUasa();return;
+  if(mock&&!mock.done&&mock.subj===SUBJ){go('mockrun');return}
+  const hist=store.mocks.filter(m=>(m.subj||'maths')===SUBJ).slice(-5).reverse();
+  app.innerHTML=`<div class="sheet" style="margin-top:32px">
+    <span class="eyebrow">Exam practice</span>
+    <h2 style="font-size:1.8rem;margin:6px 0 10px">${SUBJECTS[SUBJ].name} mock paper</h2>
+    <ul style="margin:0 0 16px;padding-left:1.2em">
+      <li><b class="num">${MOCK_N}</b> questions drawn from every topic</li>
+      <li><b class="num">30 minutes</b>. The paper is handed in automatically when time runs out.</li>
+      <li>You can move between questions and change answers before you submit.</li>
+      <li>Marks, feedback and full working are shown after you submit.</li></ul>
+    <p class="muted small">Tip: have paper and a pencil ready for working, just like the real exam.</p>
+    <button class="btn hi" id="start">Start the clock</button>
+  </div>
+  ${hist.length?`<div class="section-h"><h2>Recent attempts</h2></div><div class="sheet topics">${hist.map(h=>`<div class="trow" style="grid-template-columns:minmax(0,1fr) auto"><div><div class="tname num">${h.score} / ${h.total} (${Math.round(h.score/h.total*100)}%)</div><div class="tmeta">${h.date}</div></div><div class="num muted small">${h.time}</div></div>`).join('')}</div>`:''}`;
+  app.querySelector('#start').onclick=()=>{
+    const pools=TOPICS.map(t=>shuffle(qsFor(t.id)));const list=[];let k=0;
+    while(list.length<MOCK_N){const pl=pools[k%pools.length];if(pl.length)list.push(pl.shift());k++}
+    const l2=shuffle(list);mock={subj:SUBJ,list:l2,ord:l2.map(q=>q.type==='mcq'?shuffle(q.opts.map((_,k)=>k)):null),ans:{},i:0,left:MOCK_SEC,done:false,start:Date.now()};
+    go('mockrun');
+  };
+}
+function clock(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function runMock(){
+  if(!timerId){timerId=setInterval(()=>{
+    mock.left=Math.max(0,MOCK_SEC-Math.floor((Date.now()-mock.start)/1000));
+    const el=document.getElementById('clk');if(el){el.textContent=clock(mock.left);el.classList.toggle('low',mock.left<=300)}
+    if(mock.left<=0)submitMock();
+  },1000)}
+  const m=mock,q=m.list[m.i],given=m.ans[m.i];
+  app.innerHTML=`
+  <div class="qhead"><span class="t">${SUBJECTS[m.subj].short} mock · Question ${m.i+1} of ${m.list.length}</span><span class="timer num ${m.left<=300?'low':''}" id="clk" aria-label="Time left">${clock(m.left)}</span></div>
+  <div class="pbar"><i style="width:${Object.keys(m.ans).length/m.list.length*100}%"></i></div>
+  <div class="sheet">
+    <p class="q-text">${q.q}</p>${figFor(q)}
+    ${questionInput(q,m.ord&&m.ord[m.i])}
+    <div class="qnav"><button class="btn" id="prev" ${m.i===0?'disabled':''}>← Previous</button>
+      ${m.i<m.list.length-1?`<button class="btn primary" id="nxt">Next →</button>`:`<button class="btn hi" id="sub">Hand in paper</button>`}</div>
+    <div class="palette" aria-label="Jump to question">${m.list.map((_,k)=>`<button data-j="${k}" class="${k in m.ans&&m.ans[k]!==''?'done':''} ${k===m.i?'cur':''}" aria-label="Question ${k+1}">${k+1}</button>`).join('')}</div>
+    <div id="cbox"></div>
+    ${m.i<m.list.length-1?`<p style="margin-top:14px"><button class="btn" id="sub2">Hand in paper early</button></p>`:''}
+  </div>`;
+  wireQuestion(q,null,{instant:false,onPick:v=>{m.ans[m.i]=v;const pb=app.querySelector(`[data-j="${m.i}"]`);if(pb)pb.classList.toggle('done',v!=='');app.querySelector('.pbar i').style.width=Object.values(m.ans).filter(x=>x!=='').length/m.list.length*100+'%'}});
+  if(q.type==='mcq'&&given!==undefined){const b=app.querySelector(`.opt[data-k="${given}"]`);if(b)b.classList.add('sel')}
+  if(q.type==='num'&&given!==undefined){app.querySelector('#af input').value=given}
+  app.querySelector('#prev').onclick=()=>{m.i--;runMock()};
+  const nx=app.querySelector('#nxt');if(nx)nx.onclick=()=>{m.i++;runMock()};
+  app.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{m.i=+b.dataset.j;runMock()});
+  const ask=()=>{const blank=m.list.length-Object.values(m.ans).filter(x=>x!=='').length;
+    app.querySelector('#cbox').innerHTML=`<div class="confirm"><span>${blank?`You have <b>${blank}</b> unanswered question${blank>1?'s':''}. `:''}Hand in your paper now?</span><button class="btn primary" id="yes">Yes, hand in</button><button class="btn" id="no">Keep working</button></div>`;
+    app.querySelector('#yes').onclick=submitMock;app.querySelector('#no').onclick=()=>app.querySelector('#cbox').innerHTML=''};
+  ['#sub','#sub2'].forEach(s=>{const b=app.querySelector(s);if(b)b.onclick=ask});
+}
+function submitMock(){
+  if(!mock||mock.done)return;
+  clearInterval(timerId);timerId=null;mock.done=true;
+  const used=MOCK_SEC-mock.left;
+  mock.res=mock.list.map((q,k)=>{const g=mock.ans[k];const ok=isRight(q,g);store.q[q.id]=ok?1:0;return {q,given:g,ok}});
+  mock.score=mock.res.filter(r=>r.ok).length;
+  const d=new Date();
+  store.mocks.push({subj:mock.subj,score:mock.score,total:mock.list.length,date:d.toLocaleDateString('en-MY',{day:'numeric',month:'short',year:'numeric'})+', '+d.toLocaleTimeString('en-MY',{hour:'numeric',minute:'2-digit'}),time:clock(used)+' used'});
+  store.mocks=store.mocks.slice(-40);save();
+  go('mockres');
+}
+function mockResults(){
+  const m=mock,pct=Math.round(m.score/m.list.length*100);
+  const msg=pct>=80?'Excellent result! You are well prepared.':pct>=60?'Good work. Revise the topics marked below to push your score higher.':pct>=40?'A fair start. Focus on the weakest topics below, then try another paper.':'Don’t give up. Work through the notes topic by topic, then try again.';
+  const by=SUBJECTS[m.subj].topics.map(t=>{const r=m.res.filter(x=>x.q.t===t.id);return {t,n:r.length,ok:r.filter(x=>x.ok).length}}).filter(x=>x.n);
+  app.innerHTML=`<div class="sheet" style="margin-top:32px">
+    <div class="result-top"><div class="ring">${pct}%</div><div><h2 class="num">${m.score} / ${m.list.length} correct</h2><p>${msg}</p><p class="small num">Time used: ${clock(MOCK_SEC-m.left)}</p></div></div>
+    <div class="breakdown">${by.map(b=>`<div class="brow"><div style="min-width:0">${b.t.name}<div class="meter" style="max-width:none"><i style="width:${b.ok/b.n*100}%;background:${b.ok===b.n?'var(--good)':b.ok/b.n>=.5?'var(--pen)':'var(--bad)'}"></i></div></div><span class="num" style="text-align:right">${b.ok}/${b.n}</span></div>`).join('')}</div>
+    <div class="qnav"><button class="btn" id="home">Back to home</button><button class="btn hi" id="again">Try a new paper</button></div>
+  </div>
+  <div class="section-h"><h2>Check your answers</h2><span>Feedback and working for every question</span></div>
+  <div class="review">${m.res.map((r,k)=>`<div class="sheet"><span class="eyebrow">Question ${k+1} · ${topic(r.q.t).name}</span><p class="q-text">${r.q.q}</p>${figFor(r.q)}${feedbackHTML(r.q,r.given===''?undefined:r.given,r.ok)}</div>`).join('')}</div>`;
+  app.querySelector('#home').onclick=()=>{mock=null;go('home')};
+  app.querySelector('#again').onclick=()=>{mock=null;go('mock')};
+}
+
+/* ---------- UASA-FORMAT MATHS PAPER ---------- */
+function regPoly(cx,cy,r,n,rot=-90){return Array.from({length:n},(_,i)=>{const a=(rot+i*360/n)*Math.PI/180;return (cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)}).join(' ')}
+function pieGen(sec,cx=160,cy=120,r=95){
+  const pt=(a,rr)=>[cx+rr*Math.sin(a*Math.PI/180),cy-rr*Math.cos(a*Math.PI/180)];
+  return sec.map(([n,a0,a1,f,tc])=>{const [x0,y0]=pt(a0,r),[x1,y1]=pt(a1,r),[lx,ly]=pt((a0+a1)/2,r*0.58);
+    return `<path d="M${cx} ${cy} L${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${a1-a0>180?1:0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z" class="${f}" stroke="currentColor" stroke-width="1.5"/>`+T(lx.toFixed(1),(ly-2).toFixed(1),n,tc+' bold')+T(lx.toFixed(1),(ly+14).toFixed(1),(a1-a0)+'°',tc)}).join('');
+}
+function scaleGrid(){
+  const ox=36,oy=230,u=30,X=v=>ox+v*u,Y=v=>oy-v*u;let g=AR('ar-sg');
+  for(let i=1;i<=8;i++)g+=`<line x1="${X(i)}" y1="${Y(0)}" x2="${X(i)}" y2="${Y(7)}" class="gl"/>`;
+  for(let i=1;i<=7;i++)g+=`<line x1="${X(0)}" y1="${Y(i)}" x2="${X(8)}" y2="${Y(i)}" class="gl"/>`;
+  for(let i=0;i<=8;i++)g+=T(X(i),oy+16,i,'tm small-t');
+  for(let i=1;i<=7;i++)g+=T(ox-8,Y(i)+4,i,'tm small-t','end');
+  g+=`<line x1="${ox}" y1="${oy}" x2="${X(8)+12}" y2="${oy}" class="s" marker-end="url(#ar-sg)"/><line x1="${ox}" y1="${oy}" x2="${ox}" y2="${Y(7)-12}" class="s" marker-end="url(#ar-sg)"/>`;
+  g+=`<circle cx="${X(1)}" cy="${Y(2)}" r="5" class="fa"/>`+T(X(1)+8,Y(2)-8,'House','ta halo','start');
+  g+=`<circle cx="${X(6)}" cy="${Y(5)}" r="5" class="fa"/>`+T(X(6)+8,Y(5)-8,'School','ta halo','start');
+  g+=`<rect x="${X(8)+24}" y="${Y(7)}" width="92" height="44" rx="6" class="fc" stroke="currentColor" stroke-width="1"/>`+T(X(8)+70,Y(7)+18,'Scale','t bold small-t')+T(X(8)+70,Y(7)+34,'1 unit : 2 km','t small-t');
+  return g;
+}
+function polyShapes(){
+  const kinds=['h','s','p','p','h','s','p','h','s','p','h','p'];let g='';
+  kinds.forEach((k,i)=>{const cx=40+(i%6)*62,cy=40+Math.floor(i/6)*70;
+    g+=`<polygon points="${regPoly(cx,cy,22,k==='h'?6:k==='s'?4:5,k==='s'?-45:-90)}" class="fs" stroke="currentColor" stroke-width="2"/>`});
+  return g;
+}
+
+Object.assign(FIG,{
+  uaCircles:fig('0 0 380 165','Three equal circles in a row inside a rectangle 36 cm long.',
+    `<rect x="20" y="15" width="330" height="110" class="fc" stroke="currentColor" stroke-width="2"/>`+
+    [75,185,295].map(x=>`<circle cx="${x}" cy="70" r="55" class="fs" stroke="currentColor" stroke-width="2"/><circle cx="${x}" cy="70" r="3" fill="currentColor"/>`).join('')+
+    `<line x1="20" y1="142" x2="350" y2="142" class="s" style="stroke-width:1"/><line x1="20" y1="136" x2="20" y2="148" class="s" style="stroke-width:1"/><line x1="350" y1="136" x2="350" y2="148" class="s" style="stroke-width:1"/>`+T(185,160,'36 cm','ta'),
+    'The three circles are the same size and touch the sides of the rectangle.'),
+  uaGrid:fig('0 0 420 250','Cartesian plane: House at (1, 2), School at (6, 5). Scale 1 unit represents 2 km.',scaleGrid()),
+  uaShapes:fig('0 0 380 110','Twelve regular polygons: hexagons, squares and pentagons.',polyShapes(),'Diagram shows several regular polygons.'),
+  uaPie:fig('0 0 320 240','Pie chart of four types of books A, B, C and D.',pieGen([['A',0,90,'fa','tc'],['B',90,150,'fh','tk'],['C',150,300,'fs','t'],['D',300,360,'fc','t']]),'Total number of books: 96'),
+  uaCut:fig('0 0 330 230','Rectangle 18 cm by 12 cm with a triangle of base 6 cm and height 8 cm cut out from the top edge.',
+    `<polygon points="20,20 110,20 155,140 200,20 290,20 290,200 20,200" class="fs" stroke="currentColor" stroke-width="2"/><line x1="110" y1="20" x2="200" y2="20" class="sm dash"/><line x1="155" y1="20" x2="155" y2="140" class="sa dash" style="stroke-width:1.5"/>`+
+    T(155,222,'18 cm','ta')+T(12,114,'12 cm','ta','end')+T(155,13,'6 cm','ta')+T(162,92,'8 cm','ta halo','start'),
+    'The triangle is cut out of the rectangle. Diagram not drawn to scale.')
+});
+
+const UASA_A=[
+// 1 mark
+{id:'ua1',t:'whole',marks:1,q:'What is the place value of digit 6 in the number 3 645 120?',parts:[{type:'text',acc:['hundred thousand','hundred thousands','hundred thousands place'],work:['3 645 120 → 3 (millions), 6 (hundred thousands), 4 (ten thousands) …','The 6 is in the hundred thousands place'],tip:'Place value is the name of the place. The digit value would be 600 000.'}]},
+{id:'ua2',t:'whole',marks:1,q:'Six number cards show: 13, 17, 21, 29, 31, 37. Which number is a composite number?',parts:[{type:'num',a:21,work:['A composite number has more than two factors','21 = 3 × 7, so its factors are 1, 3, 7 and 21','All the other cards are prime numbers']}]},
+{id:'ua3',t:'whole',marks:1,q:'Write "six million four hundred and five thousand" in numerals.',parts:[{type:'num',a:6405000,work:['Six million = 6 000 000','Four hundred and five thousand = 405 000','6 000 000 + 405 000 = 6 405 000']}]},
+{id:'ua4',t:'whole',marks:1,q:'Five number cards show: 27, 33, 39, 41, 49. Which number is a prime number?',parts:[{type:'num',a:41,work:['27 = 3 × 9, 33 = 3 × 11, 39 = 3 × 13, 49 = 7 × 7','41 has only two factors: 1 and 41']}]},
+{id:'ua5',t:'whole',marks:1,q:'Round off 4 563 812 to the nearest hundred thousand.',parts:[{type:'num',a:4600000,work:['Hundred thousands digit: 5 (4 563 812)','The next digit is 6, which is 5 or more, so round up','4 600 000']}]},
+{id:'ua6',t:'whole',marks:1,q:'What is the digit value of 8 in the number 2 381 450?',parts:[{type:'num',a:80000,work:['The 8 is in the ten thousands place','Digit value = 8 × 10 000 = 80 000'],tip:'Digit value is a number (80 000). Place value is the name of the place (ten thousands).'}]},
+// 2 marks
+{id:'ua7',t:'whole',marks:2,q:'3 × 1¼ million = <br>Give the answer in whole numbers.',parts:[{type:'num',a:3750000,work:['1¼ million = 1.25 × 1 000 000 = 1 250 000','1 250 000 × 3 = 3 750 000']}]},
+{id:'ua8',t:'whole',marks:2,q:'6.4 million − 2 750 000 = <br>Give the answer in whole numbers.',parts:[{type:'num',a:3650000,work:['6.4 million = 6 400 000','6 400 000 − 2 750 000 = 3 650 000']}]},
+{id:'ua9',t:'frac',marks:2,q:'2.4 × 0.7 =',parts:[{type:'num',a:1.68,work:['24 × 7 = 168','2.4 has 1 decimal place and 0.7 has 1, so the answer has 2','1.68']}]},
+{id:'ua10',t:'frac',marks:2,q:'6.25 × 0.4 =',parts:[{type:'num',a:2.5,work:['625 × 4 = 2 500','Total decimal places: 2 + 1 = 3 → 2.500','2.5']}]},
+{id:'ua11',t:'frac',marks:2,q:'Convert 315% to a decimal.',parts:[{type:'num',a:3.15,work:['315% = 315/100','315 ÷ 100 = 3.15']}]},
+{id:'ua12',t:'frac',marks:2,q:'3⅓ ÷ 5/6 =',parts:[{type:'frac',a:4,disp:'4',work:['3⅓ = 10/3','Dividing by 5/6 is the same as multiplying by 6/5','10/3 × 6/5 = 60/15 = 4']}]},
+{id:'ua13',t:'frac',marks:2,q:'1½ − ¾ + ⅝ = <br>Give the answer in its simplest form.',parts:[{type:'frac',a:11/8,disp:'1 3/8',work:['Common denominator 8: 12/8 − 6/8 + 5/8','= 11/8 = 1 3/8']}]},
+{id:'ua14',t:'money',marks:2,q:'Puan Rina pays a restaurant bill of RM 85. She is charged 8% service tax. Calculate the value of the service tax.',parts:[{type:'num',pre:'RM',a:6.8,work:['8% of RM 85 = 8/100 × 85','= 680/100 = RM 6.80']}]},
+{id:'ua15',t:'money',marks:2,q:'A laptop has an original price of RM 1 260. The promotional price is RM 899. How much is the discount?',parts:[{type:'num',pre:'RM',a:361,work:['Discount = original price − promotional price','1 260 − 899 = RM 361.00']}]},
+{id:'ua16',t:'time',marks:2,q:'The time in Kuala Lumpur is 7:15 p.m. on Monday, while the time in London is 11:15 a.m. on the same day. Calculate the time difference between Kuala Lumpur and London.',parts:[{type:'num',unit:'hours',a:8,work:['Change to the 24-hour system: 1915 and 1115','1915 − 1115 = 8 hours']}]},
+{id:'ua17',t:'time',marks:2,q:'City X is 5 hours behind Malaysia. When it is 1:30 p.m. in Malaysia, what is the time in City X? Give the answer in the 12-hour system.',parts:[{type:'time',a:8*60+30,work:['1:30 p.m. = 1330','City X is behind, so subtract: 1330 − 5 h = 0830','0830 = 8:30 a.m.']}]},
+{id:'ua18',t:'meas',marks:2,q:'2¾ kg − 3 × 0.35 kg = ____ kg',parts:[{type:'num',unit:'kg',a:1.7,work:['Multiply first: 3 × 0.35 = 1.05 kg','2¾ kg = 2.75 kg','2.75 − 1.05 = 1.7 kg']}]},
+{id:'ua19',t:'meas',marks:2,q:'4.5 l + 2 × 750 ml = ____ l',parts:[{type:'num',unit:'l',a:6,work:['Multiply first: 2 × 750 ml = 1 500 ml = 1.5 l','4.5 + 1.5 = 6 l']}]},
+{id:'ua20',t:'space',marks:2,q:'The diagram shows three equal circles inside a rectangle. What is the radius, in cm, of each circle?',fig:'uaCircles',parts:[{type:'num',unit:'cm',a:6,work:['Three diameters fit across 36 cm','Diameter = 36 ÷ 3 = 12 cm','Radius = 12 ÷ 2 = 6 cm']}]},
+{id:'ua21',t:'coord',marks:2,q:'The Cartesian plane shows the locations of a house and a school. State the actual horizontal distance and vertical distance from the house to the school, in km.',fig:'uaGrid',parts:[
+  {label:'Horizontal distance',type:'num',unit:'km',a:10,marks:1,work:['House x = 1, School x = 6 → 5 units','5 × 2 km = 10 km']},
+  {label:'Vertical distance',type:'num',unit:'km',a:6,marks:1,work:['House y = 2, School y = 5 → 3 units','3 × 2 km = 6 km']}]},
+{id:'ua22',t:'coord',marks:2,q:'The diagram shows several regular polygons. State the ratio of the number of hexagons to the total number of polygons in its simplest form.',fig:'uaShapes',parts:[{type:'ratio',a:[1,3],work:['Count: 4 hexagons, 3 squares, 5 pentagons → total 12','Hexagons : total = 4 : 12','Divide both by 4 → 1 : 3']}]},
+{id:'ua23',t:'coord',marks:2,q:'A jar has 24 red marbles and 36 blue marbles. State the ratio of red marbles to blue marbles in its simplest form.',parts:[{type:'ratio',a:[2,3],work:['Red : blue = 24 : 36','HCF of 24 and 36 is 12','24 ÷ 12 : 36 ÷ 12 = 2 : 3']}]},
+{id:'ua24',t:'coord',marks:2,q:'The ratio of stamps collected by Ali to stamps collected by Badrul is 4 : 7. Ali collects 28 stamps. Calculate the number of stamps Badrul collects.',parts:[{type:'num',unit:'stamps',a:49,work:['4 parts = 28, so 1 part = 28 ÷ 4 = 7','Badrul = 7 parts = 7 × 7 = 49']}]},
+{id:'ua25',t:'data',marks:2,q:'A pie chart shows the favourite fruits of 120 pupils. The sector for durian has an angle of 60°. How many pupils chose durian?',parts:[{type:'num',unit:'pupils',a:20,work:['60° out of 360° = 60/360 = 1/6','1/6 × 120 = 20 pupils']}]},
+{id:'ua26',t:'frac',marks:2,q:'A school has 260 pupils. 35% of them are girls. How many boys are there?',parts:[{type:'num',unit:'boys',a:169,work:['Boys = 100% − 35% = 65%','65/100 × 260 = 169']}]},
+{id:'ua27',t:'time',marks:2,q:'A train departs at 2150 and arrives at 0605 the next day. How long is the journey?',parts:[
+  {label:'Hours',type:'num',unit:'h',a:8,marks:1,work:['2150 → 0000 = 2 h 10 min','0000 → 0605 = 6 h 5 min']},
+  {label:'Minutes',type:'num',unit:'min',a:15,marks:1,work:['2 h 10 min + 6 h 5 min = 8 h 15 min']}]},
+{id:'ua28',t:'data',marks:2,q:'Find the mean of 14, 9, 11, 18 and 13.',parts:[{type:'num',a:13,work:['Total: 14 + 9 + 11 + 18 + 13 = 65','65 ÷ 5 = 13']}]},
+// 3 marks
+{id:'ua29',t:'coord',marks:3,q:'Two metal rods, P and Q, are made of the same material. Rod P has a mass of 2.4 kg and is 3 m long. Rod Q has a mass of 4 kg. Find the length, in m, of rod Q.',parts:[{type:'num',unit:'m',a:5,work:['2.4 kg → 3 m','1 kg → 3 ÷ 2.4 = 1.25 m','4 kg → 4 × 1.25 = 5 m']}]},
+{id:'ua30',t:'meas',marks:3,q:'Encik Halim drives from his house to a shop 1¼ km away, then continues 73.75 km to his hometown. His car uses 3 l of petrol for every 25 km. Calculate the total volume, in l, of petrol used for the trip.',parts:[{type:'num',unit:'l',a:9,work:['Total distance: 1.25 + 73.75 = 75 km','75 ÷ 25 = 3 (groups of 25 km)','3 × 3 l = 9 l']}]},
+{id:'ua31',t:'data',marks:3,q:'The pie chart shows four types of books, A, B, C and D, in a class library. There are 96 books altogether. Find the difference between the number of type C books and type A books.',fig:'uaPie',parts:[{type:'num',unit:'books',a:16,work:['C: 150/360 × 96 = 40 books','A: 90/360 × 96 = 24 books','Difference: 40 − 24 = 16']}]},
+{id:'ua32',t:'money',marks:3,q:'Mei Ling buys 3 shirts at RM 45.90 each. The shop gives a 10% discount on the total price. She pays with RM 150. How much change does she receive?',parts:[{type:'num',pre:'RM',a:26.07,work:['Total: 3 × 45.90 = RM 137.70','Discount: 10% of 137.70 = RM 13.77','Price paid: 137.70 − 13.77 = RM 123.93','Change: 150.00 − 123.93 = RM 26.07']}]},
+{id:'ua33',t:'money',marks:3,q:'Encik Ravi saves RM 4 500 in a bank that pays 3.5% simple interest per year. Calculate the total interest he receives after 2 years.',parts:[{type:'num',pre:'RM',a:315,work:['Interest for 1 year: 3.5/100 × 4 500 = RM 157.50','Interest for 2 years: 157.50 × 2 = RM 315.00']}]},
+{id:'ua34',t:'space',marks:3,q:'The diagram shows a triangle cut out from a rectangle. Calculate the area, in cm², of the remaining shape.',fig:'uaCut',parts:[{type:'num',unit:'cm²',a:192,work:['Rectangle: 18 × 12 = 216 cm²','Triangle: ½ × 6 × 8 = 24 cm²','Remaining: 216 − 24 = 192 cm²']}]},
+{id:'ua35',t:'data',marks:3,q:'The mean mass of 5 parcels is 3.2 kg. Four of the parcels weigh 2.5 kg, 4.1 kg, 3 kg and 2.9 kg. Find the mass, in kg, of the fifth parcel.',parts:[{type:'num',unit:'kg',a:3.5,work:['Total mass of 5 parcels: 3.2 × 5 = 16 kg','Total of four parcels: 2.5 + 4.1 + 3 + 2.9 = 12.5 kg','Fifth parcel: 16 − 12.5 = 3.5 kg']}]}
+];
+
+const UASA_B=[
+{id:'ub1',t:'money',marks:12,q:'Puan Lina makes and sells boxes of kuih. It costs her RM 12.50 to make one box, and she sells each box for RM 18.',parts:[
+  {label:'(a)',q:'Calculate the profit for one box.',type:'num',pre:'RM',a:5.5,marks:2,work:['Profit = selling price − cost price','18.00 − 12.50 = RM 5.50']},
+  {label:'(b)',q:'She sells 64 boxes in one week. Calculate her total profit for the week.',type:'num',pre:'RM',a:352,marks:3,work:['64 × 5.50 = RM 352.00']},
+  {label:'(c)',q:'She saves RM 3 000 in a bank that pays 4% simple interest per year. Calculate the interest after 1 year.',type:'num',pre:'RM',a:120,marks:3,work:['4/100 × 3 000 = RM 120.00']},
+  {label:'(d)',q:'Over one weekend she sells 72 boxes. The ratio of boxes sold on Saturday to Sunday is 5 : 3. How many boxes does she sell on Saturday?',type:'num',unit:'boxes',a:45,marks:4,work:['Total parts: 5 + 3 = 8','1 part = 72 ÷ 8 = 9','Saturday = 5 × 9 = 45 boxes']}]},
+{id:'ub2',t:'meas',marks:12,q:'Sekolah Kebangsaan Seri Mawar holds its sports day. One lap of the school track is 400 m.',parts:[
+  {label:'(a)',q:'Aiman runs 7½ laps. Calculate the distance he runs, in km.',type:'num',unit:'km',a:3,marks:2,work:['7.5 × 400 m = 3 000 m','3 000 m ÷ 1 000 = 3 km']},
+  {label:'(b)',q:'He starts running at 0845 and finishes at 0912. How long, in minutes, does he run?',type:'num',unit:'min',a:27,marks:3,work:['0845 → 0900 = 15 min','0900 → 0912 = 12 min','15 + 12 = 27 min']},
+  {label:'(c)',q:'The teachers prepare 12 bottles of 1.5 l water and 8 bottles of 750 ml water. Calculate the total volume of water, in l.',type:'num',unit:'l',a:24,marks:3,work:['12 × 1.5 l = 18 l','8 × 750 ml = 6 000 ml = 6 l','18 + 6 = 24 l']},
+  {label:'(d)',q:'All the water is shared equally among 32 pupils. How much water, in ml, does each pupil get?',type:'num',unit:'ml',a:750,marks:4,work:['24 l = 24 000 ml','24 000 ÷ 32 = 750 ml']}]},
+{id:'ub3',t:'space',marks:12,q:'Encik Faris has a rectangular garden 15 m long and 8 m wide.',parts:[
+  {label:'(a)',q:'Calculate the perimeter, in m, of the garden.',type:'num',unit:'m',a:46,marks:2,work:['Perimeter = 2 × (15 + 8)','= 2 × 23 = 46 m']},
+  {label:'(b)',q:'He builds a square pond with sides of 3 m in the garden. Calculate the area, in m², of the garden that is not covered by the pond.',type:'num',unit:'m²',a:111,marks:3,work:['Garden: 15 × 8 = 120 m²','Pond: 3 × 3 = 9 m²','120 − 9 = 111 m²']},
+  {label:'(c)',q:'On a plan of the garden, a tree is at (2, 7) and the gate is at (8, 3). Each unit on the plan represents 5 m. Calculate the actual horizontal distance, in m, from the tree to the gate.',type:'num',unit:'m',a:30,marks:3,work:['Horizontal units: 8 − 2 = 6','6 × 5 m = 30 m']},
+  {label:'(d)',q:'He fills a cuboid box with soil. The box measures 60 cm × 40 cm × 30 cm. Calculate the volume, in cm³, of the box.',type:'num',unit:'cm³',a:72000,marks:4,work:['Volume = length × width × height','60 × 40 × 30 = 72 000 cm³']}]},
+{id:'ub4',t:'data',marks:12,q:'The table shows the number of books read by five pupils in one month.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Pupil</th><th>Amin</th><th>Bella</th><th>Chong</th><th>Devi</th><th>Elan</th></tr><tr><td>Books</td><td class="num">12</td><td class="num">8</td><td class="num">15</td><td class="num">8</td><td class="num">17</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the mode.',type:'num',a:8,marks:2,work:['8 appears twice; every other number appears once','Mode = 8']},
+  {label:'(b)',q:'Calculate the range.',type:'num',a:9,marks:2,work:['Largest = 17, smallest = 8','17 − 8 = 9']},
+  {label:'(c)',q:'Calculate the mean number of books read.',type:'num',a:12,marks:3,work:['Total: 12 + 8 + 15 + 8 + 17 = 60','60 ÷ 5 = 12']},
+  {label:'(d)',q:'State the median.',type:'num',a:12,marks:2,work:['In order: 8, 8, 12, 15, 17','The middle value is 12']},
+  {label:'(e)',q:'The data is drawn as a pie chart. Calculate the angle of the sector for Chong.',type:'num',unit:'°',a:90,marks:3,work:['Chong read 15 out of 60 books = 15/60 = ¼','¼ × 360° = 90°']}]}
+];
+[...UASA_A,...UASA_B].forEach(q=>{q.s='maths';q.parts.forEach(p=>{if(p.marks==null)p.marks=q.marks})});
+
+/* ---------- SCIENCE: UASA-STYLE CONTENT ---------- */
+Object.assign(FIG,{
+  eclipsePos:fig('0 0 380 220','The Sun on the left, the Earth in the middle, and four possible Moon positions W, X, Y and Z around the Earth.',
+    `<circle cx="50" cy="110" r="40" class="fh"/>`+T(50,170,'Sun','t bold')+
+    `<circle cx="240" cy="110" r="80" class="sm dash"/><circle cx="240" cy="110" r="24" class="fa"/>`+T(240,114,'Earth','tc small-t bold')+
+    [['W',240,30,0,-16],['X',320,110,18,4],['Y',240,190,0,26],['Z',160,110,-18,4]].map(([l,x,y,dx,dy])=>`<circle cx="${x}" cy="${y}" r="9" class="fm"/>`+T(x+dx,y+dy,l,'t bold')).join(''),
+    'Moon positions W, X, Y and Z. Not drawn to scale.'),
+  plantBars:fig('0 0 360 220','Bar chart of the number of plants R, S, T and U: R 80, S 50, T 60, U 100.',
+    (()=>{const ox=50,oy=180,h=v=>v*1.5;let g=`<line x1="${ox}" y1="${oy}" x2="340" y2="${oy}" class="s"/><line x1="${ox}" y1="${oy}" x2="${ox}" y2="20" class="s"/>`;
+      [0,50,100].forEach(v=>{g+=`<line x1="${ox-5}" y1="${oy-h(v)}" x2="340" y2="${oy-h(v)}" class="gl"/>`+T(ox-9,oy-h(v)+4,v,'tm small-t','end')});
+      [['R',80],['S',50],['T',60],['U',100]].forEach(([l,v],i)=>{const x=80+i*66;g+=`<rect x="${x}" y="${oy-h(v)}" width="40" height="${h(v)}" class="fs" stroke="currentColor" stroke-width="1.5"/>`+T(x+20,oy+18,l,'t bold')});
+      return g+T(20,14,'Number of plants','tm small-t','start')})(),
+    'Number of plants of species R, S, T and U found in forest Y.'),
+  solarSys:fig('0 0 360 160','System X: the Sun at the centre with planets moving around it in orbits.',
+    `<circle cx="180" cy="80" r="16" class="fh"/>`+[40,62,84,108,132,156].map((r,i)=>`<ellipse cx="180" cy="80" rx="${r}" ry="${r*0.42}" class="sm" style="stroke-width:1"/><circle cx="${(180+r*Math.cos(i*1.3)).toFixed(1)}" cy="${(80+r*0.42*Math.sin(i*1.3)).toFixed(1)}" r="${[3,4,4,3,8,7][i]}" fill="currentColor"/>`).join(''),
+    'System X')
+});
+
+/* extra multiple-choice questions in the UASA paper style (also used in practice) */
+SCI_Q.push(
+{id:'xa1',t:'hu',type:'mcq',q:'Organ K is where fertilisation between a sperm and an ovum takes place. What is organ K?',opts:['Fallopian tube','Uterus','Ovary','Vagina'],a:0,
+ why:{1:'The uterus is where the baby develops, after fertilisation.',2:'The ovary produces the ovum, but fertilisation happens in the Fallopian tube.'},
+ work:['The ovum travels from the ovary along the Fallopian tube','A sperm meets the ovum in the Fallopian tube, so fertilisation happens there']},
+{id:'xa2',t:'ke',type:'mcq',q:'A motorcycle is moving at 80 km/h. Which formula is used to calculate its speed?',opts:['Speed = Distance ÷ Time','Speed = Distance × Time','Speed = Time ÷ Distance','Speed = Distance + Time'],a:0,
+ work:['Speed is the distance travelled in one unit of time','Speed = Distance ÷ Time, for example km ÷ h = km/h']},
+{id:'xa3',t:'ke',type:'mcq',fixed:true,q:'The table shows the distance travelled and time taken by four vehicles. Which vehicle moves the fastest?<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Vehicle</th><th>Distance (km)</th><th>Time (h)</th></tr><tr><td>P</td><td class="num">180</td><td class="num">3</td></tr><tr><td>Q</td><td class="num">200</td><td class="num">4</td></tr><tr><td>R</td><td class="num">140</td><td class="num">2</td></tr><tr><td>S</td><td class="num">75</td><td class="num">1</td></tr></table></div>',opts:['P','Q','R','S'],a:3,
+ why:{1:'Q travels the furthest, but it also takes the longest. Work out the speed of each one.'},
+ work:['P: 180 ÷ 3 = 60 km/h','Q: 200 ÷ 4 = 50 km/h','R: 140 ÷ 2 = 70 km/h','S: 75 ÷ 1 = 75 km/h, the fastest']},
+{id:'xa4',t:'ge',type:'mcq',fixed:true,q:'The diagram shows four positions of the Moon, W, X, Y and Z. At which position will the Moon cause a solar eclipse?',fig:'eclipsePos',opts:['W','X','Y','Z'],a:3,
+ why:{1:'At X the Earth is between the Sun and the Moon. That gives a lunar eclipse.'},
+ work:['A solar eclipse happens when the Moon is between the Sun and the Earth','Z is the only position between the Sun and the Earth']},
+{id:'xa5',t:'da',type:'mcq',q:'A tin of condensed milk has one hole punched in its lid. The milk flows out very slowly. What should be done so the milk flows out smoothly?',opts:['Shake the tin hard','Punch a second hole on the opposite side of the lid','Put the tin in hot water','Make the first hole smaller'],a:1,
+ work:['With one hole, air cannot get into the tin to push the milk out','A second hole lets air in, so air pressure pushes the milk out smoothly']},
+{id:'xa6',t:'da',type:'mcq',q:'Which action reduces friction on the surface of a carrom board?',opts:['Sprinkling sand on it','Wiping it with a wet cloth','Sprinkling fine powder on it','Sticking a rubber mat on it'],a:2,
+ why:{0:'Sand makes the surface rough, which increases friction.',3:'Rubber grips the pieces and increases friction.'},
+ work:['Fine powder makes the board smoother','A smoother surface has less friction, so the pieces slide further']},
+{id:'xa7',t:'ks',type:'mcq',q:'A tall chair topples over easily. What can be done to make it more stable?',opts:['Make the legs longer','Make the base of the legs wider','Remove one leg','Put a heavy load on the seat back'],a:1,
+ why:{0:'Longer legs make the chair taller and less stable.',3:'A heavy load high up makes the chair less stable.'},
+ work:['A wider base makes an object more stable']},
+{id:'xa8',t:'in',type:'mcq',q:'Which factors cause competition between animals of <b>different</b> species?',opts:['Mate and territory','Food, water and territory','Food, water and mate','Air, sunlight and mate'],a:1,
+ why:{0:'Animals of different species do not compete for mates.',2:'Mates are only competed for within the same species.'},
+ work:['Different species can compete for food, water and territory','Only animals of the same species compete for mates']},
+{id:'xa9',t:'in',type:'mcq',q:'A mistletoe plant grows on a mango tree and takes water and nutrients from it. The mango tree becomes weak. What type of interaction is this?',opts:['Mutualism','Commensalism','Parasitism','Competition'],a:2,
+ why:{1:'In commensalism the host is not harmed. Here the mango tree becomes weak.'},
+ work:['One organism benefits (mistletoe) and the other is harmed (mango tree)','That is parasitism']},
+{id:'xa10',t:'mi',type:'mcq',q:'Pupils want to observe the microorganisms in a sample of pond water clearly. Which tool should they use?',opts:['Telescope','Binoculars','Microscope','Stethoscope'],a:2,
+ work:['Most microorganisms are too small to see with the eye','A microscope magnifies them so they can be seen']},
+{id:'xa11',t:'mi',type:'mcq',q:'A pupil has a disease that spreads through touch and the air. What is the best way to stop it from spreading to others?',opts:['Share his water bottle','Isolate him from other pupils until he recovers','Give him antibiotics without seeing a doctor','Let him play with friends'],a:1,
+ work:['Keeping the sick pupil apart stops the microorganisms reaching others']},
+{id:'xa12',t:'bb',type:'mcq',q:'P is a banana peel, Q is a glass bottle, R is newspaper and S is a plastic bag. Which shows the correct classification?<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th></th><th>Biodegradable</th><th>Non-biodegradable</th></tr><tr><td>A</td><td>P and Q</td><td>R and S</td></tr><tr><td>B</td><td>P and R</td><td>Q and S</td></tr><tr><td>C</td><td>Q and S</td><td>P and R</td></tr><tr><td>D</td><td>R and S</td><td>P and Q</td></tr></table></div>',opts:['A','B','C','D'],a:1,fixed:true,
+ work:['Banana peel (P) and newspaper (R) rot away: biodegradable','Glass (Q) and plastic (S) do not: non-biodegradable']},
+{id:'xa13',t:'pm',type:'mcq',q:'Which pair of methods is suitable for preserving fresh fish and fresh milk?',opts:['Fish: freezing · Milk: pasteurisation','Fish: pickling · Milk: drying','Fish: waxing · Milk: salting','Fish: sugaring · Milk: smoking'],a:0,
+ work:['Freezing keeps fish fresh at a low temperature','Pasteurisation heats milk, then cools it quickly, to kill microorganisms']},
+{id:'xa14',t:'ga',type:'mcq',q:'What does the Milky Way look like when viewed from the side?',opts:['A ball','A thin disc that bulges at the centre','A long straight line','A ring with nothing in the middle'],a:1,
+ work:['The Milky Way is a flat spiral disc','From the side it looks like a thin disc with a bulge in the middle']},
+{id:'xa15',t:'te',type:'mcq',q:'Which statement shows a <b>disadvantage</b> of technology?',opts:['Machines reduce the time taken to harvest crops','Medicine production improves human health','Personal data can be stolen and misused online','Drones help farmers spray crops quickly'],a:2,
+ work:['The other three are benefits','Misuse of personal data is a disadvantage of technology']}
+);
+
+/* Section B: 4 marks each, two 2-mark parts */
+const SCI_B=[
+{id:'sb1',t:'ge',marks:4,q:'A natural phenomenon makes the sky turn dark during the day for a few minutes. It happens when the Sun, the Moon and the Earth are in a straight line.',parts:[
+  {label:'(a)',q:'Label the positions of the Moon and the Earth during this phenomenon.<br><span class="num">Sun → (i) → (ii)</span>',type:'multi',marks:2,opts:['Moon','Earth'],items:[{q:'(i)',a:0},{q:'(ii)',a:1}],work:['This is a solar eclipse','The Moon is in the middle, between the Sun and the Earth']},
+  {label:'(b)',q:'Write True or False for each statement about this phenomenon.',type:'multi',marks:2,opts:['True','False'],items:[{q:'(i) The surroundings become dark like night.',a:0},{q:'(ii) It happens during the full moon phase.',a:1},{q:'(iii) The Moon’s shadow falls on the Earth.',a:0}],work:['A solar eclipse happens at new moon, not full moon','The Moon’s shadow falls on the Earth and the sky becomes dark']}]},
+{id:'sb2',t:'in',marks:4,q:'Plants interact with each other in different ways.',fig:'plantBars',parts:[
+  {label:'(a)',q:'Match each type of symbiosis with the correct example.',type:'multi',marks:2,opts:['Mistletoe and mango tree','Staghorn fern and rain tree','Paddy and weeds'],items:[{q:'(i) Parasitism',a:0},{q:'(ii) Commensalism',a:1}],work:['Parasitism: mistletoe takes nutrients and harms the mango tree','Commensalism: the staghorn fern gets a place to grow; the tree is not harmed','Paddy and weeds compete with each other; that is not symbiosis']},
+  {label:'(b)',q:'The bar chart shows the number of plants R, S, T and U found in forest Y. Mark each statement as Correct or Not correct.',type:'multi',marks:2,opts:['Correct','Not correct'],items:[{q:'(i) There are fewer S plants than T plants.',a:0},{q:'(ii) There are more U plants than R plants, but fewer than S plants.',a:1},{q:'(iii) There are fewer T plants than R plants.',a:0},{q:'(iv) There are fewer R plants than U plants, but more than T plants.',a:0}],work:['From the chart: R = 80, S = 50, T = 60, U = 100','(ii) is not correct: U (100) is more than S (50)']}]},
+{id:'sb3',t:'ga',marks:4,q:'The diagram shows system X, which is found in galaxy Y. Galaxy Y has long curved arms that wind around its centre.',fig:'solarSys',parts:[
+  {label:'(a)',q:'Choose the correct answer.',type:'multi',marks:2,items:[{q:'(i) System X',opts:['Solar System','Universe'],a:0},{q:'(ii) Galaxy Y',opts:['Elliptical galaxy','Spiral galaxy'],a:1}],work:['The Sun with planets in orbit is the Solar System','Curved arms winding around the centre: a spiral galaxy (the Milky Way)']},
+  {label:'(b)',q:'Choose the correct word to complete each sentence.',type:'multi',marks:2,items:[{q:'(i) The side view of the Milky Way looks like a thin disc that ______ at the centre.',opts:['bulges','flattens'],a:0},{q:'(ii) The Milky Way is a very large ______ galaxy.',opts:['elliptical','spiral'],a:1}],work:['From the side, the Milky Way is a thin disc with a bulge in the middle','It is a spiral galaxy']}]},
+{id:'sb4',t:'pm',marks:4,q:'Food can spoil if it is not stored properly.',parts:[
+  {label:'(a)',q:'Will each food spoil? Choose Spoiled or Not spoiled.',type:'multi',marks:2,opts:['Spoiled','Not spoiled'],items:[{q:'(i) Fresh milk left on a kitchen table at room temperature for three days.',a:0},{q:'(ii) Fish wrapped in plastic and frozen at −18 °C for three days.',a:1}],work:['Microorganisms grow quickly in milk at room temperature','Freezing slows down their growth, so the frozen fish stays fresh']},
+  {label:'(b)',q:'Write Correct or Wrong for each statement.',type:'multi',marks:2,opts:['Correct','Wrong'],items:[{q:'(i) Food spoilage is caused by the action of microorganisms.',a:0},{q:'(ii) Food stored in the refrigerator will spoil quickly.',a:1},{q:'(iii) Mould can grow on moist rice.',a:0}],work:['Microorganisms cause spoilage','Cold slows them down, so food in the fridge lasts longer','Mould grows well on damp food']}]},
+{id:'sb5',t:'da',marks:4,q:'Friction and air pressure are part of our daily lives.',parts:[
+  {label:'(a)',q:'Does friction help us or cause a problem in each situation?',type:'multi',marks:2,opts:['Helps us','Causes a problem'],items:[{q:'(i) The brakes stop a moving bicycle.',a:0},{q:'(ii) The soles of shoes wear out.',a:1}],work:['Friction between the brake pads and wheel stops the bicycle','Rubbing wears the soles away']},
+  {label:'(b)',q:'Write True or False for each statement.',type:'multi',marks:2,opts:['True','False'],items:[{q:'(i) Oil on a bicycle chain reduces friction.',a:0},{q:'(ii) Air pressure is higher at the top of a mountain than at sea level.',a:1},{q:'(iii) We can drink using a straw because of air pressure.',a:0}],work:['Oil is a lubricant that reduces friction','Air pressure is lower higher up','Air pressure pushes the drink up the straw']}]},
+{id:'sb6',t:'bb',marks:4,q:'Waste must be managed properly to protect the environment.',parts:[
+  {label:'(a)',q:'Classify each waste.',type:'multi',marks:2,opts:['Biodegradable','Non-biodegradable'],items:[{q:'(i) Banana peel',a:0},{q:'(ii) Glass bottle',a:1}],work:['Banana peel is broken down by microorganisms','Glass is not broken down']},
+  {label:'(b)',q:'Choose the correct recycling bin for each item.',type:'multi',marks:2,opts:['Blue','Orange','Brown'],items:[{q:'(i) Old newspapers',a:0},{q:'(ii) Aluminium can',a:1},{q:'(iii) Glass jar',a:2}],work:['Blue: paper','Orange: plastic and aluminium','Brown: glass']}]}
+];
+
+/* Section C: investigations */
+const VAR_OPTS={};
+const SCI_C=[
+{id:'sc1',t:'mi',marks:6,q:'Aina put the same amount of yeast and sugar solution into three bottles, P, Q and R. She covered each bottle with a balloon and placed them in water at different temperatures. After 30 minutes she measured the diameter of each balloon.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Bottle</th><th>Water temperature (°C)</th><th>Balloon diameter (cm)</th></tr><tr><td>P</td><td class="num">5</td><td class="num">2</td></tr><tr><td>Q</td><td class="num">30</td><td class="num">8</td></tr><tr><td>R</td><td class="num">60</td><td class="num">0</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the variable that is changed (manipulated variable).',type:'mcq',marks:1,opts:['Temperature of the water','Diameter of the balloon','Amount of yeast','Size of the bottle'],a:0,work:['Aina changes the water temperature: 5 °C, 30 °C, 60 °C']},
+  {label:'(b)',q:'State the variable that is measured (responding variable).',type:'mcq',marks:1,opts:['Temperature of the water','Diameter of the balloon','Amount of sugar solution','Time taken'],a:1,work:['She measures the diameter of the balloon']},
+  {label:'(c)',q:'State one variable that is kept the same (constant variable).',type:'mcq',marks:1,opts:['Amount of yeast','Temperature of the water','Diameter of the balloon','Bottle label'],a:0,work:['The same amount of yeast is used in every bottle']},
+  {label:'(d)',q:'Why did the balloon on bottle R not inflate?',type:'mcq',marks:2,opts:['The high temperature killed the yeast','The water was too cold','There was no sugar in bottle R','The balloon had a hole'],a:0,work:['Yeast is a living microorganism','At 60 °C it is killed, so it cannot respire and produce gas']},
+  {label:'(e)',q:'In which bottle was the yeast most active?',type:'mcq',marks:1,opts:['P','Q','R'],a:1,fixed:true,work:['Bottle Q has the biggest balloon (8 cm), so the yeast produced the most gas at 30 °C']}]},
+{id:'sc2',t:'ke',marks:6,q:'Four pupils ran a 100 m race. The table shows the time each one took.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Pupil</th><th>Distance (m)</th><th>Time (s)</th></tr><tr><td>Hana</td><td class="num">100</td><td class="num">20</td></tr><tr><td>Ivan</td><td class="num">100</td><td class="num">16</td></tr><tr><td>Jaya</td><td class="num">100</td><td class="num">25</td></tr><tr><td>Kamal</td><td class="num">100</td><td class="num">12.5</td></tr></table></div>',parts:[
+  {label:'(a)',q:'Calculate Hana’s speed.',type:'num',unit:'m/s',a:5,marks:2,work:['Speed = distance ÷ time','100 ÷ 20 = 5 m/s']},
+  {label:'(b)',q:'Who ran the fastest?',type:'mcq',marks:2,opts:['Hana','Ivan','Jaya','Kamal'],a:3,fixed:true,work:['Everyone ran the same distance','Kamal took the least time (12.5 s), so he was the fastest']},
+  {label:'(c)',q:'State the relationship between the time taken and the speed.',type:'mcq',marks:2,opts:['The shorter the time taken, the higher the speed','The longer the time taken, the higher the speed','Time taken does not affect speed','The shorter the distance, the higher the speed'],a:0,work:['For the same distance, less time means a higher speed']}]},
+{id:'sc3',t:'pm',marks:6,q:'Three slices of the same bread were stored in different ways. The number of days before mould appeared was recorded.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Bread</th><th>How it was stored</th><th>Days before mould appeared</th></tr><tr><td>A</td><td>Open, on a kitchen table</td><td class="num">3</td></tr><tr><td>B</td><td>In a refrigerator</td><td class="num">7</td></tr><tr><td>C</td><td>In a sealed bag in a freezer</td><td class="num">20</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the manipulated variable.',type:'mcq',marks:2,opts:['How the bread was stored','Number of days before mould appeared','Type of bread','Size of the bread slices'],a:0,work:['What was changed: the storage method (temperature)']},
+  {label:'(b)',q:'State the responding variable.',type:'mcq',marks:1,opts:['How the bread was stored','Number of days before mould appeared','Type of bread','Colour of the mould'],a:1,work:['What was measured: the number of days before mould appeared']},
+  {label:'(c)',q:'Which bread became mouldy first?',type:'mcq',marks:1,opts:['A','B','C'],a:0,fixed:true,work:['Bread A grew mould after only 3 days']},
+  {label:'(d)',q:'Make an inference: why did bread C last the longest?',type:'mcq',marks:2,opts:['The low temperature slowed the growth of microorganisms','The freezer added preservatives','Bread C was a different type of bread','Light killed the microorganisms'],a:0,work:['Microorganisms grow slowly at low temperatures','The sealed bag also kept out air and moisture']}]},
+{id:'sc4',t:'ks',marks:10,q:'Daniel filled three identical plastic bottles with different masses of sand. He tilted each bottle slowly and recorded the largest angle it could tilt before it toppled.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Bottle</th><th>Mass of sand (g)</th><th>Angle before toppling (°)</th></tr><tr><td>X</td><td class="num">0</td><td class="num">20</td></tr><tr><td>Y</td><td class="num">200</td><td class="num">35</td></tr><tr><td>Z</td><td class="num">400</td><td class="num">50</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the aim of this investigation.',type:'mcq',marks:2,opts:['To study how the mass of sand at the base affects the stability of a bottle','To study how the size of a bottle affects its mass','To find the mass of sand','To study how the angle affects the mass of sand'],a:0,work:['Daniel changes the mass of sand and observes how stable the bottle is']},
+  {label:'(b)',q:'State the variables.',type:'multi',marks:3,opts:['Mass of sand','Angle before toppling','Size of bottle'],items:[{q:'(i) Manipulated variable',a:0},{q:'(ii) Responding variable',a:1},{q:'(iii) Constant variable',a:2}],work:['Changed: mass of sand','Measured: angle before toppling','Kept the same: size (type) of bottle']},
+  {label:'(c)',q:'State a hypothesis for this investigation.',type:'mcq',marks:2,opts:['The bigger the mass of sand at the base, the more stable the bottle','The bigger the mass of sand, the less stable the bottle','The bottle topples because it is plastic','The smaller the bottle, the heavier it is'],a:0,work:['As the sand increases, the bottle tilts further before toppling','More mass at the base → more stable']},
+  {label:'(d)',q:'Predict the angle before toppling if the bottle had 600 g of sand.',type:'mcq',marks:1,opts:['Less than 20°','Between 20° and 35°','More than 50°'],a:2,fixed:true,work:['The pattern rises 15° for every extra 200 g','600 g should give an angle greater than 50°']},
+  {label:'(e)',q:'Why are racing cars built low and wide?',type:'mcq',marks:2,opts:['To be more stable at high speed','To be lighter','To carry more fuel','To look bigger'],a:0,work:['A low height and wide base increase stability, so the car does not topple on bends']}]},
+{id:'sc5',t:'da',marks:10,q:'Mei released a toy car from the top of a ramp onto three different surfaces and measured the distance it travelled.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Surface</th><th>Distance travelled (cm)</th></tr><tr><td>Glass</td><td class="num">120</td></tr><tr><td>Wood</td><td class="num">85</td></tr><tr><td>Carpet</td><td class="num">40</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the variables.',type:'multi',marks:3,opts:['Type of surface','Distance travelled by the toy car','Height of the ramp'],items:[{q:'(i) Manipulated variable',a:0},{q:'(ii) Responding variable',a:1},{q:'(iii) Constant variable',a:2}],work:['Changed: type of surface','Measured: distance travelled','Kept the same: height of the ramp (and the same toy car)']},
+  {label:'(b)',q:'State a hypothesis.',type:'mcq',marks:2,opts:['The rougher the surface, the shorter the distance travelled by the toy car','The smoother the surface, the shorter the distance travelled','The higher the ramp, the longer the distance','The type of surface does not affect the distance'],a:0,work:['Carpet (roughest) gave the shortest distance; glass (smoothest) the longest']},
+  {label:'(c)',q:'Which surface has the most friction?',type:'mcq',marks:1,opts:['Glass','Wood','Carpet'],a:2,fixed:true,work:['The car stopped soonest on carpet, so carpet has the most friction']},
+  {label:'(d)',q:'Predict the distance the car travels on sandpaper.',type:'mcq',marks:2,opts:['Less than 40 cm','Between 85 cm and 120 cm','More than 120 cm'],a:0,fixed:true,work:['Sandpaper is rougher than carpet','So the distance should be less than 40 cm']},
+  {label:'(e)',q:'State the operational definition of friction based on this investigation.',type:'mcq',marks:2,opts:['Friction is the force that makes the toy car travel a shorter distance on a rougher surface','Friction is a pushing force','Friction makes the toy car move faster','Friction is the weight of the toy car'],a:0,work:['An operational definition describes what was done and observed in the investigation']}]},
+{id:'sc6',t:'in',marks:10,q:'Farah planted different numbers of the same type of seedling in three pots of the same size. Each pot was given the same amount of water every day. After four weeks she counted the average number of leaves per seedling.<div class="tbl" style="overflow-x:auto;margin-top:8px"><table class="data-tbl"><tr><th>Pot</th><th>Number of seedlings</th><th>Average number of leaves</th></tr><tr><td>J</td><td class="num">1</td><td class="num">24</td></tr><tr><td>K</td><td class="num">3</td><td class="num">15</td></tr><tr><td>L</td><td class="num">6</td><td class="num">9</td></tr></table></div>',parts:[
+  {label:'(a)',q:'State the aim of this investigation.',type:'mcq',marks:2,opts:['To study how the number of seedlings in a pot affects the growth of the seedlings','To study how water affects the size of the pot','To count the leaves on a plant','To study how leaves affect the number of seedlings'],a:0,work:['She changes the number of seedlings and observes how well they grow']},
+  {label:'(b)',q:'State the variables.',type:'multi',marks:3,opts:['Number of seedlings','Average number of leaves','Size of the pot'],items:[{q:'(i) Manipulated variable',a:0},{q:'(ii) Responding variable',a:1},{q:'(iii) Constant variable',a:2}],work:['Changed: number of seedlings','Measured: average number of leaves','Kept the same: size of the pot (and amount of water)']},
+  {label:'(c)',q:'State a hypothesis.',type:'mcq',marks:2,opts:['The more seedlings in a pot, the fewer the average number of leaves','The more seedlings in a pot, the more leaves each one grows','The size of the pot affects the amount of water','Seedlings do not need water'],a:0,work:['As the number of seedlings goes up, the average number of leaves goes down']},
+  {label:'(d)',q:'Make an inference: why do the seedlings in pot L have the fewest leaves?',type:'mcq',marks:2,opts:['They compete for water, nutrients and sunlight','They cooperate with each other','They get too much sunlight','The pot is bigger'],a:0,work:['Six seedlings share the same space, water and nutrients','Strong competition means each one grows less']},
+  {label:'(e)',q:'Predict the average number of leaves if 9 seedlings were planted in the same pot.',type:'mcq',marks:1,opts:['Fewer than 9','Between 15 and 24','More than 24'],a:0,fixed:true,work:['The pattern decreases as seedlings increase','9 seedlings should have fewer than 9 leaves each on average']}]}
+];
+[...SCI_B,...SCI_C].forEach(q=>{q.s='science';q.parts.forEach(p=>{if(p.marks==null)p.marks=q.marks})});
+SCI_B.forEach(q=>q.sec='B');SCI_C.forEach(q=>q.sec='C');
+
+/* ---------- UASA ENGINE (both subjects) ---------- */
+function parseFrac(s){s=String(s).trim().replace(/\s+/g,' ');let m;
+  if((m=s.match(/^(\d+) (\d+)\/(\d+)$/)))return +m[1]+ +m[2]/ +m[3];
+  if((m=s.match(/^(\d+)\/(\d+)$/)))return +m[1]/ +m[2];
+  return parseNum(s)}
+function parseTime(s){const m=String(s).toLowerCase().replace(/\s/g,'').match(/^(\d{1,2})[:.](\d{2})([ap])\.?m?\.?$/);if(!m)return null;let h=+m[1]%12;if(m[3]==='p')h+=12;return h*60+ +m[2]}
+const normText=s=>String(s).toLowerCase().replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
+const hasVal=v=>Array.isArray(v)?v.some(x=>x!==''&&x!=null):v!=null&&String(v).trim()!=='';
+function partRight(p,raw){
+  if(!hasVal(raw))return false;
+  if(p.type==='num'){const n=parseNum(raw);return n!==null&&Math.abs(n-p.a)<1e-6}
+  if(p.type==='frac'){const n=parseFrac(raw);return n!==null&&Math.abs(n-p.a)<1e-9}
+  if(p.type==='text')return p.acc.map(normText).includes(normText(raw));
+  if(p.type==='ratio'){const n=(String(raw).match(/\d+(\.\d+)?/g)||[]).map(Number);return n.length===2&&n[0]===p.a[0]&&n[1]===p.a[1]}
+  if(p.type==='time')return parseTime(raw)===p.a;
+  if(p.type==='mcq')return +raw===p.a;
+  if(p.type==='multi')return p.items.every((it,j)=>raw[j]!==''&&raw[j]!=null&&+raw[j]===it.a);
+  return false;
+}
+function itemsRight(p,raw){return p.items.filter((it,j)=>raw&&raw[j]!==''&&raw[j]!=null&&+raw[j]===it.a).length}
+function partScore(p,raw){
+  if(p.type==='multi'){const c=itemsRight(p,raw),n=p.items.length;return c===n?p.marks:Math.floor(c/n*p.marks)}
+  return partRight(p,raw)?p.marks:0;
+}
+const itemOpts=(p,it)=>it.opts||p.opts;
+const optTxt=(p,k)=>p.opts[k].length<=2?p.opts[k]:'ABCD'[k]+'. '+p.opts[k];
+function partAnswer(p){
+  if(p.type==='num')return fmtNum(p,p.a);
+  if(p.type==='frac')return p.disp;
+  if(p.type==='text')return p.acc[0];
+  if(p.type==='ratio')return p.a[0]+' : '+p.a[1];
+  if(p.type==='time'){const h=Math.floor(p.a/60),m=p.a%60;return (h%12||12)+':'+String(m).padStart(2,'0')+(h<12?' a.m.':' p.m.')}
+  if(p.type==='mcq')return optTxt(p,p.a);
+  if(p.type==='multi')return p.items.map(it=>(it.q.match(/^\([ivx]+\)/)||[it.q])[0]+' '+itemOpts(p,it)[it.a]).join(' · ');
+}
+const HINT={num:'Numbers only',frac:'e.g. 1 3/8 or 11/8',text:'Type the answer in words',ratio:'e.g. 2 : 3',time:'e.g. 8:30 a.m.'};
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+function partInput(q,p,i,v){
+  const id=`ua-${q.id}-${i}`;
+  if(p.type==='mcq')return `<div class="opts" role="radiogroup">${p.opts.map((o,k)=>`<label class="opt ropt"><input type="radio" name="${id}" value="${k}" ${v!=null&&v!==''&&+v===k?'checked':''}><span class="L">${'ABCD'[k]}</span><span>${o}</span></label>`).join('')}</div>`;
+  if(p.type==='multi')return `<div class="mrows">${p.items.map((it,j)=>`<div class="mrow"><span class="mq">${it.q}</span><select id="${id}-${j}" aria-label="${esc(it.q)}"><option value="">Choose…</option>${itemOpts(p,it).map((o,k)=>`<option value="${k}" ${v&&v[j]!==''&&v[j]!=null&&+v[j]===k?'selected':''}>${o}</option>`).join('')}</select></div>`).join('')}</div>`;
+  return `<div class="ansbox">${p.pre?`<span>${p.pre}</span>`:''}<input id="${id}" inputmode="${p.type==='text'||p.type==='time'?'text':'decimal'}" autocomplete="off" placeholder="${HINT[p.type]}" value="${v!=null&&!Array.isArray(v)?esc(v):''}">${p.unit?`<span>${p.unit}</span>`:''}</div>`;
+}
+function uasaQHTML(q,label,vals){
+  const solo=q.parts.length===1&&!q.parts[0].q;
+  return `<div class="ua-head"><span class="eyebrow">Section ${q.sec} · Question ${label} · ${topic(q.t).name}</span><span class="marks num">[${q.marks} mark${q.marks>1?'s':''}]</span></div>
+  <div class="q-text">${q.q}</div>${figFor(q)}
+  <div class="ua-parts">${q.parts.map((p,i)=>`<div class="ua-part">${p.q?`<p class="ua-pq"><b>${p.label}</b> ${p.q} <span class="marks num">[${p.marks}]</span></p>`:''}
+    ${p.type==='mcq'||p.type==='multi'||p.q||solo?'':`<span class="ua-lbl">${p.label||'Answer'} <span class="marks num">[${p.marks}]</span></span>`}
+    ${partInput(q,p,i,vals&&vals[i])}<div class="ua-fb" id="uafb-${q.id}-${i}"></div></div>`).join('')}</div>`;
+}
+function collect(root,q){return q.parts.map((p,i)=>{const id=`ua-${q.id}-${i}`;
+  if(p.type==='mcq'){const c=root.querySelector(`input[name="${id}"]:checked`);return c?c.value:''}
+  if(p.type==='multi')return p.items.map((_,j)=>{const s=root.querySelector(`#${id}-${j}`);return s?s.value:''});
+  const inp=root.querySelector('#'+id);return inp?inp.value:''})}
+function lockAll(root){root.querySelectorAll('input,select').forEach(x=>x.disabled=true)}
+function partFeedback(q,p,raw){
+  const got=partScore(p,raw),ok=got===p.marks,blank=!hasVal(raw);
+  let yours='';
+  if(p.type==='multi')yours=`<ul class="mres">${p.items.map((it,j)=>{const rv=raw?raw[j]:'',g=rv!==''&&rv!=null?itemOpts(p,it)[+rv]:'No answer',r=rv!==''&&rv!=null&&+rv===it.a;return `<li class="${r?'y':'n'}"><span>${r?'✓':'✗'}</span> ${it.q} <b>${r?g:`${g} → ${itemOpts(p,it)[it.a]}`}</b></li>`}).join('')}</ul>`;
+  else if(!ok)yours=`<p>Your answer: <b class="num">${blank?'No answer':p.type==='mcq'?optTxt(p,+raw):esc(raw)}</b></p><p>Correct answer: <b class="num">${partAnswer(p)}</b></p>`;
+  else yours=`<p>Answer: <b class="num">${partAnswer(p)}</b></p>`;
+  const why=!ok&&p.type==='mcq'&&p.why&&p.why[raw]?`<p>${p.why[raw]}</p>`:'';
+  return `<div class="fb ${ok?'ok':got?'part':'no'}"><h3>${ok?pick(praise):got?'Partly right.':pick(encourage)} <span class="marks num">${got}/${p.marks}</span></h3>
+  ${yours}${why}<p style="margin-top:8px"><b>${SUBJECTS[q.s].workLabel}</b></p><ol>${p.work.map(s=>`<li>${s}</li>`).join('')}</ol>${!ok&&p.tip?`<div class="tip"><b>Common mistake:</b> ${p.tip}</div>`:''}</div>`;
+}
+function shuffledCopy(q){
+  return {...q,parts:q.parts.map(p=>{if(p.type!=='mcq'||p.fixed)return p;const ord=shuffle(p.opts.map((_,k)=>k));
+    const why={};if(p.why)ord.forEach((o,k)=>{if(p.why[o])why[k]=p.why[o]});
+    return {...p,opts:ord.map(k=>p.opts[k]),a:ord.indexOf(p.a),why}})};
+}
+
+/* science Section A pool from the multiple-choice bank */
+function sciA(){return SCI_Q.filter(q=>q.type==='mcq').map(q=>({id:q.id,t:q.t,s:'science',sec:'A',marks:1,q:q.q,fig:q.fig,parts:[{type:'mcq',opts:q.opts,a:q.a,why:q.why,work:q.work,marks:1,fixed:q.fixed}]}))}
+function spreadPick(pool,n,topicList){
+  const ord=q=>topicList.findIndex(t=>t.id===q.t);const by={};shuffle(pool).forEach(q=>(by[q.t]=by[q.t]||[]).push(q));
+  const keys=shuffle(Object.keys(by)),out=[];let r=0;
+  while(out.length<n&&keys.some(k=>by[k].length>r)){for(const k of keys){if(out.length<n&&by[k][r])out.push(by[k][r])}r++}
+  return out.sort((a,b)=>ord(a)-ord(b));
+}
+function pickSectionA(){const by=m=>UASA_A.filter(q=>q.marks===m);return [...spreadPick(by(1),2,MATHS_TOPICS),...spreadPick(by(2),9,MATHS_TOPICS),...spreadPick(by(3),2,MATHS_TOPICS)]}
+
+const PAPERS={
+  maths:{key:'maths-uasa',title:'UASA-format Maths paper',code:'Matematik (015)',dur:75*60,
+    rows:[['A','13 questions (1–3 marks each)',26],['B','2 structured questions',24]],
+    rules:['Answer every question. Write the answer only; there is no multiple choice.','No calculator. Do your working on paper.'],
+    note:'Each answer box gets full marks when the final answer is correct. In the real exam, a teacher may also give marks for correct working.',
+    build:()=>[...pickSectionA(),...shuffle(UASA_B).slice(0,2)]},
+  science:{key:'science-uasa',title:'UASA-format Science paper',code:'Sains (018)',dur:75*60,
+    rows:[['A','10 multiple-choice questions (1 mark each)',10],['B','2 questions (4 marks each)',8],['C','4 questions (6, 6, 10, 10 marks)',32]],
+    rules:['Answer every question.','Section B and C use True/False, matching and choose-the-answer tasks.'],
+    note:'In the real exam, Section C also asks you to write some answers in your own words. Here you choose from options, so practise writing hypotheses and inferences on paper too.',
+    build:()=>[...spreadPick(sciA(),10,SCI_TOPICS),...shuffle(SCI_B).slice(0,2),...shuffle(SCI_C.filter(q=>q.marks===6)).slice(0,2),...shuffle(SCI_C.filter(q=>q.marks===10)).slice(0,2)]}
+};
+function labelsFor(list){const c={};return list.map(q=>{c[q.sec]=(c[q.sec]||0)+1;return q.sec==='A'?String(c.A):q.sec+c[q.sec]})}
+
+/* --- section practice --- */
+let uap=null;
+function practiceSet(kind){
+  if(SUBJ==='maths')return kind==='B'?shuffle(UASA_B).slice(0,1):pickSectionA();
+  if(kind==='A')return spreadPick(sciA(),10,SCI_TOPICS);
+  if(kind==='B')return shuffle(SCI_B).slice(0,2);
+  return shuffle(SCI_C).slice(0,1);
+}
+function runUasaPractice(kind){
+  const list=practiceSet(kind).map(shuffledCopy);
+  uap={kind,list,labels:labelsFor(list),i:0,got:0,max:list.reduce((s,q)=>s+q.marks,0)};
+  showUasaPractice();
+}
+function showUasaPractice(){
+  const p=uap,q=p.list[p.i];
+  app.innerHTML=`<div class="qhead"><span class="t">${SUBJECTS[SUBJ].short} · Section ${p.kind} practice</span><span class="muted num small">Question ${p.i+1} of ${p.list.length} · ${p.got} marks</span></div>
+  <div class="pbar"><i style="width:${p.i/p.list.length*100}%"></i></div>
+  <form class="sheet" id="uaf">${uasaQHTML(q,p.labels[p.i])}
+  <div class="qnav"><button class="btn" type="button" id="quit">Stop and see score</button><span style="display:flex;gap:8px"><button class="btn primary" type="submit" id="chk">Check answer${q.parts.length>1?'s':''}</button><button class="btn primary" type="button" id="next" hidden>${p.i===p.list.length-1?'See my score':'Next question →'}</button></span></div></form>`;
+  const f=app.querySelector('#uaf');
+  f.onsubmit=e=>{e.preventDefault();const raw=collect(f,q);let m=0;
+    q.parts.forEach((pt,i)=>{m+=partScore(pt,raw[i]);app.querySelector(`#uafb-${q.id}-${i}`).innerHTML=partFeedback(q,pt,raw[i])});
+    lockAll(f);markOpts(f,q,raw);p.got+=m;store.q[q.id]=m===q.marks?1:0;save();
+    app.querySelector('#chk').hidden=true;const n=app.querySelector('#next');n.hidden=false;n.focus();};
+  app.querySelector('#next').onclick=()=>{p.i++;p.i<p.list.length?showUasaPractice():uasaPracticeDone()};
+  app.querySelector('#quit').onclick=uasaPracticeDone;
+}
+function markOpts(root,q,raw){q.parts.forEach((p,i)=>{if(p.type!=='mcq')return;root.querySelectorAll(`input[name="ua-${q.id}-${i}"]`).forEach(inp=>{const k=+inp.value,l=inp.closest('.opt');if(k===p.a)l.classList.add('right');else if(raw[i]!==''&&k===+raw[i])l.classList.add('wrong')})})}
+function uasaPracticeDone(){
+  const p=uap,pct=p.max?Math.round(p.got/p.max*100):0;
+  app.innerHTML=`<div class="sheet" style="margin-top:32px"><div class="result-top"><div class="ring num" style="font-size:1.6rem">${p.got}/${p.max}</div><div><h2>Section ${p.kind} practice</h2><p>${pct>=80?'Excellent work!':pct>=50?'Good effort. Check the working for the ones you missed.':'Keep practising. Read each explanation carefully.'}</p></div></div>
+  <div class="qnav"><button class="btn" id="back">Back to practice</button><button class="btn primary" id="again">Try another set</button></div></div>`;
+  app.querySelector('#back').onclick=()=>go('practice');app.querySelector('#again').onclick=()=>go('uasaprac',p.kind);
+}
+
+/* --- full paper --- */
+let ua=null;
+function viewUasa(){
+  if(ua&&!ua.done&&ua.subj===SUBJ){go('uasarun');return}
+  const P=PAPERS[SUBJ],hist=store.mocks.filter(m=>m.subj===P.key).slice(-5).reverse();
+  app.innerHTML=`<div class="sheet" style="margin-top:32px">
+    <span class="eyebrow">Exam practice · ${P.code}</span>
+    <h2 style="font-size:1.8rem;margin:6px 0 10px">${P.title}</h2>
+    <div class="tbl" style="overflow-x:auto"><table class="data-tbl"><tr><th>Section</th><th>Questions</th><th>Marks</th></tr>
+      ${P.rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td></tr>`).join('')}<tr><th>Total</th><td>1 hour 15 minutes</td><th class="num">50</th></tr></table></div>
+    <ul style="margin:14px 0 16px;padding-left:1.2em">${P.rules.map(r=>`<li>${r}</li>`).join('')}<li>The paper is handed in automatically when time runs out. Marks and explanations appear afterwards.</li></ul>
+    <p class="muted small">${P.note}</p>
+    <button class="btn hi" id="start">Start the clock</button></div>
+  ${hist.length?`<div class="section-h"><h2>Recent attempts</h2></div><div class="sheet topics">${hist.map(h=>`<div class="trow" style="grid-template-columns:minmax(0,1fr) auto"><div><div class="tname num">${h.score} / ${h.total} marks</div><div class="tmeta">${h.date}</div></div><div class="num muted small">${h.time}</div></div>`).join('')}</div>`:''}`;
+  app.querySelector('#start').onclick=()=>{const list=P.build().map(shuffledCopy);
+    ua={subj:SUBJ,dur:P.dur,key:P.key,list,labels:labelsFor(list),vals:list.map(()=>[]),i:0,left:P.dur,start:Date.now(),done:false};go('uasarun')};
+}
+function runUasa(){
+  if(!timerId){timerId=setInterval(()=>{ua.left=Math.max(0,ua.dur-Math.floor((Date.now()-ua.start)/1000));
+    const el=document.getElementById('clk');if(el){el.textContent=clock(ua.left);el.classList.toggle('low',ua.left<=300)}
+    if(ua.left<=0)submitUasa()},1000)}
+  const u=ua,q=u.list[u.i],answered=k=>u.vals[k].some(hasVal);
+  app.innerHTML=`<div class="qhead"><span class="t">UASA ${SUBJECTS[u.subj].short} · Section ${q.sec}</span><span class="timer num ${u.left<=300?'low':''}" id="clk">${clock(u.left)}</span></div>
+  <div class="pbar"><i style="width:${u.list.filter((_,k)=>answered(k)).length/u.list.length*100}%"></i></div>
+  <div class="sheet" id="uaq">${uasaQHTML(q,u.labels[u.i],u.vals[u.i])}
+    <div class="qnav"><button class="btn" id="prev" ${u.i===0?'disabled':''}>← Previous</button>${u.i<u.list.length-1?`<button class="btn primary" id="nxt">Next →</button>`:`<button class="btn hi" id="sub">Hand in paper</button>`}</div>
+    <div class="palette" aria-label="Jump to question">${u.list.map((_,k)=>`<button data-j="${k}" class="${answered(k)?'done':''} ${k===u.i?'cur':''}" style="${u.labels[k].length>2?'width:44px':''}">${u.labels[k]}</button>`).join('')}</div>
+    <div id="cbox"></div>${u.i<u.list.length-1?`<p style="margin-top:14px"><button class="btn" id="sub2">Hand in paper early</button></p>`:''}</div>`;
+  const box=app.querySelector('#uaq');
+  const sync=()=>{u.vals[u.i]=collect(box,q);const b=app.querySelector(`[data-j="${u.i}"]`);b&&b.classList.toggle('done',answered(u.i));
+    app.querySelector('.pbar i').style.width=u.list.filter((_,k)=>answered(k)).length/u.list.length*100+'%'};
+  box.addEventListener('input',sync);box.addEventListener('change',sync);
+  box.querySelectorAll('input[type=text],input:not([type])').forEach(inp=>inp.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();const n=app.querySelector('#nxt');n&&n.click()}});
+  app.querySelector('#prev').onclick=()=>{u.i--;runUasa()};
+  const nx=app.querySelector('#nxt');if(nx)nx.onclick=()=>{u.i++;runUasa()};
+  app.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>{u.i=+b.dataset.j;runUasa()});
+  const ask=()=>{const blank=u.list.filter((_,k)=>!answered(k)).length;
+    app.querySelector('#cbox').innerHTML=`<div class="confirm"><span>${blank?`You have <b>${blank}</b> unanswered question${blank>1?'s':''}. `:''}Hand in your paper now?</span><button class="btn primary" id="yes">Yes, hand in</button><button class="btn" id="no">Keep working</button></div>`;
+    app.querySelector('#yes').onclick=submitUasa;app.querySelector('#no').onclick=()=>app.querySelector('#cbox').innerHTML=''};
+  ['#sub','#sub2'].forEach(s=>{const b=app.querySelector(s);if(b)b.onclick=ask});
+}
+function submitUasa(){
+  if(!ua||ua.done)return;clearInterval(timerId);timerId=null;ua.done=true;
+  ua.res=ua.list.map((q,k)=>{const got=q.parts.reduce((s,p,i)=>s+partScore(p,ua.vals[k][i]),0);store.q[q.id]=got===q.marks?1:0;return got});
+  ua.score=ua.res.reduce((a,b)=>a+b,0);ua.total=ua.list.reduce((s,q)=>s+q.marks,0);
+  const d=new Date();
+  store.mocks.push({subj:ua.key,score:ua.score,total:ua.total,date:d.toLocaleDateString('en-MY',{day:'numeric',month:'short',year:'numeric'})+', '+d.toLocaleTimeString('en-MY',{hour:'numeric',minute:'2-digit'}),time:clock(ua.dur-ua.left)+' used'});
+  store.mocks=store.mocks.slice(-40);save();go('uasares');
+}
+function uasaResults(){
+  const u=ua,pct=Math.round(u.score/u.total*100);
+  const secs=[...new Set(u.list.map(q=>q.sec))].map(s=>{const ks=u.list.map((q,k)=>q.sec===s?k:-1).filter(k=>k>=0);return `Section ${s}: ${ks.reduce((a,k)=>a+u.res[k],0)}/${ks.reduce((a,k)=>a+u.list[k].marks,0)}`}).join(' · ');
+  const msg=pct>=80?'Excellent result! You are well prepared for UASA.':pct>=60?'Good work. Look at the questions you missed and revise those topics.':pct>=40?'A fair start. Study the explanations below, then try another paper.':'Don’t give up. Work through the notes topic by topic, then try again.';
+  app.innerHTML=`<div class="sheet" style="margin-top:32px">
+    <div class="result-top"><div class="ring num" style="font-size:1.7rem">${u.score}/${u.total}</div><div><h2>${pct}%</h2><p>${msg}</p><p class="small num">${secs} · Time used: ${clock(u.dur-u.left)}</p></div></div>
+    <div class="tbl" style="overflow-x:auto;margin-top:16px"><table class="data-tbl score-tbl"><tr><th>Question</th>${u.labels.map(l=>`<th>${l}</th>`).join('')}</tr><tr><td>Marks</td>${u.res.map((r,k)=>`<td class="num ${r===u.list[k].marks?'full':r?'part':'zero'}">${r}/${u.list[k].marks}</td>`).join('')}</tr></table></div>
+    <div class="qnav"><button class="btn" id="home">Back to home</button><button class="btn hi" id="again">Try a new paper</button></div></div>
+  <div class="section-h"><h2>Check your answers</h2><span>Marks and explanations for every question</span></div>
+  <div class="review">${u.list.map((q,k)=>`<div class="sheet" data-k="${k}">${uasaQHTML(q,u.labels[k],u.vals[k])}</div>`).join('')}</div>`;
+  app.querySelectorAll('.review [data-k]').forEach(el=>{const k=+el.dataset.k,q=u.list[k];lockAll(el);markOpts(el,q,u.vals[k]);
+    q.parts.forEach((p,i)=>{const fb=el.querySelector(`#uafb-${q.id}-${i}`);if(fb)fb.innerHTML=partFeedback(q,p,u.vals[k][i])})});
+  app.querySelector('#home').onclick=()=>{ua=null;go('home')};app.querySelector('#again').onclick=()=>{ua=null;go('mock')};
+}
+
+UASA_A.forEach(q=>q.sec='A');UASA_B.forEach(q=>q.sec='B');
+
+document.querySelectorAll('[data-subj]').forEach(b=>b.onclick=()=>{if(b.dataset.subj!==SUBJ){setSubject(b.dataset.subj);go('home')}});
+setSubject(SUBJECTS[store.subj]?store.subj:'maths');
+go('home');
+</script>
+
+</body>
+</html>
