@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="UASA revision for Tahun 4, 5 and 6 in BM and English: Maths and Science notes, practice questions with feedback, and UASA-format papers.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>UASA Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: exercise-book page — sticky tab bar, graph-paper ground, one working column for notes and questions */
+:root{
+  --paper:#F4F6FB; --card:#FFFFFF; --ink:#18213A; --muted:#566180; --line:#D9E0ED; --grid:#E4E9F3;
+  --pen:#2453B3; --pen-soft:#E4ECFB; --hi:#FFD23F; --hi-soft:#FFF4C9; --on-hi:#18213A;
+  --good:#1D8350; --good-soft:#E1F4E8; --bad:#BF3A30; --bad-soft:#FBE5E2;
+  --sci:#0B7A6A; --sci-soft:#DDF3EE;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Lexend", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#10152A; --card:#18203A; --ink:#E9EDF7; --muted:#9BA6C4; --line:#2B3556; --grid:#182041;
+  --pen:#86A8F2; --pen-soft:#22305133; --hi:#FFD23F; --hi-soft:#3A3417; --on-hi:#18213A;
+  --good:#5CCB8D; --good-soft:#15342A; --bad:#F27C72; --bad-soft:#3E1F1D; --sci:#4FD1BC; --sci-soft:#12332F; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#10152A; --card:#18203A; --ink:#E9EDF7; --muted:#9BA6C4; --line:#2B3556; --grid:#182041;
+  --pen:#86A8F2; --pen-soft:#22305133; --hi:#FFD23F; --hi-soft:#3A3417; --on-hi:#18213A;
+  --good:#5CCB8D; --good-soft:#15342A; --bad:#F27C72; --bad-soft:#3E1F1D; --sci:#4FD1BC; --sci-soft:#12332F; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
